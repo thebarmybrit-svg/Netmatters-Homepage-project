@@ -76,13 +76,24 @@
 
 // Image replacement
 
-@mixin img-replace($img, $w, $h, $disp: block) {
-	background-image: url('#{$path--rel}/#{$img}');
+@mixin img-icon-replace($img, $w, $h, $disp: block) {
+	background-image: url('#{$path-img-icon--rel}/#{$img}');
+  background-size: contain;
 	background-repeat: no-repeat;
 	width: $w;
 	height: $h;
 	display: $disp;
 }
+
+@mixin img-logo-replace($img, $w, $h, $disp: block) {
+	background-image: url('#{$path-img-logo--rel}/#{$img}');
+  background-size: contain;
+	background-repeat: no-repeat;
+	width: $w;
+	height: $h;
+	display: $disp;
+}
+
       
 // Adjacent sibling margins
 

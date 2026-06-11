@@ -1,0 +1,26 @@
+.container, .section {
+    display: grid;
+    // margin: 0px auto;
+    
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+
+    @include mq(small){
+        width: $brkpoint-sm;
+        grid-template-columns: repeat(auto-fit, minmax($g-col-width, 1fr));
+        grid-gap: $g-gutter-width ;
+    }
+
+     @include mq(medium){
+        width: $brkpoint-md;
+    }
+
+     @include mq(large){
+        width: $brkpoint-lg;
+    }
+
+
+}
+
