@@ -3,6 +3,9 @@
 // ==========================================================================
 
 .row {
+  display: flex;
+  flex-wrap: wrap;
+
   @extend %clearfix;
   @extend .centered;
   width: 90%;

@@ -6,14 +6,19 @@ body {
     margin: 0;
 }
 
-.container {
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: 15px;
-    padding-left: 15px;
+.container, .section {
+    display: grid;
+    // margin: 0px auto;
+    
+    // margin-right: auto;
+    // margin-left: auto;
+    // padding-right: 15px;
+    // padding-left: 15px;
 
     @include mq(small){
         width: 750px;
+        grid-template-columns: repeat(auto-fit, minmax($g-col-width, 1fr));
+        grid-gap: $g-gutter-width ;
     }
 
      @include mq(medium){

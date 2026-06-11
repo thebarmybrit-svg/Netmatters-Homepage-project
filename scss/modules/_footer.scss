@@ -4,31 +4,29 @@ footer {
     color: $white;
     padding: em(30px) 0 0;
     position: relative;
+    float: none;
+	margin-left: auto;
+	margin-right: auto;
+}
 
-    .footer-row{
-        display: flex;
-        flex-wrap: wrap;
+.footer-row{
+        flex: 100%;
+        margin-bottom: em(30px);
 
-        .footer-menu{
-            flex: 100%;
-            margin-bottom: em(30px);
-
-            @include mq(small){
-                flex: 50%;
-            }
-            @include mq(medium){
-                flex: 25%;
-            }
-            @include mq(large){
-                margin-bottom: 40px;
-            }
+        @include mq(small){
+            flex: 50%;
+        }
+        @include mq(medium){
+            flex: 25%;
+        }
+        @include mq(large){
+            margin-bottom: 40px;
+        }
 
 
-            h4 {
-                text-transform: uppercase;
-                font-size: 1rem;
-                margin-bottom: em(26px);
-            }
+        h4 {
+            text-transform: uppercase;
+            font-size: 1rem;
+            margin-bottom: em(26px);
         }
     }
-}

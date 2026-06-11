@@ -372,27 +372,26 @@ body {
   margin: 0;
 }
 
-.container {
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 15px;
-  padding-left: 15px;
+.container, .section {
+  display: grid;
 }
 
 @media (min-width: 768px) {
-  .container {
+  .container, .section {
     width: 750px;
+    grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
+    grid-gap: 20px;
   }
 }
 
 @media (min-width: 992px) {
-  .container {
+  .container, .section {
     width: 970px;
   }
 }
 
 @media (min-width: 1100px) {
-  .container {
+  .container, .section {
     width: 1260px;
   }
 }
@@ -419,6 +418,8 @@ body {
 }
 
 .row {
+  display: flex;
+  flex-wrap: wrap;
   width: 90%;
 }
 
@@ -434,18 +435,24 @@ body {
 
 @media (min-width: 992px) {
   .row__col--1 {
-    width: 16.04938%;
+    width: 11.30435%;
   }
   .row__col--2 {
-    width: 37.03704%;
+    width: 26.08696%;
   }
   .row__col--3 {
-    width: 58.02469%;
+    width: 40.86957%;
   }
   .row__col--4 {
-    width: 79.01235%;
+    width: 55.65217%;
   }
   .row__col--5 {
+    width: 70.43478%;
+  }
+  .row__col--6 {
+    width: 85.21739%;
+  }
+  .row__col--7 {
     width: 100%;
   }
 }
@@ -465,7 +472,7 @@ body {
     padding-right: 10px;
   }
   [class^="row__col--"] + [class^="row__col--"] {
-    margin-left: 4.93827%;
+    margin-left: 3.47826%;
   }
   [class^="row__col--"]:last-of-type {
     float: right;
@@ -475,12 +482,12 @@ body {
 .about-netmatters {
   background-color: #323544;
   color: white;
-  display: grid;
 }
 
 @media (min-width: 992px) {
   .about-netmatters {
-    grid-auto-columns: 3;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-columns: 6.25em;
   }
 }
 
@@ -489,37 +496,35 @@ footer {
   color: #fff;
   padding: 1.875em 0 0;
   position: relative;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-footer .footer-row {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-footer .footer-row .footer-menu {
+.footer-row {
   flex: 100%;
   margin-bottom: 1.875em;
 }
 
 @media (min-width: 768px) {
-  footer .footer-row .footer-menu {
+  .footer-row {
     flex: 50%;
   }
 }
 
 @media (min-width: 992px) {
-  footer .footer-row .footer-menu {
+  .footer-row {
     flex: 25%;
   }
 }
 
 @media (min-width: 1100px) {
-  footer .footer-row .footer-menu {
+  .footer-row {
     margin-bottom: 40px;
   }
 }
 
-footer .footer-row .footer-menu h4 {
+.footer-row h4 {
   text-transform: uppercase;
   font-size: 1rem;
   margin-bottom: 1.625em;
