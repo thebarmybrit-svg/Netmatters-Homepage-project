@@ -47,6 +47,27 @@ $ui-colors: (
     dev-train : $training-brown
 );
 
+// UI Colors
+
+$icon-locations: (
+	arrow-right : "arrow-right.svg",
+    briefcase : "briefcase.svg",
+    display : "display.svg",
+    embed : "embed.svg",
+    facebook : "facebook.svg",
+    instagram : "instagram.svg",
+    laptop : "laptop.svg",
+    linkedin : "linkedin.svg",
+    menu : "menu.svg",
+    phone : "phone.svg",
+    search : "search.svg",
+    shield : "shield.svg",
+    star : "star-full.svg",
+    stats-bars : "stats-bars.svg",
+    twitter : "twitter.svg"
+);
+
+
 // Text
 
 $base__font-size : 16px;
@@ -71,8 +92,8 @@ $path-img-logo--rel           : "../img/logos";
 
 $g-col-width    : 65px;
 $g-gutter-width : 20px;
-$g-col-count    : 7;
-$g-cont-max-w   : 1050px;
+$g-col-count    : 6;
+$g-cont-max-w   : 1260px;
 
 // Breakpoints
 

@@ -55,6 +55,21 @@
 	}
 }
 
+// Generate modifier color classes
+
+@mixin icons($map, $w, $h, $disp: block) {
+	@each $icon, $img in $map {
+		&-#{$icon} {
+			background-image: url('#{$path-img-icon--rel}/#{$img}');
+      background-size: contain;
+    	background-repeat: no-repeat;
+	    width: $w;
+	    height: $h;
+	    display: $disp;
+		}
+	}
+}
+
 // Generating :before or :after pseudo-element shapes
 
 @mixin p-el(
@@ -75,15 +90,6 @@
 }
 
 // Image replacement
-
-@mixin img-icon-replace($img, $w, $h, $disp: block) {
-	background-image: url('#{$path-img-icon--rel}/#{$img}');
-  background-size: contain;
-	background-repeat: no-repeat;
-	width: $w;
-	height: $h;
-	display: $disp;
-}
 
 @mixin img-logo-replace($img, $w, $h, $disp: block) {
 	background-image: url('#{$path-img-logo--rel}/#{$img}');
