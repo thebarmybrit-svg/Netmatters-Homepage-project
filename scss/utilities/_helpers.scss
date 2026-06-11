@@ -1,0 +1,27 @@
+// ==========================================================================
+// Helpers
+// ==========================================================================
+
+// Clearfix
+
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// Center alignment
+
+%center-align {
+	text-align: center;
+}
+
+// Center elements
+
+.centered {
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+}
