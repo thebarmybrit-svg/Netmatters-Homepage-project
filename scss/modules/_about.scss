@@ -1,7 +1,9 @@
 .about-netmatters {
     background-color: $colour-primary;
     color: white;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    @include mq(medium){
+        grid-auto-columns: 3;
+    }
 
 }
