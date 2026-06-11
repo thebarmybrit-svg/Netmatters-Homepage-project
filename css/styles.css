@@ -374,11 +374,15 @@ body {
 
 .container, .section {
   display: grid;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 @media (min-width: 768px) {
   .container, .section {
-    width: 750px;
+    width: 768px;
     grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
     grid-gap: 20px;
   }
@@ -386,11 +390,11 @@ body {
 
 @media (min-width: 992px) {
   .container, .section {
-    width: 970px;
+    width: 992px;
   }
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 1260px) {
   .container, .section {
     width: 1260px;
   }
@@ -427,7 +431,7 @@ body {
   width: 100%;
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 1260px) {
   .row {
     max-width: 1050px;
   }
@@ -484,13 +488,6 @@ body {
   color: white;
 }
 
-@media (min-width: 992px) {
-  .about-netmatters {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-auto-columns: 6.25em;
-  }
-}
-
 footer {
   background-color: #323544;
   color: #fff;
@@ -499,6 +496,17 @@ footer {
   float: none;
   margin-left: auto;
   margin-right: auto;
+}
+
+.footer-menu {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .footer-menu {
+    flex-wrap: nowrap;
+  }
 }
 
 .footer-row {
@@ -518,7 +526,7 @@ footer {
   }
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 1260px) {
   .footer-row {
     margin-bottom: 40px;
   }

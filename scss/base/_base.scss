@@ -10,23 +10,23 @@ body {
     display: grid;
     // margin: 0px auto;
     
-    // margin-right: auto;
-    // margin-left: auto;
-    // padding-right: 15px;
-    // padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
 
     @include mq(small){
-        width: 750px;
+        width: $brkpoint-sm;
         grid-template-columns: repeat(auto-fit, minmax($g-col-width, 1fr));
         grid-gap: $g-gutter-width ;
     }
 
      @include mq(medium){
-        width: 970px;
+        width: $brkpoint-md;
     }
 
      @include mq(large){
-        width: 1260px;
+        width: $brkpoint-lg;
     }
 
 

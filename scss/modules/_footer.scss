@@ -9,24 +9,35 @@ footer {
 	margin-right: auto;
 }
 
-.footer-row{
-        flex: 100%;
-        margin-bottom: em(30px);
-
-        @include mq(small){
-            flex: 50%;
-        }
-        @include mq(medium){
-            flex: 25%;
-        }
-        @include mq(large){
-            margin-bottom: 40px;
-        }
-
-
-        h4 {
-            text-transform: uppercase;
-            font-size: 1rem;
-            margin-bottom: em(26px);
-        }
+.footer-menu {
+    display: flex;
+    flex-wrap: wrap;
+    
+    @include mq(small){
+        flex-wrap: nowrap;
     }
+
+}
+
+.footer-row{
+ 
+    flex: 100%;
+    margin-bottom: em(30px);
+
+    @include mq(small){
+        flex: 50%;
+    }
+    @include mq(medium){
+        flex: 25%;
+    }
+    @include mq(large){
+        margin-bottom: 40px;
+    }
+
+
+    h4 {
+        text-transform: uppercase;
+        font-size: 1rem;
+        margin-bottom: em(26px);
+    }
+}
