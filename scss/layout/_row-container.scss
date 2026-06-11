@@ -2,6 +2,7 @@
 // Grid Container
 // ==========================================================================
 
+
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -18,5 +19,6 @@
   // Set a max-width for grid container
   @include mq(large) {
     max-width: $g-cont-max-w;
+    flex-wrap: nowrap;
   }
 }

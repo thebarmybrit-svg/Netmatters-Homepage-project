@@ -3,45 +3,17 @@
 // ==========================================================================
 
 
-.menu {
-    display: flex;
-    flex-wrap: wrap;
-    
-    @include mq(small){
-        flex-wrap: nowrap;
-    }
+// Calculate grid columns
 
-}
-
-// .row{
-//     display: grid;
-    
-
-//     @include mq(small){
-//         flex: 50%;
-//         @include g-columns;
-//     }
-//     @include mq(medium){
-//         flex: 25%;
-        
-//     }
-//     @include mq(large){
-//         margin-bottom: 40px;
-       
-//     }
-
-// }
-
-.row__col{
+.row__col {
   @include mq(medium) {
-      @include g-columns; 
-    }
-    
-
+    @include g-columns; 
+  }
 }
+
+// Column styles
 
 [class^="row__col--"] {
-  
   @include mq(small)  {
     margin-top: em(12px);
     margin-bottom: em(12px);
