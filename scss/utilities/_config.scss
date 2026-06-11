@@ -2,6 +2,14 @@
 // Global Config
 // ==========================================================================
 
+// Font Weights
+
+$font-weight--thin       : 100;
+$font-weight--light      : 300;
+$font-weight--medium     : 400;
+$font-weight--bold       : 700;
+$font-weight--ultra-bold : 900;
+
 // Descriptive Base Colors
 
 $white : #fff;
@@ -10,6 +18,7 @@ $grey  : #797e83;
 
 
 $deep-steel-blue        : #323544;
+$glowing-sun            : #cdcabb;
 $darkest-sea            : #212330;
 $dev-blue               : #67809f;
 $it-blue                : #4082d6;
@@ -27,14 +36,15 @@ $color-shadow       : rgba($black, .2);
 // UI Colors
 
 $ui-colors: (
-	default : $deep-steel-blue,
-	developer : $dev-blue,
-	it   : $it-blue,
-	marketing : $market-green,
-	telecom    : $telecom-red,
-    webdev : $webdev-lavander,
-    security : $security-magenta,
-    training : $training-brown
+	primary : $deep-steel-blue,
+    primary-inverse: $glowing-sun,
+	cons-dev : $dev-blue,
+	it-supp   : $it-blue,
+	digi-mrk : $market-green,
+	tele-serv    : $telecom-red,
+    web-dsner : $webdev-lavander,
+    cbr-scr : $security-magenta,
+    dev-train : $training-brown
 );
 
 // Text
@@ -47,6 +57,10 @@ $letter-space    : 1px;
 
 $br--default    : .4em;
 $br--round      : 50%;
+
+// Transitions
+
+$trns-duration  : .3s;
 
 // Path to Assets
 
