@@ -1,3 +1,9 @@
 // ==========================================================================
 // Images
 // ==========================================================================
+
+.img-cover, .img-standard {
+display: block;    /* Removes the bottom whitespace gap */
+  width: 100%;       /* Forces image to match container width */
+  height: auto;      /* Maintains aspect ratio */
+}
