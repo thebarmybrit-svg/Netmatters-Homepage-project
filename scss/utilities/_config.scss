@@ -18,6 +18,7 @@ $grey  : #797e83;
 
 
 $deep-steel-blue        : #323544;
+$meteorite-blue         : #333645;
 $glowing-sun            : #cdcabb;
 $darkest-sea            : #212330;
 $dev-blue               : #67809f;
@@ -27,6 +28,9 @@ $telecom-red            : #d64541;
 $webdev-lavander        : #926fb1;
 $security-magenta       : #f62459;
 $training-brown         : #ce4125;
+$google-blue            : #4387f6;
+$trustpilot-green       : #00b67b;
+$star-yellow            : #ffa500;
 
 
 $colour-primary     : $deep-steel-blue;
@@ -36,37 +40,71 @@ $color-shadow       : rgba($black, .2);
 // UI Colors
 
 $ui-colors: (
-	primary : $deep-steel-blue,
-    primary-inverse: $glowing-sun,
-	cons-dev : $dev-blue,
-	it-supp   : $it-blue,
-	digi-mrk : $market-green,
-	tele-serv    : $telecom-red,
-    web-dsner : $webdev-lavander,
-    cbr-scr : $security-magenta,
-    dev-train : $training-brown
+	primary             : $deep-steel-blue,
+    primary-inverse     : $glowing-sun,
+	cons-dev            : $dev-blue,
+	it-supp             : $it-blue,
+	digi-mrk            : $market-green,
+	tele-serv           : $telecom-red,
+    web-dsner           : $webdev-lavander,
+    cbr-scr             : $security-magenta,
+    dev-train           : $training-brown,
+    google              : $google-blue,
+    trustpilot          : $trustpilot-green
 );
 
-// UI Colors
+//Icons 
+$icons-full: (
+	arrow-right         : (location: "arrow-right.svg", colour: #0b0b0b),
+    briefcase           : (location: "briefcase.svg", colour: $training-brown),
+    display             : (location: "display.svg", colour: $it-blue),
+    embed               : (location: "embed.svg", colour: $webdev-lavander),
+    facebook            : (location: "facebook.svg", colour: #0b0b0b),
+    instagram           : (location: "instagram.svg", colour: #0b0b0b),
+    laptop              : (location: "laptop.svg", colour: $dev-blue),
+    linkedin            : (location: "linkedin.svg", colour: #0b0b0b),
+    menu                : (location: "menu.svg", colour: #0b0b0b),
+    phone               : (location: "phone.svg", colour: $telecom-red),
+    search              : (location: "search.svg", colour: #0b0b0b),
+    shield              : (location: "shield.svg", colour: $security-magenta),
+    star                : (location: "star-full.svg", colour: $star-yellow) ,
+    stats-bars          : (location: "stats-bars.svg", colour: $market-green),
+    twitter             : (location: "twitter.svg", colour: #0b0b0b) 
+);
+
+
+// Icon locations
 
 $icon-locations: (
-	arrow-right : "arrow-right.svg",
-    briefcase : "briefcase.svg",
-    display : "display.svg",
-    embed : "embed.svg",
-    facebook : "facebook.svg",
-    instagram : "instagram.svg",
-    laptop : "laptop.svg",
-    linkedin : "linkedin.svg",
-    menu : "menu.svg",
-    phone : "phone.svg",
-    search : "search.svg",
-    shield : "shield.svg",
-    star : "star-full.svg",
-    stats-bars : "stats-bars.svg",
-    twitter : "twitter.svg"
+	arrow-right         : "arrow-right.svg",
+    briefcase           : "briefcase.svg",
+    display             : "display.svg",
+    embed               : "embed.svg",
+    facebook            : "facebook.svg",
+    instagram           : "instagram.svg",
+    laptop              : "laptop.svg",
+    linkedin            : "linkedin.svg",
+    menu                : "menu.svg",
+    phone               : "phone.svg",
+    search              : "search.svg",
+    shield              : "shield.svg",
+    star                : "star-full.svg",
+    stats-bars          : "stats-bars.svg",
+    twitter             : "twitter.svg"
 );
 
+// Icon Themes
+
+$icon-themes: (
+    briefcase : $training-brown,
+    display : $it-blue,
+    embed : $webdev-lavander,
+    laptop : $dev-blue,
+    phone : $telecom-red,
+    shield : $security-magenta,
+    star : $star-yellow,
+    stats-bars : $market-green
+);
 
 // Text
 

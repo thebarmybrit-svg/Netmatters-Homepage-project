@@ -6,12 +6,12 @@
 
 .container, .section {
     display: grid;
-    // margin: 0px auto;
+    margin: 0px auto;
     
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: 15px;
-    padding-left: 15px;
+    // margin-right: auto;
+    // margin-left: auto;
+    // padding-right: 15px;
+    // padding-left: 15px;
 
     @include mq(small){
         width: $brkpoint-sm;
@@ -24,6 +24,7 @@
     }
 
      @include mq(large){
+        
         width: $brkpoint-lg;
     }
 

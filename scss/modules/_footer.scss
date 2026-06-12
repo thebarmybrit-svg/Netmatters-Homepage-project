@@ -14,7 +14,7 @@
 }
 
 .footer-row{
- 
+    
     flex: 100%;
     margin-bottom: em(30px);
 
@@ -28,6 +28,9 @@
         margin-bottom: 40px;
     }
 
+    a {
+        color: $white;
+    }
 
     h4 {
         text-transform: uppercase;

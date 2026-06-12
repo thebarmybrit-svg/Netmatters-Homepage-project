@@ -1,5 +1,13 @@
 .btn {
-	@include bg-colors($ui-colors);
+	display: inline-block;
+    margin-bottom: 0;
+    font-weight: $font-weight--medium;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    @include bg-colors($ui-colors);
     text-decoration: none;
 
     &[class^="btn--"] {

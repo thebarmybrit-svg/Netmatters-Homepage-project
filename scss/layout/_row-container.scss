@@ -3,22 +3,45 @@
 // ==========================================================================
 
 
+// .row {
+//   display: flex;
+//   flex-wrap: wrap;
+
+//   @extend %clearfix;
+//   @extend .centered;
+//   width: 90%;
+ 
+//   [class*="row__col--"] > & {
+//     flex: 1rem;
+//     width: 100%; 
+//   }
+
+//   @include mq(large) {
+//     flex-wrap: nowrap;
+//   }
+// }
+
 .row {
   display: flex;
   flex-wrap: wrap;
+  
+  /* Centers items horizontally */
+  justify-content: center; 
+  /* Centers items vertically (requires a height on .row) */
+  align-items: center; 
 
   @extend %clearfix;
   @extend .centered;
   width: 90%;
+  
+
  
-  // Make nested grid 100%
   [class*="row__col--"] > & {
+    flex: 1rem;
     width: 100%; 
   }
 
-  // Set a max-width for grid container
   @include mq(large) {
-    max-width: $g-cont-max-w;
     flex-wrap: nowrap;
   }
 }

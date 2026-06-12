@@ -7,6 +7,18 @@ body {
     background-color: $grey;
 }
 
+h1, .h1 {
+    font-weight: $font-weight--medium;
+    color: $meteorite-blue;
+}
+
+a {
+    text-decoration: none;
+    font-weight: $font-weight--medium;
+    color: $meteorite-blue;
+}
+
+
 footer {
     @extend .centered;
     background-color: $colour-primary;

@@ -48,14 +48,41 @@
 // Generate modifier color classes
 
 @mixin bg-colors($map) {
-	@each $theme, $color in $map {
+	@each $theme, $colour in $map {
 		&--#{$theme} {
-			background-color: $color;    
+			background-color: $colour;    
 		}
 	}
 }
 
-// Generate modifier color classes
+// Gnerate Icon Colours
+
+@mixin icons-full($config-map, $w, $h, $disp: block) {
+  @each $icon, $props in $config-map {
+    
+    // Extract values from the inner map
+    $colour: map-get($props, "colour");
+    $img:    map-get($props, "location");
+
+    &--#{$icon} {
+      background-image: url('#{$path-img-icon--rel}/#{$img}');
+      background-size: contain;
+    	background-repeat: no-repeat;
+	    width: $w;
+	    height: $h;
+	    display: $disp;
+      background-color: $colour;
+      -webkit-mask: url('#{$path-img-icon--rel}/#{$img}') no-repeat center;
+      mask: url('#{$path-img-icon--rel}/#{$img}') no-repeat center;
+      mask-size: contain;
+      display: inline-block; // Ensure it has dimensions
+      width: 24px; 
+      height: 24px;
+    }
+  }
+}
+
+// Generate icon image classes
 
 @mixin icons($map, $w, $h, $disp: block) {
 	@each $icon, $img in $map {
