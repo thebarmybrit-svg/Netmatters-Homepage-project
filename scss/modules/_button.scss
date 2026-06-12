@@ -1,3 +1,5 @@
+
+
 .btn {
 	display: inline-block;
     margin-bottom: 0;
@@ -9,18 +11,20 @@
     border: 1px solid transparent;
     @include bg-colors($ui-colors);
     text-decoration: none;
+    width: fit-content;
 
     &[class^="btn--"] {
         @extend %center-align;
         @extend %btn;
         margin-bottom: em(20px, 14px); 
         @include mq(small) {
+            display:block;
             width: 100%;
         }
         @include mq(medium) { 
-            width: auto;
+            width: fit-content;
             display: inline-block;
-            @include doubly(20px);
+            @include doubly(em($g-gutter-width));
         }
     }
 

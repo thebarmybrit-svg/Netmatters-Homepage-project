@@ -5,9 +5,9 @@
 .img {
 
     [class*="img--"] > & {
-        display: block;    /* Removes the bottom whitespace gap */
-        width: 100%;       /* Forces image to match container width */
-        height: auto;      /* Maintains aspect ratio */
+        display: block;
+        width: 100%;
+        height: auto;
     }
     
     @include m(standard) {
@@ -27,16 +27,23 @@
         }
     }
     @include m(avatar) {
-        display: block;
         border-radius: $br--round;
         margin-left: auto;
         margin-right: auto;
         margin-top: em(24px);
     }
     @include m(cover) {
-        
+        max-width: 100%;
+        display: block;
+        @include mq(small){
+            width: $brkpoint-sm;
+        }
         @include mq(medium) {
-        margin-bottom: em(42px);
+            width: $brkpoint-md;
+            margin-bottom: em(42px);
+        }
+        @include mq(large){
+            width: $brkpoint-lg;
         }
     }
 }

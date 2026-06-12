@@ -24,11 +24,9 @@
 .row {
   display: flex;
   flex-wrap: wrap;
-  
-  /* Centers items horizontally */
   justify-content: center; 
-  /* Centers items vertically (requires a height on .row) */
   align-items: center; 
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
 
   @extend %clearfix;
   @extend .centered;
