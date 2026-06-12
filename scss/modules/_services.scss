@@ -6,4 +6,15 @@
  .our-services {
     background-color: $white;
     padding: 60px 0;
+
+    .container .row{
+        [class^="row__col-"]{
+            border: 3px solid $black;
+        }
+    }
+ }
+
+ .block {
+    color: blue;
+    
  }

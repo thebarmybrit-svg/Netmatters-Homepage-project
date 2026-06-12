@@ -11,7 +11,7 @@
   flex-wrap: wrap;
   justify-content: center; 
   align-items: center; 
-  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  grid-template-columns: repeat(12, minmax(0, 1fr));
 
   @extend %clearfix;
   @extend .centered;
@@ -19,17 +19,15 @@
   
 
  
-  [class*="row__col--"] > & {
+  [class*="row__col-"] > & {
     flex: 1rem;
     width: 100%; 
   }
 
   @include mq(large) {
-    flex-wrap: nowrap;
+
+    // flex: repeat(3, minmax(0, 1fr)), repeat(4, minmax(0, 1fr));
+    // flex-wrap: nowrap;
   }
 }
 
-// .row > * {
-//   flex: 0 0 auto;
-//   max-width: 100%;
-// }
