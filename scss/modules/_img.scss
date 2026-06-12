@@ -2,8 +2,30 @@
 // Images
 // ==========================================================================
 
-.img-cover, .img-standard {
-display: block;    /* Removes the bottom whitespace gap */
-  width: 100%;       /* Forces image to match container width */
-  height: auto;      /* Maintains aspect ratio */
+.img {
+
+    [class*="img--"] > & {
+        display: block;    /* Removes the bottom whitespace gap */
+        width: 100%;       /* Forces image to match container width */
+        height: auto;      /* Maintains aspect ratio */
+    }
+    
+    @include m(standard) {
+        border: 1px solid palette(grey, x-light);
+        padding: em(12px);
+    }
+    @include m(avatar) {
+        display: block;
+        border-radius: $br--round;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: em(24px);
+    }
+    @include m(cover) {
+        
+        @include mq(medium) {
+        margin-bottom: em(42px);
+        }
+    }
 }
+

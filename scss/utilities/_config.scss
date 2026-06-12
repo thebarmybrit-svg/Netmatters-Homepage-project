@@ -32,10 +32,30 @@ $google-blue            : #4387f6;
 $trustpilot-green       : #00b67b;
 $star-yellow            : #ffa500;
 
+// Colour usage
 
 $colour-primary     : $deep-steel-blue;
 $colour-secondary   : $darkest-sea;
-$color-shadow       : rgba($black, .2);
+$colour-inverse     :$glowing-sun;
+$colour-shadow       : rgba($black, .2);
+
+// Color Palette Modifiers
+
+$color-palettes: (
+	grey: (
+		xx-light : lighten($grey, 43%),
+		x-light  : lighten($grey, 35%),
+	  light    : lighten($grey, 12%),
+	  base     : $grey,
+	 	dark     : darken($grey, 8%),
+	 	x-dark   : darken($grey, 16%)
+	),
+	black: (
+		light    : lighten($black, 10%),
+		base     : $black,
+		dark     : darken($black, 10%)
+	)
+);
 
 // UI Colors
 
