@@ -11,8 +11,20 @@
     }
     
     @include m(standard) {
+        max-width: em(300px);
         border: 1px solid palette(grey, x-light);
         padding: em(12px);
+    }
+    @include m(partner) {
+        max-width: em(300px);
+        padding: em(12px);
+        filter: grayscale(100%);
+        opacity: 0.6;
+        transition: filter $trns-duration ease, opacity $trns-duration ease;
+        &:hover{
+            filter: grayscale(0);
+            opacity: 1;
+        }
     }
     @include m(avatar) {
         display: block;

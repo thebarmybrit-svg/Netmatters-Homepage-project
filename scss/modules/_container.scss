@@ -9,6 +9,7 @@
   width: 100%;
 }
 
+
 //primary container
 .container, .section {
     display: grid;
@@ -34,8 +35,16 @@
         width: $brkpoint-lg;
     }
 
-
 }
+
+.partners {
+    display: grid;
+    grid-auto-flow: column; /* Automatically creates new columns for every child */
+    grid-auto-columns: min-content; /* Size columns based on the content */
+    gap: $g-gutter-width;
+    overflow-x: auto;
+}
+
 
 .content {
     position: absolute;
