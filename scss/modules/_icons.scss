@@ -15,7 +15,7 @@
 // Icons
 
 .icon{
-    @include icons($icon-locations, em(25px), em(25px), inline-block);
+    @include generate-icons($icons-full);
     // @include img-icon-replace("arrow-right.svg", em(25px), em(25px), inline-block);
 }
 

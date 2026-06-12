@@ -15,6 +15,16 @@
  }
 
  .block {
-    color: blue;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-content: center;
+    padding: $br--default;
+
+    span {
+        display: block;
+        width: 100%;
+    }
     
+
  }

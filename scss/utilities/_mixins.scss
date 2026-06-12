@@ -55,32 +55,6 @@
 	}
 }
 
-// Gnerate Icon Colours
-
-@mixin icons-full($config-map, $w, $h, $disp: block) {
-  @each $icon, $props in $config-map {
-    
-    // Extract values from the inner map
-    $colour: map-get($props, "colour");
-    $img:    map-get($props, "location");
-
-    &--#{$icon} {
-      background-image: url('#{$path-img-icon--rel}/#{$img}');
-      background-size: contain;
-    	background-repeat: no-repeat;
-	    width: $w;
-	    height: $h;
-	    display: $disp;
-      background-color: $colour;
-      -webkit-mask: url('#{$path-img-icon--rel}/#{$img}') no-repeat center;
-      mask: url('#{$path-img-icon--rel}/#{$img}') no-repeat center;
-      mask-size: contain;
-      display: inline-block; // Ensure it has dimensions
-      width: 24px; 
-      height: 24px;
-    }
-  }
-}
 
 // Generate icon image classes
 
@@ -95,6 +69,24 @@
 	    display: $disp;
 		}
 	}
+}
+
+// Gnerate Icon Colours
+
+@mixin generate-icons($icon-map) {
+  @each $name, $props in $icon-map {
+    &-#{$name} {
+      // Use the location for the background image
+      background-image: url('#{$path-img-icon--rel}#{map-get($props, location)}');
+      background-color: map-get($props, colour);
+      mask-image: url('#{$path-img-icon--rel}#{map-get($props, location)}');
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      background-size: contain;
+    	background-repeat: no-repeat;
+	    display: block
+    }
+  }
 }
 
 // Generating :before or :after pseudo-element shapes
