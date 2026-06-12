@@ -3,26 +3,11 @@
 // ==========================================================================
 
 
-// .row {
-//   display: flex;
-//   flex-wrap: wrap;
-
-//   @extend %clearfix;
-//   @extend .centered;
-//   width: 90%;
- 
-//   [class*="row__col--"] > & {
-//     flex: 1rem;
-//     width: 100%; 
-//   }
-
-//   @include mq(large) {
-//     flex-wrap: nowrap;
-//   }
-// }
-
 .row {
+  
   display: flex;
+  flex: 0 0 auto;
+  max-width: 100%;
   flex-wrap: wrap;
   justify-content: center; 
   align-items: center; 
@@ -43,3 +28,8 @@
     flex-wrap: nowrap;
   }
 }
+
+// .row > * {
+//   flex: 0 0 auto;
+//   max-width: 100%;
+// }

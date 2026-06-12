@@ -139,8 +139,8 @@
 
 // Grid Columns
      
-@mixin g-columns {
-  @for $i from 1 through $g-col-count {
+@mixin g-columns($columns: $g-col-count) {
+  @for $i from 1 through $columns {
     $context: g-context($g-col-width, $g-col-count ,$g-gutter-width) !global;  
     $target: ($g-col-width * $i) + ($g-gutter-width * ($i - 1));
     
