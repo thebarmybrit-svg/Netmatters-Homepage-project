@@ -61,7 +61,7 @@
 @mixin icons($map, $w, $h, $disp: block) {
 	@each $icon, $img in $map {
 		&-#{$icon} {
-      background-color: currentColor;
+      // background-color: currentColor;
 			background-image: url('#{$path-img-icon--rel}/#{$img}');
       background-size: contain;
     	background-repeat: no-repeat;

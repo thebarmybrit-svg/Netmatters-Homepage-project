@@ -1,0 +1,34 @@
+// ==========================================================================
+// Hidden Sections
+// ==========================================================================
+
+.hidden-xs {
+    @include mq(micro){
+        display: none !important;
+    }
+}
+
+.hidden-sm {
+    @include mq(small){
+        display: none;
+    }
+    @include mq(medium){
+        display: block;
+    }
+}
+
+.visible-xs{
+    display: none !important;
+    @include mq(micro){
+        display: block !important;
+    }
+}
+
+.hidden-checkbox{
+    display: none;
+    &:checked{
+        ~ .main-nav{
+            display: block;
+        }
+    }
+}

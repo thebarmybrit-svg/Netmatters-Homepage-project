@@ -20,16 +20,18 @@
                             <button id="search-submit" type="submit">
                                 <span class="icon icon-search" aria-hidden="true"></span>
                             </button>
-                        </form>
-                        <button class="btn btn--primary hamburger" type="button">
-                            <span class="hamburger-box">
-                                <span class="icon-menu">
-                                </span>
-                            </span>
-                        </button>
+                        </form>   
                     </div>
+                    
                 </header>
-                <div class="main-nav hidden-xs hidden-sm">
+                <input type="checkbox" id="nav-toggle" class="hidden-checkbox">
+                    <label for="nav-toggle" class="btn btn--primary visible-xs" type="checkbox">
+                        <span class="btn--hamburger">
+                            <span class="icon-menu">
+                            </span>
+                        </span>
+                    </label>
+                <div class="main-nav hidden-xs">
                     <div class="container">
                         <ul class="nav row">
                             <li class="theme--cons-dev row__col-md--1">
@@ -49,7 +51,7 @@
                             </li>
                             <li class="theme--digi-mrk row__col-md--1">
                                 <a href="#">
-                                    <span class="icon icon-display"></span>
+                                    <span class="icon icon-stats-bars"></span>
                                     <p>Digital</p>
                                     <strong>Marketing</strong>
                                 </a>
@@ -446,7 +448,6 @@
                     </div>
                     <div class="container latest-view-all visible-xs">
                         <h3 class="float-right-sm">
-
                             View all
                             <em class="icon icon-arrow-right"></em>
                         </h3>

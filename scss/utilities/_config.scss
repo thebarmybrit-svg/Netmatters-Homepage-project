@@ -36,8 +36,8 @@ $star-yellow            : #ffa500;
 
 $colour-primary     : $deep-steel-blue;
 $colour-secondary   : $darkest-sea;
-$colour-inverse     :$glowing-sun;
-$colour-shadow       : rgba($black, .2);
+$colour-inverse     : $glowing-sun;
+$colour-shadow      : rgba($black, .2);
 
 // Color Palette Modifiers
 
@@ -60,8 +60,8 @@ $color-palettes: (
 // UI Colors
 
 $ui-colors: (
-	primary             : $deep-steel-blue,
-    primary-inverse     : $glowing-sun,
+	primary             : $colour-primary,
+    primary-inverse     : $colour-inverse,
 	cons-dev            : $dev-blue,
 	it-supp             : $it-blue,
 	digi-mrk            : $market-green,
@@ -73,7 +73,7 @@ $ui-colors: (
     trustpilot          : $trustpilot-green
 );
 
-//Icons 
+//Icons Full 
 $icons-full: (
 	arrow-right         : (location: "arrow-right.svg", colour: #0b0b0b),
     briefcase           : (location: "briefcase.svg", colour: $training-brown),
