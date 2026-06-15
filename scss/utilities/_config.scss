@@ -154,6 +154,15 @@ $g-col-count        : 12;
 $g-col-count-lg     : 16;
 $g-cont-max-w       : 1260px;
 
+// Grid Layout Headings
+
+$g-layout-header: (
+    "logo": site-logo,
+    "support": btn--it-supp,
+    "contact": btn--cons-dev,
+    "search-bar": search_form
+);
+
 // Breakpoints
 
 $brkpoint-xs    : 1px;

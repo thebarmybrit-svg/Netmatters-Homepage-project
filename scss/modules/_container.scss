@@ -36,6 +36,12 @@
     display: grid;
     grid-template-columns: auto;
     margin: 0px auto;
+    grid-gap: $g-gutter-width;
+    width: 100%;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    align-items: center; ;
+
     
     // margin-right: auto;
     // margin-left: auto;
@@ -47,7 +53,7 @@
     @include mq(small){
         width: $brkpoint-sm;
         grid-template-columns: repeat(auto-fit, minmax($g-col-width, 1fr));
-        grid-gap: $g-gutter-width ;
+       
     }
 
      @include mq(medium){
