@@ -9,24 +9,16 @@
 
     .container .row{
         [class^="row__col-"]{
-            border: 3px solid $black;
+            border: 3px solid $colour-shadow;
+            border-radius: $br--default;
+            background-color: $colour-secondary;
+            h2, a{
+                color: $white;
+            }
         }
     }
  }
 
-//  .block {
-//     display: grid;
-//     grid-template-columns: 1fr;
-//     justify-content: center;
-//     align-content: center;
-//     padding: $br--default;
-
-//     span {
-//         display: block;
-//         width: 100%;
-//     }
-    
-//  }
 // Block 
 .block {
     display: flex;

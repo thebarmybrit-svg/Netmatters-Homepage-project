@@ -1,10 +1,12 @@
 // ==========================================================================
-// Navigation Bar
+// Navigation Header Bar
 // ==========================================================================
 
-.main-nav{
-    display: block;
+
+#header{
     background-color: $white;
-    padding: $g-gutter-width 0;
-    width: auto;
+    .header .container {
+        align-items: center;
+        justify-content: space-between;
+    }
 }

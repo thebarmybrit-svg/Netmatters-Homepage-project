@@ -4,7 +4,6 @@
 
 
 .row {
-  
   display: flex;
   flex: 0 0 auto;
   max-width: 100%;
@@ -16,8 +15,6 @@
   @extend %clearfix;
   @extend .centered;
   width: 90%;
-  
-
  
   [class*="row__col-"] > & {
     flex: 1rem;

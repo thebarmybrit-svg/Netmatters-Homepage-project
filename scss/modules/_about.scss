@@ -6,5 +6,13 @@
 .about-netmatters {
     background-color: $colour-primary;
     color: $white;
-
+     .container .row{
+        [class^="row__col-"]{
+            border: 3px solid $colour-shadow;
+            border-radius: $br--default;
+            .icon-star{
+                background-color: $star-yellow;
+            }
+        }
+     }
 }
