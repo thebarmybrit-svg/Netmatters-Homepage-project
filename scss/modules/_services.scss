@@ -14,17 +14,27 @@
     }
  }
 
- .block {
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-content: center;
-    align-content: center;
-    padding: $br--default;
+//  .block {
+//     display: grid;
+//     grid-template-columns: 1fr;
+//     justify-content: center;
+//     align-content: center;
+//     padding: $br--default;
 
-    span {
-        display: block;
-        width: 100%;
-    }
+//     span {
+//         display: block;
+//         width: 100%;
+//     }
     
+//  }
+.block {
+    display: flex;
+    flex-direction: column; /* Keeps elements stacked vertically */
+    align-items: center;    /* Centres children (including icons) horizontally */
+    text-align: center;     /* Centres the text inside the spans */
+}
 
- }
+.block .icon {
+    display: block;         /* Ensures the span behaves like a block element */
+    margin-bottom: 15px;    /* Optional: adds space below the icon */
+}
