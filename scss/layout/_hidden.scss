@@ -23,12 +23,3 @@
         display: block !important;
     }
 }
-
-.hidden-checkbox{
-    display: none;
-    &:checked{
-        ~ .main-nav{
-            display: block;
-        }
-    }
-}

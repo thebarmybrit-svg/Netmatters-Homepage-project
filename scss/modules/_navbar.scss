@@ -4,5 +4,22 @@
 
 #header{
     background-color: $white;
+
+    .hidden-checkbox{
+        display: none;
+        @include mq(micro){
+             & + .btn--primary .icon-menu {
+                    transition: $trns-duration;
+                }
+            &:checked{
+                ~ .main-nav{
+                    display: block !important;
+                }
+                & + .btn--primary .icon-menu {
+                    background-image: url('#{$path-img-icon--rel}/cross.svg');
+                }
+            }
+        }
+    }
 }
 
