@@ -11,9 +11,6 @@
             background-color: $colour-secondary;
             border: 3px solid $colour-shadow;
             border-radius: $br--default;
-            .icon{
-                @include icons-coloured($icons-coloured, em(30px), em(30px), inline-block);               
-            }
         }
      }
 }

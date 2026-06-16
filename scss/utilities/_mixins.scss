@@ -75,8 +75,7 @@
 
 @mixin icons-coloured($map, $w, $h, $disp: block) {
   @each $name, $props in $map {
-    &-#{$name} {
-      background-image: none;
+    &-coloured-#{$name} {
       -webkit-mask-image: url('#{$path-img-icon--rel}/#{map-get($props, location)}');
       mask-image: url('#{$path-img-icon--rel}/#{map-get($props, location)}');
       -webkit-mask-repeat: no-repeat;
