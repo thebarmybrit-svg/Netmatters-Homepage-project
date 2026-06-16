@@ -23,3 +23,24 @@
         display: block !important;
     }
 }
+
+.hidden-checkbox{
+    display: none;
+    @include mq(micro){
+            & + .btn--primary .icon-menu {
+                transition: $trns-duration;
+            }
+        &:checked{
+            ~ .main-nav{
+                display: block !important;
+            }
+            & + .btn--primary .icon-menu {
+                background-image: none;
+                background-color: $security-magenta;
+                -webkit-mask-image: url('#{$path-img-icon--rel}/cross.svg');
+                mask-image: url('#{$path-img-icon--rel}/cross.svg');
+                mask-size: contain;
+            }
+        }
+    }
+}
