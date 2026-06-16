@@ -1,0 +1,22 @@
+// ==========================================================================
+// Latest News
+// ==========================================================================
+
+.latest-articles{
+    .img-content-container {
+        position: relative; // Creates the anchor for absolute positioning
+        display: inline-block; // Keeps the container tight to the image size
+
+        .category {
+            position: absolute;
+            top: 1rem;    
+            left: 1rem;   
+            z-index: 2;   
+            pointer-events: auto; 
+        }
+
+            .img-container {
+            display: block;
+        }
+    }
+}
