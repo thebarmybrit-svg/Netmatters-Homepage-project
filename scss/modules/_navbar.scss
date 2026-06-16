@@ -16,7 +16,11 @@
                     display: block !important;
                 }
                 & + .btn--primary .icon-menu {
-                    background-image: url('#{$path-img-icon--rel}/cross.svg');
+                    background-image: none;
+                    background-color: $security-magenta;
+                    -webkit-mask-image: url('#{$path-img-icon--rel}/cross.svg');
+                    mask-image: url('#{$path-img-icon--rel}/cross.svg');
+                    mask-size: contain;
                 }
             }
         }

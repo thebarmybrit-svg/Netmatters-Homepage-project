@@ -17,6 +17,9 @@
             }
         }
     }
+    .icon {
+        
+    }
  }
 
 // Block 
@@ -28,7 +31,7 @@
     .icon {
         display: block;
         margin-bottom: 15px;
-        @include icon-colours($icon-themes);
-        background-color: currentColor;
+        // @include icon-colours($icon-themes);
+        @include icons-coloured($icons-coloured, em(30px), em(30px), inline-block);
     }  
 }

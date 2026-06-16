@@ -61,11 +61,9 @@
 @mixin icons($map, $w, $h, $disp: block) {
 	@each $icon, $img in $map {
 		&-#{$icon} {
-      // background-color: currentColor;
 			background-image: url('#{$path-img-icon--rel}/#{$img}');
       background-size: contain;
     	background-repeat: no-repeat;
-      
 	    width: $w;
 	    height: $h;
 	    display: $disp;
@@ -73,9 +71,30 @@
 	}
 }
 
-// Gnerate Icon Colours
+// Generate coloured icons
 
-@mixin icon-colours($map){
+@mixin icons-coloured($map, $w, $h, $disp: block) {
+  @each $name, $props in $map {
+    &-#{$name} {
+      background-image: none;
+      -webkit-mask-image: url('#{$path-img-icon--rel}/#{map-get($props, location)}');
+      mask-image: url('#{$path-img-icon--rel}/#{map-get($props, location)}');
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      background-color: map-get($props, colour);
+      width: $w;
+	    height: $h;
+	    display: $disp;
+    }
+  }
+}
+
+
+// Gnerate Icon theme colours
+
+@mixin icon-themes($map){
   @each $icon, $colour in $map{
     &-#{$icon}{
       color: $colour;
