@@ -11,9 +11,18 @@
     }
     
     @include m(standard) {
-        max-width: em(300px);
+        max-width: em(435px);
         border: 1px solid palette(grey, x-light);
-        padding: em(12px);
+        border-radius: $br--default;
+        object-fit: cover;
+        object-position: center; 
+        @include mq(medium){
+            max-width: em(300px);
+        }
+        @include mq(large){
+            max-width: $brkpoint-lg/3;
+        }
+        // padding: em(12px);
     }
     @include m(partner) {
         max-width: em(300px);

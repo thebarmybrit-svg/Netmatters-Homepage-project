@@ -4,8 +4,7 @@
 
 .latest-articles{
     .img-content-container {
-        position: relative; // Creates the anchor for absolute positioning
-        display: inline-block; // Keeps the container tight to the image size
+        // align-content: center;
 
         .category {
             position: absolute;
@@ -15,8 +14,29 @@
             pointer-events: auto; 
         }
 
-            .img-container {
+        .img-container {
             display: block;
+            
+            @include mq(medium){
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden; 
+                height: auto;
+                width: 100%;
+            }
+        }
+    }
+    [class^="row__col-"]{
+        @extend .centered;
+        &:not(:first-child) {
+            padding-left: $g-gutter-width;
+        }
+        
+        .item{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
     }
 }

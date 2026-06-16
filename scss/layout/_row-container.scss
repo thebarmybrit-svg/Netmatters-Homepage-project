@@ -10,6 +10,7 @@
   flex-wrap: wrap;
   justify-content: center; 
   align-items: center; 
+  flex-direction: column;
   grid-template-columns: repeat(12, minmax(0, 1fr));
 
   @extend %clearfix;
@@ -21,10 +22,8 @@
     width: 100%; 
   }
 
-  @include mq(large) {
-
-    // flex: repeat(3, minmax(0, 1fr)), repeat(4, minmax(0, 1fr));
-    // flex-wrap: nowrap;
+  @include mq(small) {
+    flex-direction: row;
   }
 }
 
