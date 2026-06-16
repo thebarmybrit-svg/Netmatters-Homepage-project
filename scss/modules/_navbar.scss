@@ -14,16 +14,20 @@
             }
 
         a {
+            display: flex;
             flex: 1;
             text-align: center;
             align-items: flex-start;
             align-items: center;   
             justify-content: center;
             &.site-logo {
-                flex: 50%;
-                @include mq(small){
-                    flex: 1;
-                }
+                flex: 30vh;
+                // @include mq(small){
+                //     flex: 1;
+                // }
+            }
+            span{
+                flex-direction: row;
             }
         }
     }

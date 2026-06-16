@@ -75,21 +75,23 @@ $ui-colors: (
 
 //Icons Coloured 
 $icons-coloured: (
-	arrow-right         : (location: "arrow-right.svg", colour: #0b0b0b),
+	arrow-right         : (location: "arrow-right.svg", colour: $black ),
     briefcase           : (location: "briefcase.svg", colour: $training-brown),
     display             : (location: "display.svg", colour: $it-blue),
     embed               : (location: "embed.svg", colour: $webdev-lavander),
-    facebook            : (location: "facebook.svg", colour: #0b0b0b),
-    instagram           : (location: "instagram.svg", colour: #0b0b0b),
+    facebook            : (location: "facebook.svg", colour: $black ),
+    instagram           : (location: "instagram.svg", colour: $black ),
     laptop              : (location: "laptop.svg", colour: $dev-blue),
-    linkedin            : (location: "linkedin.svg", colour: #0b0b0b),
-    menu                : (location: "menu.svg", colour: #0b0b0b),
+    linkedin            : (location: "linkedin.svg", colour: $black ),
+    menu                : (location: "menu.svg", colour: $black),
     phone               : (location: "phone.svg", colour: $telecom-red),
-    search              : (location: "search.svg", colour: #0b0b0b),
+    search              : (location: "search.svg", colour: $black),
     shield              : (location: "shield.svg", colour: $security-magenta),
     star                : (location: "star-full.svg", colour: $star-yellow) ,
     stats-bars          : (location: "stats-bars.svg", colour: $market-green),
-    twitter             : (location: "twitter.svg", colour: #0b0b0b) 
+    twitter             : (location: "twitter.svg", colour: $black),
+    question            : (location: "question.svg", colour: $white), 
+    envelop            : (location: "envelop.svg", colour: $white)
 );
 
 
