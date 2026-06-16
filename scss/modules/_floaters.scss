@@ -2,14 +2,31 @@
 // Floaters
 // ==========================================================================
 
-.float-left-sm{
-    @include mq(small){
-        float: left;
+.float-left{
+    &-xs {
+        @include mq(micro){
+            float: left;
+        }
     }
+    &-sm {
+        @include mq(small){
+            float: left;
+        }
+    }
+    
 }
 
-.float-right-sm{
-    @include mq(small){
-        float: right;
+.float-right{
+    &-xs {
+        @include mq(micro){
+            float: right;
+        }
     }
+
+    &-sm {    
+        @include mq(small){
+            float: right;
+        }
+    }
+    
 }

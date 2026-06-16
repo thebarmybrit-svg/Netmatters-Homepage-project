@@ -2,6 +2,10 @@
 // Hidden Sections
 // ==========================================================================
 
+.hidden-all{
+    display: none !important;
+}
+
 .hidden-xs {
     @include mq(micro){
         display: none !important;

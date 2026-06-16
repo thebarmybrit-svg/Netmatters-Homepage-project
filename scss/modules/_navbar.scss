@@ -4,16 +4,23 @@
 
 #header{
     background-color: $white;
+
+
     header .container{
         display: flex;
+        flex-wrap: wrap;
         width: 100%;
         gap: $g-gutter-width;
+
+        @include mq(small){
+            flex-wrap: nowrap;
+        }
 
         @include mq(large){
                 width: 130vh;
             }
-
-        a {
+        
+        a, label {
             display: flex;
             flex: 1;
             text-align: center;
@@ -22,17 +29,22 @@
             justify-content: center;
             &.site-logo {
                 flex: 30vh;
-                // @include mq(small){
-                //     flex: 1;
-                // }
+                min-width: 50%;
+                @include mq(small){
+                    flex: auto;
+                    min-width: 0;
+                }
             }
             span{
                 flex-direction: row;
             }
         }
+        form.search_form, label{
+            order: 2;
+        }
     }
+   
 }
-
 
 .search_form {
     display: flex;
@@ -40,7 +52,7 @@
     align-items: stretch;
 
     #search_input {
-        flex: 1;     
+        // flex: 1;     
         min-width: 0; 
     }
 
@@ -51,4 +63,3 @@
         justify-content: center;
     }
 }
-
