@@ -19,7 +19,7 @@
 // Column styles
 
 [class^="row__col-"]{
-  
+  position: relative;
   @include mq(small)  {
     margin-top: em(12px);
     margin-bottom: em(12px);

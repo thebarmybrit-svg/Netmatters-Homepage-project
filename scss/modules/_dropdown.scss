@@ -1,0 +1,17 @@
+// ==========================================================================
+// Fullpage Dropdown
+// ==========================================================================
+
+.dropdown-nav{
+    background-color: $colour-primary;
+    padding: $g-gutter-width 0;
+    @include dropdown-layout();
+    top: 50vh;
+    height: 50vh;
+    @include mq(small){
+        top: 0;
+        height: 100vh;
+        width: 25vh;
+    }
+    
+}

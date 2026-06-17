@@ -3,17 +3,19 @@
 // ==========================================================================
 
 .main-nav{
-    display: block;
     background-color: $colour-primary;
     padding: $g-gutter-width 0;
-    width: auto;
+    @include dropdown-layout();
+    @include mq(small){
+        @include dropdown-layout-undo();
+    }
 }
 
 .nav {
     display: flex;
     gap: $g-gutter-width;
     .theme{
-        @include bg-colors($ui-colors);
+        background-color: $colour-primary;
     }
     li {
         flex: 1rem;
@@ -23,6 +25,7 @@
         text-align: center; 
         a{
             text-decoration: none;
+            background-color: transparent; 
             p, strong{        
                 color: $white;
                 display: block;
@@ -30,11 +33,50 @@
                 
             }
         }
-        &:hover{
-            div.sub-menu-banner{
-                display: block !important;
-                background-color: red;
+
+        .sub-menu-banner{
+            background-color: $colour-primary;
+            
+            .sub-menu{
+                display: flex;
+                flex-direction: column;
+                padding: 0;
+                list-style: none;
             }
+        }
+
+        &:hover{
+            .sub-menu-banner{
+                display: block !important;
+            }
+        }
+
+        @include mq(small){
+            &.theme{
+                @include bg-colour-hover-darken($ui-colors);
+            }
+            .sub-menu-banner {
+                &.theme{
+                    @include bg-colours($ui-colors);
+                }
+                position: absolute;
+                left: 0;
+                right: 0;
+                width: 100vw;
+
+                left: 50%;
+                transform: translateX(-50%); 
+                z-index: 9999;
+
+                .sub-menu {
+                    display: flex;
+                    flex-direction: row; // Align items horizontally in a row
+                    justify-content: center; // Center items horizontally
+                    align-items: center; // Align items vertically
+                    flex-wrap: wrap; // Prevent overflow on smaller desktop windows
+                    margin: 0 auto;
+                }
+            }    
         }
     }
 }

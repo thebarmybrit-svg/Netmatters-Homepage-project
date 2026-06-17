@@ -10,7 +10,7 @@
     background-image: none;
     border: 1px solid transparent;
     border-radius: $br--default;
-    @include bg-colors($ui-colors);
+    @include bg-colours($ui-colors);
     text-decoration: none;
     width: fit-content;
 

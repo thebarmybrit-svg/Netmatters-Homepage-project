@@ -47,7 +47,7 @@
      
 // Generate modifier color classes
 
-@mixin bg-colors($map) {
+@mixin bg-colours($map) {
 	@each $theme, $colour in $map {
 		&--#{$theme} {
 			background-color: $colour;    
@@ -55,6 +55,24 @@
 	}
 }
 
+@mixin bg-colours-darken($map) {
+	@each $theme, $colour in $map {
+		&--#{$theme} {
+      background-color: darken($colour, 50%);   
+		}
+	}
+}
+
+@mixin bg-colour-hover-darken($map) {
+	@each $theme, $colour in $map {
+		&--#{$theme} {
+      background-color: $colour;
+      &:hover{
+        background-color: darken($colour, 20%);  
+      }
+		}
+	}
+}
 
 // Generate icon image classes
 
@@ -155,4 +173,20 @@
       width: percentage($target / $context);
     }
   }
+}
+
+@mixin dropdown-layout($width: 50%){
+  height: 100vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  transition: visibility $trns-duration;
+}
+
+@mixin dropdown-layout-undo(){
+  display: block;
+  width: auto;
+  height: auto;
+  transform: none;
+  transition: none;
 }
