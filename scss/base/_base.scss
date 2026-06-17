@@ -16,8 +16,10 @@ body {
 
 h1, .h1 {
     @extend %hdln-prim;
-    font-weight: $font-weight--medium;
-    color: $black;
+}
+
+h2 {
+    @extend %hdln-sec;
 }
 
 a {
@@ -27,12 +29,16 @@ a {
 }
 
 p, .p{
-
+    font-size: $font-weight--light;
 }
 
 
 footer {
     @extend .centered;
+    @include mq(small){
+        margin-left: 0%;
+        margin-right: 0%;
+    }
     background-color: $colour-primary;
     color: $white;
     padding: em(30px) 0 0;

@@ -29,3 +29,21 @@
 	line-height: 0;
 	cursor: pointer;
 }
+
+// Headlines
+
+%hdln-prim {
+  color: $white;
+  font-weight: $font-weight--bold;
+  font-size: em(42px);
+  line-height: (46px/42px);
+  margin-top: 0;
+}
+
+%hdln-sec {
+  color: $white;
+  letter-spacing: $letter-space;
+  font-weight: $font-weight--light;
+  font-size: em(24px);
+  font-family: $font-family--secondary;
+}

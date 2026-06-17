@@ -7,8 +7,9 @@
     display: flex;
     flex-wrap: wrap;
     
-    @include mq(small){
+    @include mq(medium){
         flex-wrap: nowrap;
+        gap: $g-gutter-width;
     }
 
 }
@@ -19,11 +20,10 @@
     margin-bottom: em(30px);
 
     @include mq(small){
-        flex: 50%;
+        flex: auto;
+        
     }
-    @include mq(medium){
-        flex: 25%;
-    }
+
     @include mq(large){
         margin-bottom: 40px;
     }
