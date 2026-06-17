@@ -7,11 +7,15 @@
 }
 
 body {
+    font-family: $font-family--primary;
+    font-size: $base__font-size;
+    line-height: ($base__line/$base__font-size);
     margin: 0;
     background-color: $grey;
 }
 
 h1, .h1 {
+    @extend %hdln-prim;
     font-weight: $font-weight--medium;
     color: $black;
 }
@@ -20,6 +24,10 @@ a {
     text-decoration: none;
     font-weight: $font-weight--medium;
     color: $meteorite-blue;
+}
+
+p, .p{
+
 }
 
 

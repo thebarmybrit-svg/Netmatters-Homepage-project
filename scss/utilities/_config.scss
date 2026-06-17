@@ -2,6 +2,11 @@
 // Global Config
 // ==========================================================================
 
+// Font Families
+
+$font-family--import : "https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap";
+$font-family--primary : "Work Sans", Arial, sans-serif;
+
 // Font Weights
 
 $font-weight--thin       : 100;
@@ -9,6 +14,12 @@ $font-weight--light      : 300;
 $font-weight--medium     : 400;
 $font-weight--bold       : 700;
 $font-weight--ultra-bold : 900;
+
+// Text
+
+$base__font-size : 16px;
+$base__line      : 24px;
+$letter-space    : 1px;
 
 // Descriptive Base Colors
 
@@ -127,12 +138,6 @@ $icon-themes: (
     star : $star-yellow,
     stats-bars : $market-green
 );
-
-// Text
-
-$base__font-size : 16px;
-$base__line      : 24px;
-$letter-space    : 1px;
 
 // Border radius
 

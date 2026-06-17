@@ -2,6 +2,12 @@
 // Functions
 // ==========================================================================
 
+// Import fonts if they are defined
+
+@if variable-exists($name: font-family--import){
+  @import url($font-family--import);
+}
+
 // Calculate em values
 
 @function em($target, $context: $base__font-size) {
