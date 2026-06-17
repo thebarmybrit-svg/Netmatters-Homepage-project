@@ -11,6 +11,18 @@
             background-color: $colour-secondary;
             border: 3px solid $colour-shadow;
             border-radius: $br--default;
+            h2{
+                font-weight: $font-weight--bold;
+            }
+            p{
+                .client-quote-author{
+                    color: $dev-blue;
+                }
+                a{
+                    text-decoration: none;
+                    color: $white;
+                }
+            }
         }
      }
 }

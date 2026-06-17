@@ -35,13 +35,26 @@
         }
 
         .sub-menu-banner{
+            color: $white;
             background-color: $colour-primary;
             
             .sub-menu{
                 display: flex;
                 flex-direction: column;
-                padding: 0;
+                padding: 4.5rem 0;
                 list-style: none;
+                .sub-menu-banner-title{
+                    font-size: larger;
+                    font-weight: $font-weight--bold;
+                    position: absolute;
+                    top: 0;
+                    margin: 0;
+                    
+                }
+                .nav-item--sub-menu{
+                    flex: 0 0 20%;
+                    font-size: large;
+                }
             }
         }
 
@@ -58,6 +71,7 @@
             .sub-menu-banner {
                 &.theme{
                     @include bg-colours($ui-colors);
+                    @include border-colour-darken($ui-colors, 10px);
                 }
                 position: absolute;
                 left: 0;

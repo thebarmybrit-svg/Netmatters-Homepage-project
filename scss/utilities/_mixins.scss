@@ -74,6 +74,14 @@
 	}
 }
 
+@mixin border-colour-darken($map, $sz: 2px, $stl: solid) {
+	@each $theme, $colour in $map {
+		&--#{$theme} {
+      border-top: darken($colour, 20%) $sz $stl;  
+		}
+	}
+}
+
 // Generate icon image classes
 
 @mixin icons($map, $w, $h, $disp: block) {
