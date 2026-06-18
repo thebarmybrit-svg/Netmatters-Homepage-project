@@ -6,7 +6,7 @@
 
 .row__col-md {
   @include mq(medium) {
-    @include g-columns; 
+    @include g-columns;
   }
 }
 
