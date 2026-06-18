@@ -41,10 +41,23 @@
         display: flex;
         flex-direction: column; 
         align-items: center;   
-        text-align: center;   
+        text-align: center;  
+        transition-duration: $trns-duration; 
         .icon {
             display: block;
             margin-bottom: 15px;
         }  
+        &:hover{
+            transition-duration: $trns-duration;
+            span{
+                color: $white;
+            }
+            span.icon{
+                display: none;
+                &.hidden-all{
+                    display: inline-block !important;
+                }
+            }
+        }
     }
  }

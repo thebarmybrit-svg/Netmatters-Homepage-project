@@ -23,6 +23,7 @@
         list-style-type: none;
         align-items: center;   
         text-align: center; 
+        transition-duration: $trns-duration;
         a{
             text-decoration: none;
             background-color: transparent; 
@@ -63,6 +64,14 @@
         }
 
         &:hover{
+            transition-duration: $trns-duration;
+            span.icon{
+                display: none;
+                &.hidden-all{
+                    display: inline-block !important;
+                }
+            }
+            
             .sub-menu-banner{
                 display: block !important;
             }

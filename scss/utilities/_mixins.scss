@@ -125,6 +125,23 @@
   }
 }
 
+@mixin icons-colour-drained($map, $w, $h, $disp: block) {
+  @each $name, $img in $map {
+    &-drained-#{$name} {
+      -webkit-mask-image: url('#{$path-img-icon--rel}/#{$img}');
+      mask-image: url('#{$path-img-icon--rel}/#{$img}');
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      background-color: $white;
+      width: $w;
+	    height: $h;
+	    display: $disp;
+    }
+  }
+}
+
 
 // Gnerate Icon theme colours
 
