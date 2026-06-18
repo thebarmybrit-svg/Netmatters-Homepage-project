@@ -35,3 +35,13 @@
     }
   }
 }
+
+.row__col-solo{
+  text-align: center;
+  margin-left: 0;
+  @include mq(medium){
+    margin-right: auto;
+    text-align: left;
+
+  }
+}

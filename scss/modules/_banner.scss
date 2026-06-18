@@ -5,40 +5,36 @@
 
 #banner{
     background-color: $colour-primary;
+    width: fit-content;
     .item{
         position: relative;
         width: 100%;
         overflow: hidden; 
     }
-    // .item{
-    //     display: flex;
-    //     flex-direction: column;
-    //     align-items: center;
-    //     justify-content: center;
-    //     position: relative;
-    //     width: 100%;
-    //     @include mq(small){
-    //         justify-content: flex-start;
-    //     }
-    // }
-
-    .content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        max-width: 100%; // Prevents horizontal overflow
-        padding: 20px;
-        @include mq(small){
-            justify-content: flex-start;
-            padding-left: 10%;
+    .text{
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    h1{
+        font-size: em($font-size--prim, 24px);
+    }
+    .btn{
+        margin: 0 auto;
+    }
+    @include mq(small){
+        h1{
+            font-size: $font-size--prim;
         }
-        .content-container, .row {
-            width: 100%;
+        p, .btn{
+            font-size: em(20px, $base__font-size);
         }
-
-        
-
-       
+        .btn{
+            font-weight: $font-weight--bold;
+            margin: 0;
+        }
+    }
+    @include mq(medium){
+        .text{
+            background-color: rgba(0, 0, 0, 0);
+        }
     }
 }
