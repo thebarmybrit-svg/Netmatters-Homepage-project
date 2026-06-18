@@ -143,6 +143,23 @@ $icon-themes: (
     stats-bars : $market-green
 );
 
+// Image sizes
+
+$icon-size__small: 15px;
+$icon-size__standard: 25px;
+$icon-size__large: 30px;
+
+$img-size__standard--max-width-mobile: 750px;
+$img-size__standard--max-width-desktop: 600px;
+
+$logo-size__main--height: 65px;
+$logo-size__main--width: 370px;
+$logo-size__footer--height: 40px;
+$logo-size__footer--width: 200px;
+$logo-size__partner--max-width: 275px;
+
+$img-gutter-width: 20px;
+
 // Border radius
 
 $br--default    : .4em;

@@ -3,6 +3,16 @@
 // ==========================================================================
 
 .latest-articles{
+    padding-top: 60px;
+    .headings-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        .h1{
+            
+            margin-right: auto;
+        }
+    }
 
     h2, h3, a{
                 text-decoration: none;
@@ -26,13 +36,14 @@
                 justify-content: center;
                 align-items: center;
                 overflow: hidden; 
-                height: auto;
-                width: 100%;
+                max-width: $img-size__standard--max-width-desktop;
+                aspect-ratio: 16 / 9;
             }
         }
     }
 
     [class^="row__col-"]{
+        align-self: flex-start;
         @extend .centered;
         background-color: $colour-secondary;
         border: 2px $white solid;
@@ -55,7 +66,7 @@
                 object-fit: contain;
             }
         }
-        .block .user{
+        .user{
             display: flex;
             flex-direction: column;
             width: 100%;
@@ -64,5 +75,4 @@
             margin-top: 1rem;
         }
     }
-
 }

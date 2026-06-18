@@ -4,17 +4,17 @@
 
 // Logo
 .site-logo {
-	@include img-logo-replace("f-logo.webp", em(370px), em(65px), inline-block);
+	@include img-logo-replace("f-logo.webp", em($logo-size__main--width), em($logo-size__main--height), inline-block);
 }
 
 .footer-logo{
-    @include img-logo-replace("nm-logo-white-med.webp", em(200px), em(40px), inline-block);
+    @include img-logo-replace("nm-logo-white-med.webp", em($logo-size__footer--width), em($logo-size__footer--height), inline-block);
 }
 
 
 // Icons
 
 .icon{
-    @include icons($icon-locations, em(25px), em(25px), inline-block);
-    @include icons-coloured($icons-coloured, em(30px), em(30px), inline-block);
+    @include icons($icon-locations, em($icon-size__standard), em($icon-size__standard), inline-block);
+    @include icons-coloured($icons-coloured, em($icon-size__large), em($icon-size__large), inline-block);
 }

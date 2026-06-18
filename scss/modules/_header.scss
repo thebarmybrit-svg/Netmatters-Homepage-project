@@ -8,40 +8,60 @@
         display: flex;
         flex-wrap: wrap;
         width: 100%;
-        align-items: center;
         
         gap: $g-gutter-width;
         padding-left: $g-gutter-width;
-
-        @include mq(medium){
-            flex-wrap: nowrap;
-        }
-
-        @include mq(large){
-            width: 130vh;
-        }
-        
-        a, a.btn, label {
+      
+        a, label {
             display: flex;
             flex: 1;
             text-align: center;
             align-items: center;   
             justify-content: center;
             &.site-logo {
-                flex: auto;
-                
-                
+                flex: 0 1 auto;
+                max-width: 100%;
+                margin-right: $g-gutter-width;
             }
             span{
                 flex-direction: row;
             }
         }
-        a.btn{
-            flex: 0 1 auto; // Prevents growing, allows shrinking if space is tight
-            width: max-content;
+        .btn-group{
+            display: flex;
+            flex: 0 1 auto;
+            gap: $g-gutter-width;
+            a.btn{
+                padding: 5px;
+                flex: 1;
+            }
+        }
+        label.btn{
+            flex: 0 0 100%;
+            max-width: $icon-size__standard;
         }
         form.search_form, label{
             order: 2;
+        }
+
+        @include mq(small){
+            
+            label.btn{
+                flex: 1 1 auto;
+                width: max-content;
+                order: 3;
+            }
+        }
+
+        @include mq(medium){
+            flex-wrap: nowrap;
+            label.btn{
+                margin-left: auto;
+            }
+        }
+
+        @include mq(large){
+            width: 130vh;
         }
     }
    
@@ -51,9 +71,9 @@
     display: flex;
     flex-wrap: nowrap;
     align-items: stretch;
+    
 
     #search_input {
-        // flex: 1;     
         min-width: 0; 
     }
 
@@ -63,5 +83,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    @include mq(small){
+        margin-left: auto;
+        order: 3;
     }
 }
