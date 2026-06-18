@@ -42,18 +42,20 @@
         margin-top: em(24px);
     }
     @include m(cover) {
-        max-width: 100%;
+        width: 100%;
+        height: 100%;
         display: block;
-        @include mq(small){
-            width: $brkpoint-sm;
-        }
-        @include mq(medium) {
-            width: $brkpoint-md;
-            margin-bottom: em(42px);
-        }
-        @include mq(large){
-            width: $brkpoint-lg;
-        }
+        object-fit: cover; 
+        // @include mq(small){
+        //     width: $brkpoint-sm;
+        // }
+        // @include mq(medium) {
+        //     width: $brkpoint-md;
+        //     margin-bottom: em(42px);
+        // }
+        // @include mq(large){
+        //     width: $brkpoint-lg;
+        // }
     }
 }
 

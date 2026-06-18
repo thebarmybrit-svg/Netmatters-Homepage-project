@@ -4,17 +4,28 @@
 
 // Our Services
  .our-services {
-    background-color: $colour-primary;
+    background-color: $white;
     padding: 60px 0;
 
     .container .row{
         [class^="row__col-"]{
             border: 3px solid $colour-shadow;
             border-radius: $br--default;
-            background-color: $colour-secondary;
-            h2, h3.a, a{
+            background-color: darken($white, 20%);
+            .theme{
+                @include bg-colour-hover($ui-colors);
+                transition: $trns-duration;
+            }
+            h2, h3, a, a span{
                 text-decoration: none;
+                color: $black;
+            }
+            .icon {
+                margin-top: $g-gutter-width;
+            }
+            .btn{
                 color: $white;
+                margin-bottom: $g-gutter-width;
             }
         }
     }

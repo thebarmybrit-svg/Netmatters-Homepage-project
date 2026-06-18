@@ -62,6 +62,15 @@
 		}
 	}
 }
+@mixin bg-colour-hover($map) {
+	@each $theme, $colour in $map {
+		&--#{$theme} {
+      &:hover{
+        background-color: darken($colour, 20%);  
+      }
+		}
+	}
+}
 
 @mixin bg-colour-hover-darken($map) {
 	@each $theme, $colour in $map {

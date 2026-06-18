@@ -4,7 +4,6 @@
 
 #container{
     display: grid;
-    // grid-template-columns: 1fr 0px;
     transition: grid-template-columns 0.3s ease;
     overflow-x: hidden;
     width: 100vw;

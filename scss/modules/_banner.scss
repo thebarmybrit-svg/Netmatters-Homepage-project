@@ -1,0 +1,44 @@
+// ==========================================================================
+// Banner
+// ==========================================================================
+
+
+#banner{
+    background-color: $colour-primary;
+    .item{
+        position: relative;
+        width: 100%;
+        overflow: hidden; 
+    }
+    // .item{
+    //     display: flex;
+    //     flex-direction: column;
+    //     align-items: center;
+    //     justify-content: center;
+    //     position: relative;
+    //     width: 100%;
+    //     @include mq(small){
+    //         justify-content: flex-start;
+    //     }
+    // }
+
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 100%; // Prevents horizontal overflow
+        padding: 20px;
+        @include mq(small){
+            justify-content: flex-start;
+            padding-left: 10%;
+        }
+        .content-container, .row {
+            width: 100%;
+        }
+
+        
+
+       
+    }
+}
