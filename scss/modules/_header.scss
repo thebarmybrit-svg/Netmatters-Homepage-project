@@ -4,15 +4,16 @@
 
 #header{
     background-color: $white;
-
-
     header .container{
         display: flex;
         flex-wrap: wrap;
         width: 100%;
+        align-items: center;
+        
         gap: $g-gutter-width;
+        padding-left: $g-gutter-width;
 
-        @include mq(small){
+        @include mq(medium){
             flex-wrap: nowrap;
         }
 
@@ -20,24 +21,24 @@
             width: 130vh;
         }
         
-        a, label {
+        a, a.btn, label {
             display: flex;
             flex: 1;
             text-align: center;
-            align-items: flex-start;
             align-items: center;   
             justify-content: center;
             &.site-logo {
-                flex: 30vh;
-                min-width: 50%;
-                @include mq(small){
-                    flex: auto;
-                    min-width: 0;
-                }
+                flex: auto;
+                
+                
             }
             span{
                 flex-direction: row;
             }
+        }
+        a.btn{
+            flex: 0 1 auto; // Prevents growing, allows shrinking if space is tight
+            width: max-content;
         }
         form.search_form, label{
             order: 2;

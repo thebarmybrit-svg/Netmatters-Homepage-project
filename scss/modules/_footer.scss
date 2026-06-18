@@ -6,10 +6,12 @@
 .footer-menu {
     display: flex;
     flex-wrap: wrap;
+    padding-left: $g-gutter-width;
     
     @include mq(medium){
         flex-wrap: nowrap;
         gap: $g-gutter-width;
+        padding-left: 0%;
     }
 
 }

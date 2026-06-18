@@ -4,7 +4,7 @@
 
 // Logo
 .site-logo {
-	@include img-logo-replace("f-logo.webp", em(200px), em(40px), inline-block);
+	@include img-logo-replace("f-logo.webp", em(370px), em(65px), inline-block);
 }
 
 .footer-logo{
