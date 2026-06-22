@@ -12,6 +12,7 @@ body {
     line-height: ($base__line/$base__font-size);
     margin: 0;
     background-color: $grey;
+    overflow-x: hidden;
 }
 
 h1, .h1 {

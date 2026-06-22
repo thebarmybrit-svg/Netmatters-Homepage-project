@@ -63,24 +63,27 @@
             }
         }
 
-        &:hover{
-            transition-duration: $trns-duration;
-            span.icon{
-                display: none;
-                &.hidden-all{
-                    display: inline-block !important;
-                }
-            }
-            
-            .sub-menu-banner{
-                display: block !important;
-            }
-        }
+        
 
         @include mq(small){
             &.theme{
                 @include bg-colour-hover-darken($ui-colors);
             }
+
+            &:hover{
+                transition-duration: $trns-duration;
+                span.icon{
+                    display: none;
+                    &.hidden-all{
+                        display: inline-block !important;
+                    }
+                }
+                
+                .sub-menu-banner{
+                    display: block !important;
+                }
+            }
+
             .sub-menu-banner {
                 &.theme{
                     @include bg-colours($ui-colors);

@@ -55,7 +55,7 @@
 
         @include mq(medium){
             flex-wrap: nowrap;
-            label.btn{
+            .btn-group{
                 margin-left: auto;
             }
         }
@@ -86,7 +86,7 @@
     }
 
     @include mq(small){
-        margin-left: auto;
+        // margin-left: auto;
         order: 3;
     }
 }

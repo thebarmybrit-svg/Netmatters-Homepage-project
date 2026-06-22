@@ -33,7 +33,7 @@
 
 
 //primary container
-.container, .section {
+.container{
     display: grid;
     grid-template-columns: auto;
     margin: 0px auto;
@@ -41,20 +41,14 @@
     width: 100%;
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
-    align-items: center; ;
-
+    align-items: center;
     
-    // margin-right: auto;
-    // margin-left: auto;
-    // padding-right: 15px;
-    // padding-left: 15px;
     @include mq(micro){
         min-width: $brkpoint-sm/1.5;
     }
     @include mq(small){
         width: $brkpoint-sm;
         grid-template-columns: repeat(auto-fit, minmax($g-col-width, 1fr));
-       
     }
 
      @include mq(medium){
@@ -62,10 +56,18 @@
     }
 
      @include mq(large){
-        
         width: $brkpoint-lg;
     }
 
+}
+
+.section{
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
 }
 
 .partners {
