@@ -93,7 +93,7 @@
 
 // Generate icon image classes
 
-@mixin icons($map, $w, $h, $disp: block) {
+@mixin icons($map, $w, $h, $disp: inline-block) {
 	@each $icon, $img in $map {
 		&-#{$icon} {
 			background-image: url('#{$path-img-icon--rel}/#{$img}');
@@ -108,7 +108,7 @@
 
 // Generate coloured icons
 
-@mixin icons-coloured($map, $w, $h, $disp: block) {
+@mixin icons-coloured($map, $w, $h, $disp: inline-block) {
   @each $name, $props in $map {
     $icon-url: '#{$path-img-icon--rel}/#{map-get($props, location)}';
     &-coloured-#{$name} {
@@ -128,7 +128,7 @@
   }
 }
 
-@mixin icons-colour-drained($map, $w, $h, $disp: block) {
+@mixin icons-colour-drained($map, $w, $h, $disp: inline-block) {
   @each $name, $img in $map {
     &-drained-#{$name} {
       -webkit-mask-image: url('#{$path-img-icon--rel}/#{$img}');
@@ -182,7 +182,7 @@
 
 // Image replacement
 
-@mixin img-logo-replace($img, $w, $h, $disp: block) {
+@mixin img-logo-replace($img, $w, $h, $disp: inline-block) {
 	background-image: url('#{$path-img-logo--rel}/#{$img}');
   background-size: contain;
 	background-repeat: no-repeat;

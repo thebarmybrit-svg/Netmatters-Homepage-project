@@ -19,7 +19,7 @@ h1, .h1 {
     @extend %hdln-prim;
 }
 
-h2 {
+h2, .h2 {
     @extend %hdln-sec;
 }
 

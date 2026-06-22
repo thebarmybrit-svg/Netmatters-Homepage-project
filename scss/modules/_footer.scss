@@ -21,13 +21,11 @@
     flex: 100%;
     margin-bottom: em(30px);
 
-    @include mq(small){
-        flex: auto;
-        
-    }
-
-    @include mq(large){
-        margin-bottom: 40px;
+    ul{
+        padding-left: 0px;
+        li{
+            list-style-type: none;
+        }
     }
 
     a {
@@ -38,5 +36,14 @@
         text-transform: uppercase;
         font-size: 1rem;
         margin-bottom: em(26px);
+        margin-top: 0;
+    }
+
+    @include mq(small){
+        flex: auto;   
+    }
+
+    @include mq(large){
+        margin-bottom: 40px;
     }
 }

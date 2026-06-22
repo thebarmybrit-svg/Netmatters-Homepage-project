@@ -23,22 +23,19 @@
         position: relative;
         .category {
             position: absolute;
-            top: 1rem;    
-            left: 1rem;   
+            top: em(5px);    
+            right: 1rem;   
             z-index: 2;   
             pointer-events: auto; 
         }
 
         .img-container {
-            display: block;
-            @include mq(medium){
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                overflow: hidden; 
-                max-width: $img-size__standard--max-width-desktop;
-                aspect-ratio: 16 / 9;
-            }
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; 
+            max-width: $img-size__standard--max-width-desktop;
+            aspect-ratio: 16 / 9;
         }
     }
 

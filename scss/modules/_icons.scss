@@ -4,19 +4,19 @@
 
 // Logo
 .site-logo {
-	@include img-logo-replace("f-logo.webp", em($logo-size__main--width), em($logo-size__main--height), inline-block);
+	@include img-logo-replace("f-logo.webp", em($logo-size__main--width), em($logo-size__main--height));
 }
 
 .footer-logo{
-    @include img-logo-replace("nm-logo-white-med.webp", em($logo-size__footer--width), em($logo-size__footer--height), inline-block);
+    @include img-logo-replace("nm-logo-white-med.webp", em($logo-size__footer--width), em($logo-size__footer--height));
 }
 
 
 // Icons
 
 .icon{
-    @include icons($icon-locations, em($icon-size__standard), em($icon-size__standard), inline-block);
-    @include icons-coloured($icons-coloured, em($icon-size__large), em($icon-size__large), inline-block);
-    @include icons-colour-drained($icon-locations, em($icon-size__large), em($icon-size__large), inline-block);
+    @include icons($icon-locations, em($icon-size__standard), em($icon-size__standard));
+    @include icons-coloured($icons-coloured, em($icon-size__standard), em($icon-size__standard));
+    @include icons-colour-drained($icon-locations, em($icon-size__standard), em($icon-size__standard));
 }
 

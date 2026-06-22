@@ -28,8 +28,6 @@
     @include doubly(percentage($g-gutter-width / $context));    
     float: left;
     min-height: 1px;
-    padding-left: 10px;
-    padding-right: 10px;
     &:last-of-type {
       float: right;
     }
