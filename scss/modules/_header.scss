@@ -112,6 +112,8 @@
         width: 40px;
         border: none;
         border-radius: $br--default;
+
+        cursor: pointer;
         
     }
 
@@ -132,6 +134,10 @@
             padding: 0 20px;
             border: 1px $black solid;
             border-radius: 0;
+
+            &:hover{
+                background-color: darken($dev-blue, 20%);
+            }
         }
     }
 

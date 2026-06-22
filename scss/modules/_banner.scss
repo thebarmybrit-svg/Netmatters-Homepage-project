@@ -13,7 +13,11 @@
     }
     .text{
         background-color: rgba(0, 0, 0, 0.5);
+        p{
+            color: $white;
+        }
     }
+    
     h1{
         font-size: em($font-size--prim, 24px);
     }

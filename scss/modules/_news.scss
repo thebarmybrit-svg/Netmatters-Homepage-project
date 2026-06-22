@@ -12,15 +12,18 @@
             margin-right: auto;
         }
     }
-
-    h2, h3, a{
-        text-decoration: none;
-        color: $white;
-    }
     .h2{
         display: inline-flex;
     }
-
+    h2, h3, h3 a{
+        color: $colour-font;
+    }
+    .btn{
+        color: $white;
+    }
+    // p, h3{
+    //     text-align: center;
+    // }
     .img-content-container {
         position: relative;
         .category {
@@ -44,13 +47,14 @@
     [class^="row__col-"]{
         align-self: flex-start;
         @extend .centered;
-        background-color: $colour-secondary;
-        border: 2px $white solid;
+        background-color: $white;
+        border: 2px $black inset;
         border-radius: $br--default;
+        padding-top: 10px;
         &:not(:first-child) {
             padding-left: $g-gutter-width;
         }
-        
+
         .item{
             height: 100%;
             display: flex;
@@ -68,8 +72,10 @@
         .user{
             display: flex;
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
             width: 100%;
-            border-top: 3px $black solid;
+            border-top: 1px $black solid;
             padding-bottom: 1.5rem;
             margin-top: 1rem;
         }

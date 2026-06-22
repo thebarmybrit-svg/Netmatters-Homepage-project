@@ -50,6 +50,7 @@ $star-yellow            : #ffa500;
 
 $colour-primary     : $deep-steel-blue;
 $colour-secondary   : $darkest-sea;
+$colour-font        : $meteorite-blue;
 $colour-inverse     : $glowing-sun;
 $colour-shadow      : rgba($black, .2);
 
@@ -75,6 +76,7 @@ $color-palettes: (
 
 $ui-colors: (
 	primary             : $colour-primary,
+    secondary           : $colour-secondary,
     primary-inverse     : $colour-inverse,
 	cons-dev            : $dev-blue,
 	it-supp             : $it-blue,

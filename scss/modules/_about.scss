@@ -8,13 +8,16 @@
     color: $white;
      .container .row{
         [class^="row__col-"]{
-            background-color: $colour-secondary;
-            border: 3px solid $colour-shadow;
+            // background-color: $colour-secondary;
+            // border: 3px solid $colour-shadow;
             border-radius: $br--default;
+            margin-top: 0;
+            align-self: flex-start;
             h2{
                 font-weight: $font-weight--bold;
             }
-            p{
+            p, .btn{
+                color: $white;
                 .client-quote-author{
                     color: $dev-blue;
                 }
