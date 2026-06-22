@@ -23,9 +23,12 @@
             text-decoration: none;
             color: $black;
         }
-        .icon {
-            margin-top: $g-gutter-width;
+        .h2{
+            display: inline-flex;
         }
+        // .icon {
+        //     margin-top: $g-gutter-width;
+        // }
         .btn{
             color: $white;
             margin-bottom: $g-gutter-width;

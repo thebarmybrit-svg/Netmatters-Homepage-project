@@ -18,5 +18,11 @@
     @include icons($icon-locations, em($icon-size__standard), em($icon-size__standard));
     @include icons-coloured($icons-coloured, em($icon-size__standard), em($icon-size__standard));
     @include icons-colour-drained($icon-locations, em($icon-size__standard), em($icon-size__standard));
+    margin-top: 10px;
 }
 
+.icon-arrow-right{
+    margin-top: 0;
+    margin-left: 10px;
+    float: none !important; 
+}
