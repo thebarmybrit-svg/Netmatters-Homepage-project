@@ -4,7 +4,7 @@
 
 .main-nav{
     background-color: $colour-primary;
-    padding: $g-gutter-width 0;
+    // padding: $g-gutter-width 0;
     @include dropdown-layout();
     @include mq(small){
         @include dropdown-layout-undo();
@@ -67,7 +67,7 @@
 
         @include mq(small){
             &.theme{
-                @include bg-colour-hover-darken($ui-colors);
+                @include bg-colour-hover($ui-colors);
             }
 
             &:hover{
