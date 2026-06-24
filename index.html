@@ -11,29 +11,41 @@
         <div id="container">
             <div id="header">
                 <header>
-                    <div class="container">
-                        <a class="site-logo" href="#"></a>
-                        <div class="btn-group">
-                            <a class="btn btn--it-supp" href="#" target="_blank">
-                                <span class="icon-coloured-question"></span>
-                                <p>Suppot</p>
-                            </a>
-                            <a class="btn btn--cons-dev" href="#" target="_blank">
-                                <span class="icon-coloured-envelop"></span>
-                                <p>Contact</p>
-                            </a>
+                    <div class="inner">
+                        <div class="container">
+                            <div class="row">
+                                <div class="row__col-md--5 row__col-lg--4">
+                                    <a class="site-logo" href="#"></a>
+                                </div>
+                                <div class="row__col-md--7 row__col-lg--8">
+                                    <div class="actions">
+                                        <div class="btn-group">
+                                            <a class="btn btn--it-supp hidden-xs" href="#" target="_blank">
+                                                <span class="icon-coloured-question"></span>
+                                                <p>Suppot</p>
+                                            </a>
+                                            <a class="btn btn--cons-dev hidden-xs" href="#" target="_blank">
+                                                <span class="icon-coloured-envelop"></span>
+                                                <p>Contact</p>
+                                            </a>
+                                        </div>
+                                        <form class="search_form float-right-sm" method="get" action="#" accept-charset="UTF8">
+                                            <input id="search_input" type="text" placeholder="Search...">
+                                            <button id="search-submit" type="submit">
+                                                <span class="icon icon-search" aria-hidden="true"></span>
+                                            </button>
+                                        </form>
+                                        <label for="nav-toggle" class="btn btn--primary float-right-xs" type="checkbox">
+                                            <span class="btn--hamburger">
+                                                <span class="icon-menu"></span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
                         </div>
-                        <form class="search_form float-right-sm" method="get" action="#" accept-charset="UTF8">
-                            <input id="search_input" type="text" placeholder="Search...">
-                            <button id="search-submit" type="submit">
-                                <span class="icon icon-search" aria-hidden="true"></span>
-                            </button>
-                        </form>
-                        <label for="nav-toggle" class="btn btn--primary float-right-xs" type="checkbox">
-                            <span class="btn--hamburger">
-                                <span class="icon-menu"></span>
-                            </span>
-                        </label>
                     </div>
                 </header>
             </div>

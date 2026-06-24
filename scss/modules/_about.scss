@@ -6,26 +6,26 @@
 .about-netmatters {
     background-color: $colour-primary;
     color: $white;
-     .container .row{
-        [class^="row__col-"]{
-            // background-color: $colour-secondary;
-            // border: 3px solid $colour-shadow;
-            border-radius: $br--default;
-            margin-top: 0;
-            align-self: flex-start;
-            h2{
-                font-weight: $font-weight--bold;
+
+    [class^="row__col-"]{
+        // background-color: $colour-secondary;
+        // border: 3px solid $colour-shadow;
+        border-radius: $br--default;
+        margin-top: 0;
+        align-self: flex-start;
+        h2{
+            font-weight: $font-weight--bold;
+        }
+        p, .btn{
+            color: $white;
+            .client-quote-author{
+                color: $dev-blue;
             }
-            p, .btn{
+            a{
+                text-decoration: none;
                 color: $white;
-                .client-quote-author{
-                    color: $dev-blue;
-                }
-                a{
-                    text-decoration: none;
-                    color: $white;
-                }
             }
         }
-     }
+    }
+
 }

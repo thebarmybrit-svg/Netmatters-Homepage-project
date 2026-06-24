@@ -4,9 +4,12 @@
 
 #header{
     background-color: $white;
-    header .container{
-        display: flex;
-        flex-wrap: wrap;
+    .inner{
+        padding: em(20px) 0px;
+    }
+    .container{
+        // display: flex;
+        // flex-wrap: wrap;
         // width: 100%;
         // max-width: 100%; 
         // margin-inline: auto;
@@ -17,54 +20,56 @@
         margin-right: auto !important;
         
         gap: $g-gutter-width;
-        padding-left: 15%;
-        padding-right: 15%;
+        // padding-left: 15%;
+        // padding-right: 15%;
       
         min-width: 0;
 
+        .actions{
+            float: right;
+        }
+
         a, label {
             display: flex;
-            flex: 1;
+            // flex: 1;
             text-align: center;
             align-items: center;   
             justify-content: center;
             &.site-logo {
-                flex: 0 1 auto;
-                min-width: $logo-size__main--width/3;
+                // flex: 0 1 auto;
+                // min-width: $logo-size__main--width/3;
                 max-width: 100%;
                 margin-right: $g-gutter-width;
             }
-            span{
-                flex-direction: row;
-            }
+ 
         }
         .btn-group{
             display: flex;
-            flex: 0 1 auto;
+            // flex: 0 1 auto;
             gap: $g-gutter-width;
             a.btn{
                 font-weight: $font-weight--bold;
                 padding: 0 10px;
-                flex: 1;
+                // flex: 1;
                 gap: 10px;
             }
         }
         label.btn{
-            flex: 0 0 100%;
+            // flex: 0 0 100%;
             max-width: $icon-size__standard;
         }
-        form.search_form, label{
-            order: 2;
-        }
+        // form.search_form, label{
+        //     order: 2;
+        // }
 
-        @include mq(small){
+        // @include mq(small){
             
-            label.btn{
-                flex: 1 1 auto;
-                width: max-content;
-                order: 3;
-            }
-        }
+        //     // label.btn{
+        //     //     flex: 1 1 auto;
+        //     //     width: max-content;
+        //     //     // order: 3;
+        //     // }
+        // }
 
         @include mq(medium){
             flex-wrap: nowrap;
@@ -141,8 +146,8 @@
         }
     }
 
-    @include mq(medium){
-        margin-left: 0;
-        order: 3;
-    }
+    // @include mq(medium){
+    //     margin-left: 0;
+    //     order: 3;
+    // }
 }

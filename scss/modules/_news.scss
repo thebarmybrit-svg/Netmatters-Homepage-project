@@ -45,6 +45,8 @@
     }
 
     [class^="row__col-"]{
+        top: 0; 
+        transition: .5s ease;
         align-self: flex-start;
         @extend .centered;
         background-color: $white;
@@ -52,6 +54,10 @@
         box-shadow: 0px 0px 5px 2px $colour-shadow;
         border-radius: $br--default;
         padding-top: 10px;
+        &:hover {
+            top: -10px; 
+            transition: .5s ease;
+        }
         &:not(:first-child) {
             padding-left: $g-gutter-width;
         }

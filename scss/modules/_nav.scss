@@ -14,6 +14,7 @@
 .nav {
     display: flex;
     gap: $g-gutter-width;
+    margin-top: 0px;
     .theme{
         background-color: $colour-primary;
     }
@@ -101,8 +102,8 @@
                 .sub-menu {
                     display: flex;
                     flex-direction: row; // Align items horizontally in a row
-                    justify-content: center; // Center items horizontally
-                    align-items: center; // Align items vertically
+                    // justify-content: center; // Center items horizontally
+                    // align-items: center; // Align items vertically
                     flex-wrap: wrap; // Prevent overflow on smaller desktop windows
                     margin: 0 auto;
                 }
