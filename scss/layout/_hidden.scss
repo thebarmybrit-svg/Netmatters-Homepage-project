@@ -13,11 +13,20 @@
 }
 
 .hidden-sm {
-    @include mq(small){
-        display: none;
+    @include mq(small-only){
+        display: none !important;
     }
-    @include mq(medium){
-        display: block;
+}
+
+.hidden-md {
+    @include mq(medium-only){
+        display: none !important;
+    }
+}
+
+.hidden-lg {
+    @include mq(large){
+        display: none !important;
     }
 }
 

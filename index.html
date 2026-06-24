@@ -14,10 +14,10 @@
                     <div class="inner">
                         <div class="container">
                             <div class="row">
-                                <div class="row__col-md--5 row__col-lg--4">
+                                <div class="row__col-xs--6 row__col-md--5 row__col-lg--4">
                                     <a class="site-logo" href="#"></a>
                                 </div>
-                                <div class="row__col-md--7 row__col-lg--8">
+                                <div class="row__col-xs--3 row__col-md--7 row__col-lg--8">
                                     <div class="actions">
                                         <div class="btn-group">
                                             <a class="btn btn--it-supp hidden-xs hidden-sm" href="#" target="_blank">
@@ -29,8 +29,8 @@
                                                 <p>Contact</p>
                                             </a>
                                         </div>
-                                        <form class="search_form float-right-sm" method="get" action="#" accept-charset="UTF8">
-                                            <input id="search_input" type="text" placeholder="Search...">
+                                        <form class="search_form float-right-sm hidden-xs" method="get" action="#" accept-charset="UTF8">
+                                            <input id="search_input" class="hidden-md" type="text" placeholder="Search...">
                                             <button id="search-submit" type="submit">
                                                 <span class="icon icon-search" aria-hidden="true"></span>
                                             </button>
@@ -42,9 +42,15 @@
                                         </label>
                                     </div>
                                 </div>
-                                
                             </div>
-                            
+                            <div class="hidden-sm hidden-md hidden-lg search-form-wrapper--mobile">
+                                <form class="search_form" method="get" action="#" accept-charset="UTF8">
+                                    <input class="form-control search-bar" placeholder="Search..." id="search-input" name="keyword" type="text" value="">
+                                    <button id="search-submit" type="submit">
+                                        <span class="icon icon-search" aria-hidden="true"></span>
+                                    </button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </header>
@@ -414,7 +420,7 @@
                     <div class="content">
                         <div class="container content-container">
                             <div class="row">
-                                <div class="text row__col-md--5 row__col-solo">
+                                <div class="text">
                                     <h1>The East Of England's Leading Technology Company</h1>
                                     <p>
                                         Performance-driven digital and technology services

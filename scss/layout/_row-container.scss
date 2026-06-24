@@ -11,6 +11,7 @@
   justify-content: center; 
   align-items: center; 
   flex-direction: column;
+  align-items: stretch;
   grid-template-columns: repeat(12, minmax(0, 1fr));
 
   @extend %clearfix;

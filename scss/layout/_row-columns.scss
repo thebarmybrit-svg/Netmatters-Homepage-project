@@ -6,7 +6,7 @@
 
 .row__col-xs {
   @include mq(micro){
-    @include g-columns($g-col-count-xs);
+    @include g-columns;
   }
 }
 

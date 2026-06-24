@@ -9,8 +9,9 @@
     .item{
         position: relative;
         width: 100%;
-        overflow: hidden; 
+        overflow: hidden;
     }
+
     .text{
         background-color: rgba(0, 0, 0, 0.5);
         p{
@@ -37,7 +38,11 @@
         }
     }
     @include mq(medium){
+        .content .row{
+            justify-content: flex-start;
+        }
         .text{
+            text-align: left;
             background-color: rgba(0, 0, 0, 0);
         }
     }
