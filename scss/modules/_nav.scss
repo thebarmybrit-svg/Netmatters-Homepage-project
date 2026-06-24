@@ -27,7 +27,7 @@
         a{
             text-decoration: none;
             background-color: transparent; 
-            p, strong{        
+            &, p, strong{        
                 color: $white;
                 display: block;
                 margin: 0;
