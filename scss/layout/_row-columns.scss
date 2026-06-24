@@ -4,6 +4,18 @@
 
 // Calculate grid columns
 
+.row__col-xs {
+  @include mq(micro){
+    @include g-columns($g-col-count-xs);
+  }
+}
+
+.row__col-sm {
+  @include mq(small){
+    @include g-columns;
+  }
+}
+
 .row__col-md {
   @include mq(medium) {
     @include g-columns;
