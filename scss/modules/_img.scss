@@ -52,16 +52,12 @@
         @include mq(large){
             width: fit-content;
         }
-        // @include mq(small){
-        //     width: $brkpoint-sm;
-        // }
-        // @include mq(medium) {
-        //     width: $brkpoint-md;
-        //     margin-bottom: em(42px);
-        // }
-        // @include mq(large){
-        //     width: $brkpoint-lg;
-        // }
+    }
+    @include m(site-logo){
+        width: $logo-size__main--width;
+    }
+    @include m(footer-logo){
+        width: $logo-size__footer--width;
     }
 }
 

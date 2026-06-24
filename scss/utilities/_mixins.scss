@@ -192,14 +192,11 @@
 
 // Image replacement
 
-@mixin img-logo-replace($img, $w, $h, $disp: inline-block) {
-	background-image: url('#{$path-img-logo--rel}/#{$img}');
-  background-size: contain;
-	background-repeat: no-repeat;
-	width: $w;
-	height: $h;
-	display: $disp;
-}
+// @mixin img-logo-replace($img, $disp: block) {
+// 	background-image: url('#{$path-img-logo--rel}/#{$img}');
+//   max-width: 100%;
+// 	display: $disp;
+// }
 
       
 // Adjacent sibling margins

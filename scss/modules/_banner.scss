@@ -38,6 +38,12 @@
         }
     }
     @include mq(medium){
+        h1{
+            font-size: $font-size--title;
+        }
+        .btn{
+            font-size: $font-family--secondary;
+        }
         .content .row{
             justify-content: flex-start;
         }

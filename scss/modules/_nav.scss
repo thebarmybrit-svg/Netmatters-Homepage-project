@@ -13,7 +13,7 @@
 
 .nav {
     display: flex;
-    gap: $g-gutter-width;
+    // gap: $g-gutter-width;
     margin-top: 0px;
     .theme{
         background-color: $colour-primary;
@@ -52,8 +52,10 @@
                     
                     top: 0;
                     margin: 0;
+                    
                     @include mq(small){
                         position: absolute;
+                         height: max-content;
                     }
                     
                 }

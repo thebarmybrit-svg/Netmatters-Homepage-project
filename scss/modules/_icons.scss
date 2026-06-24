@@ -2,14 +2,14 @@
 // Icons
 // ==========================================================================
 
-// Logo
-.site-logo {
-	@include img-logo-replace("f-logo.webp", em($logo-size__main--width), em($logo-size__main--height));
-}
+// // Logo
+// .site-logo {
+// 	@include img-logo-replace("f-logo.webp");
+// }
 
-.footer-logo{
-    @include img-logo-replace("nm-logo-white-med.webp", em($logo-size__footer--width), em($logo-size__footer--height));
-}
+// .footer-logo{
+//     @include img-logo-replace("nm-logo-white-med.webp");
+// }
 
 
 // Icons
