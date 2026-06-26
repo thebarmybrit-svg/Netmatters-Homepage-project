@@ -18,12 +18,34 @@
 
         .row{
             flex-direction: row;
+            flex-wrap: nowrap;
+            padding: 0;
+            // margin-right: 0;
         }
         .actions{
             display: flex;
-            gap: $g-gutter-width;
             float: right;
-            padding: 7px 0px;
+            flex: 0 0 auto; 
+            width: max-content;
+            // justify-items: start;
+            @include mq(small){
+                gap: $g-gutter-width;
+                padding: 7px 0px;
+            }
+            @include mq(medium){
+                
+            }
+        }
+
+        .logo-container{
+            margin-right: auto;
+            a{
+                display: flex;
+                flex: 0 1 $logo-size__main--width;
+                min-width: $logo-size__main--width/1.5;
+                width: 100%;
+
+            }
         }
 
         a, label {
@@ -45,6 +67,14 @@
         label.btn{
             max-width: $icon-size__standard;
             float: right;
+        }
+        .mobile-container {
+            // margin-left: auto;
+            .icon{
+                width: $icon-size__large;
+                height: 100%;
+                float: right;
+            }
         }
 
     }

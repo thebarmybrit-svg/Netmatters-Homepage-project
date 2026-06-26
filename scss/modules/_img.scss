@@ -54,10 +54,16 @@
         }
     }
     @include m(site-logo){
-        width: $logo-size__main--width;
+        flex: 1 1 100%;
+        max-width: 100%;
+        height: auto;
+        transition: width $trns-duration ease-out;
     }
     @include m(footer-logo){
-        width: $logo-size__footer--width;
+        flex: 1 1 100%;
+        max-width: 100%;
+        height: auto;
+        transition: width $trns-duration ease-out;
     }
 }
 
