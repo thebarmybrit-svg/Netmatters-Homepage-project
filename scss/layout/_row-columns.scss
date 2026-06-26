@@ -24,7 +24,7 @@
 
 .row__col-lg{
   @include mq(large){
-    @include g-columns($g-col-count-lg);
+    @include g-columns;
   }
 }
 
@@ -52,6 +52,5 @@
   @include mq(medium){
     margin-right: auto;
     text-align: left;
-
   }
 }
