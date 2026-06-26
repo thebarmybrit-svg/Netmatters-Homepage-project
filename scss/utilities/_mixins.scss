@@ -121,7 +121,7 @@
 @mixin icons-coloured($map, $w, $h, $disp: inline-block) {
   @each $name, $props in $map {
     $icon-url: '#{$path-img-icon--rel}/#{map-get($props, location)}';
-    &-coloured-#{$name} {
+    &-#{$name}--coloured {
       -webkit-mask-image: url($icon-url);
       -webkit-mask-repeat: no-repeat;
       -webkit-mask-size: contain;
@@ -138,15 +138,15 @@
   }
 }
 
-@mixin icons-colour-drained($map, $w, $h, $disp: inline-block) {
+@mixin icons-whiten($map, $w, $h, $disp: inline-block) {
   @each $name, $img in $map {
-    &-drained-#{$name} {
-      -webkit-mask-image: url('#{$path-img-icon--rel}/#{$img}');
+    $icon-url: '#{$path-img-icon--rel}/#{$img}';
+    &-#{$name}--whiten {
+      -webkit-mask-image: url($icon-url);
       -webkit-mask-repeat: no-repeat;
       -webkit-mask-size: contain;
-      -webkit-mask-box-image: url('#{$path-img-icon--rel}/#{$img}');
 
-      mask-image: url('#{$path-img-icon--rel}/#{$img}');
+      mask-image: url($icon-url);
       mask-repeat: no-repeat;
       mask-size: contain;
 

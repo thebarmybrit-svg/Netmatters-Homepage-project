@@ -95,12 +95,12 @@ $ui-colors: (
 //Icons Coloured 
 $icons-coloured: (
 	arrow-right         : (location: "arrow-right.svg", colour: $black ),
-    briefcase           : (location: "briefcase.svg", colour: $training-brown),
-    display             : (location: "display.svg", colour: $it-blue),
+    devices             : (location: "devices.svg", colour: $it-blue),
     embed               : (location: "embed.svg", colour: $webdev-lavander),
     // facebook            : (location: "facebook.svg", colour: $black ),
+    graduation-cap      : (location: "graduation-cap.svg", colour: $training-brown),
     // instagram           : (location: "instagram.svg", colour: $black ),
-    laptop              : (location: "laptop.svg", colour: $dev-blue),
+    display              : (location: "display.svg", colour: $dev-blue),
     // linkedin            : (location: "linkedin.svg", colour: $black ),
     menu                : (location: "menu.svg", colour: $black),
     phone_in_talk       : (location: "phone_in_talk.svg", colour: $telecom-red),
@@ -118,36 +118,62 @@ $icons-coloured: (
 // Icon locations
 
 $icon-locations: (
-	arrow-right         : "arrow-right.svg",
+    arrow-right         : "arrow-right.svg",
     briefcase           : "briefcase.svg",
+    bullhorn            : "bullhorn.svg",
+    cart                : "cart.svg",
+    clipboard           : "clipboard.svg",
+    clock               : "clock.svg",
+    cloud               : "cloud.svg",
+    cloud-download      : "cloud-download.svg",
+    cogs                : "cogs.svg",
+    devices             : "devices.svg",
     display             : "display.svg",
+    drive               : "drive.svg",
+    download            : "download.svg",
+    earth               : "earth.svg",
     embed               : "embed.svg",
     envelop             : "envelop.svg",
     facebook            : "facebook.svg",
+    folder-open         : "folder-open.svg",
+    graduation-cap      : "graduation-cap.svg",
+    handshake-o         : "handshake-o.svg",
+    headphones          : "headphones.svg",
+    help                : "help.svg",
     instagram           : "instagram.svg",
+    lab                 : "lab.svg",
     laptop              : "laptop.svg",
     linkedin            : "linkedin.svg",
+    locked              : "locked.svg",
     menu                : "menu.svg",
+    meter               : "meter.svg",
+    mobile              : "mobile.svg",
+    money               : "money.svg",
     mouse               : "mouse.svg",
     paperplane          : "paperplane.svg",
+    pencil              : "pencil.svg",
+    people_alt          : "people_alt.svg",
     phone               : "phone.svg",
     phone_in_talk       : "phone_in_talk.svg",
     phone-square        : "phone-square.svg",
-    question            : "question.svg",
     search              : "search.svg",
     shield              : "shield.svg",
+    shuffle             : "shuffle.svg",
     star                : "star-full.svg",
     stats-bars          : "stats-bars.svg",
+    transfer            : "transfer.svg",
+    ticket              : "ticket.svg",
+    trending_up         : "trending_up.svg",
     twitter             : "twitter.svg"
 );
 
 // Icon Themes
 
 $icon-themes: (
-    briefcase : $training-brown,
-    display : $it-blue,
+    graduation-cap : $training-brown,
+    devices : $it-blue,
     embed : $webdev-lavander,
-    laptop : $dev-blue,
+    display : $dev-blue,
     phone_in_talk : $telecom-red,
     shield : $security-magenta,
     star : $star-yellow,
@@ -187,7 +213,7 @@ $path-img-logo--rel           : "../img/logos";
 
 $g-col-width        : 65px;
 $g-gutter-width     : 25px;
-$g-col-count-xs     : 9;
+// $g-col-count-xs     : 9;
 $g-col-count        : 12;
 $g-col-count-lg     : 16;
 $g-cont-max-w       : 1260px;

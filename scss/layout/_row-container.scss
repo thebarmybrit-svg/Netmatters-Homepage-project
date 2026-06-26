@@ -5,12 +5,13 @@
 
 .row {
   display: flex;
-  flex: 0 0 auto;
+  position: relative;
+  // flex: 0 0 auto;
   max-width: 100%;
   flex-wrap: wrap;
   justify-content: center; 
   align-items: center; 
-  flex-direction: column;
+  // flex-direction: column;
   align-items: stretch;
   grid-template-columns: repeat(12, minmax(0, 1fr));
 
@@ -18,11 +19,6 @@
   @extend .centered;
   width: 90%;
  
-  [class*="row__col-"] > & {
-    flex: 1rem;
-    width: 100%; 
-  }
-
   @include mq(small) {
     flex-direction: row;
   }

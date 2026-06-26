@@ -16,6 +16,9 @@
         margin-right: auto !important;
         min-width: 0;
 
+        .row{
+            flex-direction: row;
+        }
         .actions{
             display: flex;
             gap: $g-gutter-width;

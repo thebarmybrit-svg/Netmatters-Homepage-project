@@ -78,11 +78,10 @@
                     
                 }
                 .nav-item{
-                    flex: 0 0 calc(33.33% - ($g-gutter-width / 3));
                     margin-top: 15px;
 
                     &--sub-menu{
-                        flex: 0 0 20%;
+                        flex: 0 0 32%;
                         font-size: $font-size--thrd;
                         text-align: left;
                     }
@@ -96,10 +95,14 @@
                         display: inline-block;
                         // width: 100%;
                         margin-top: 0px;
+                        margin-left: 10px;
                     }
 
                     .link-text{
                         margin-left: 10px;
+                        &:hover{
+                            text-decoration: underline;
+                        }
                     }
                 }
             }
