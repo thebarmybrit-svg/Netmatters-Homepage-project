@@ -22,6 +22,7 @@ $base__font-size    : 16px;
 $font-size--title   : 64px; 
 $font-size--prim    : 36px;
 $font-size--secn    : 24px;
+$font-size--thrd    : 19px;
 $base__line         : 24px;
 $letter-space       : 1px;
 
@@ -97,19 +98,20 @@ $icons-coloured: (
     briefcase           : (location: "briefcase.svg", colour: $training-brown),
     display             : (location: "display.svg", colour: $it-blue),
     embed               : (location: "embed.svg", colour: $webdev-lavander),
-    facebook            : (location: "facebook.svg", colour: $black ),
-    instagram           : (location: "instagram.svg", colour: $black ),
+    // facebook            : (location: "facebook.svg", colour: $black ),
+    // instagram           : (location: "instagram.svg", colour: $black ),
     laptop              : (location: "laptop.svg", colour: $dev-blue),
-    linkedin            : (location: "linkedin.svg", colour: $black ),
+    // linkedin            : (location: "linkedin.svg", colour: $black ),
     menu                : (location: "menu.svg", colour: $black),
-    phone               : (location: "phone.svg", colour: $telecom-red),
+    phone_in_talk       : (location: "phone_in_talk.svg", colour: $telecom-red),
     search              : (location: "search.svg", colour: $black),
     shield              : (location: "shield.svg", colour: $security-magenta),
     star                : (location: "star-full.svg", colour: $star-yellow) ,
     stats-bars          : (location: "stats-bars.svg", colour: $market-green),
-    twitter             : (location: "twitter.svg", colour: $black),
-    question            : (location: "question.svg", colour: $white), 
-    envelop             : (location: "envelop.svg", colour: $white)
+    // twitter             : (location: "twitter.svg", colour: $black),
+    // mouse               : (location: "mouse.svg", colour: $white), 
+    // envelop             : (location: "envelop.svg", colour: $white),
+    paperplane          : (location: "paperplane.svg", colour: $white)
 );
 
 
@@ -120,12 +122,18 @@ $icon-locations: (
     briefcase           : "briefcase.svg",
     display             : "display.svg",
     embed               : "embed.svg",
+    envelop             : "envelop.svg",
     facebook            : "facebook.svg",
     instagram           : "instagram.svg",
     laptop              : "laptop.svg",
     linkedin            : "linkedin.svg",
     menu                : "menu.svg",
+    mouse               : "mouse.svg",
+    paperplane          : "paperplane.svg",
     phone               : "phone.svg",
+    phone_in_talk       : "phone_in_talk.svg",
+    phone-square        : "phone-square.svg",
+    question            : "question.svg",
     search              : "search.svg",
     shield              : "shield.svg",
     star                : "star-full.svg",
@@ -140,7 +148,7 @@ $icon-themes: (
     display : $it-blue,
     embed : $webdev-lavander,
     laptop : $dev-blue,
-    phone : $telecom-red,
+    phone_in_talk : $telecom-red,
     shield : $security-magenta,
     star : $star-yellow,
     stats-bars : $market-green
