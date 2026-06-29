@@ -4,7 +4,6 @@
 
 .main-nav{
     background-color: $colour-primary;
-    // padding: $g-gutter-width 0;
     @include dropdown-layout();
     @include mq(small){
         @include dropdown-layout-undo();
@@ -13,7 +12,6 @@
 
 .nav {
     display: flex;
-    // gap: $g-gutter-width;
     margin-top: 0px;
     .theme{
         background-color: $colour-primary;
@@ -33,7 +31,6 @@
                 color: $white;
                 display: block;
                 margin: 0;
-                
             }
         }
 
@@ -51,29 +48,16 @@
                 list-style: none;
                 text-align: left;
                 padding: 0;
-
-                // display: flex;
-                // 
-                // padding: 4.5rem 0;
-                // list-style: none;
-
                 .sub-menu-banner-title{
                     font-size: $font-size--secn;
                     font-weight: $font-weight--bold;
                     text-align: left;
-                    // position:relative;
-                    // top: 0;
-                    // margin: 0;
-                    // display: block;
                     flex-basis: 100%;
                     margin-bottom: 10px;
                     margin-top: 15px;
-                    // grid-column: 1 / -1;
                     
                     @include mq(small){
-                        // position: absolute;
                         height: max-content;
-                        // margin-bottom: 20px;
                     }
                     
                 }
@@ -93,7 +77,6 @@
 
                     .link-icon{
                         display: inline-block;
-                        // width: 100%;
                         margin-top: 0px;
                         margin-left: 10px;
                     }

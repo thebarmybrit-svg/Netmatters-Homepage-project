@@ -13,20 +13,10 @@
     @include m(standard) {
         width: 100%;
         height: auto;
-        // max-width: 100%;
-        // max-width: em($img-size__standard--max-width-mobile);
-        // aspect-ratio: 16 / 9;
         border: 1px solid palette(grey, x-light);
         border-radius: $br--default;
         object-fit: cover;
         object-position: center; 
-        // @include mq(medium){
-        //     max-width: em($img-size__standard--max-width-desktop);
-        // }
-        // @include mq(large){
-        //     max-width: $brkpoint-lg/3;
-        // }
-        // padding: em(12px);
     }
     @include m(partner) {
         max-width: em($logo-size__partner--max-width);

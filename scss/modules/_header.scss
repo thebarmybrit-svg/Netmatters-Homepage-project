@@ -84,11 +84,7 @@
 .search_form {
     display: inline-flex;
     flex-wrap: nowrap;
-    // align-items: stretch;
-    // margin-left: auto;
     position: relative;
-    // height: 45px;
-
     .search_input {
         background-color: $white;
         min-width: 0;
@@ -143,12 +139,6 @@
             }
         }
     }
-
-    // @include mq(medium){
-    //     .search-toggle-check:checked ~ .search_form .search_input {
-    //         width: 200px;
-    //     }
-    // }
 }
 
 .search-form-wrapper--mobile{

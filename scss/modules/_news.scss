@@ -45,16 +45,6 @@
             display: block;
             width: 100%;
             height: auto;
-            // display: flex;
-            // justify-content: center;
-            // align-items: center;
-            // overflow: hidden; 
-            // // max-width: $img-size__standard--max-width-desktop;
-            // // width: $img-size__standard--max-width-mobile;
-            // aspect-ratio: 16 / 9;
-            // @include mq(small){
-            //     // width: $img-size__standard--max-width-desktop;
-            // }
         }
     }
 
@@ -64,7 +54,6 @@
         align-self: flex-start;
         @extend .centered;
         background-color: $white;
-        // border: 2px $black inset;
         box-shadow: 0px 0px 5px 2px $colour-shadow;
         border-radius: $br--default;
         padding-top: 10px;

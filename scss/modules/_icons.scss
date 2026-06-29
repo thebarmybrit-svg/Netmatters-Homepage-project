@@ -2,18 +2,6 @@
 // Icons
 // ==========================================================================
 
-// // Logo
-// .site-logo {
-// 	@include img-logo-replace("f-logo.webp");
-// }
-
-// .footer-logo{
-//     @include img-logo-replace("nm-logo-white-med.webp");
-// }
-
-
-// Icons
-
 .icon{
     @include icons($icon-locations, em($icon-size__standard), em($icon-size__standard));
     @include icons-coloured($icons-coloured, em($icon-size__standard), em($icon-size__standard));
