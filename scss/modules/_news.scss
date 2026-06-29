@@ -24,7 +24,7 @@
     .img-content-container {
         position: relative;
         max-width: $img-size__standard--max-width-mobile;
-        width: 100%;
+        
         .category {
             position: absolute;
             top: em(5px);    
@@ -48,21 +48,23 @@
         }
     }
 
+    .row{
+        padding: 0;
+    }
+
     [class^="row__col-"]{
         top: 0; 
+        display: grid;
         transition: $trns-duration ease;
-        align-self: flex-start;
+        align-self: stretch;
         @extend .centered;
         background-color: $white;
         box-shadow: 0px 0px 5px 2px $colour-shadow;
         border-radius: $br--default;
-        padding-top: 10px;
+        padding: 0;
         &:hover {
             top: -10px; 
             transition: $trns-duration ease;
-        }
-        &:not(:first-child) {
-            padding-left: $g-gutter-width;
         }
 
         .item{
@@ -78,6 +80,9 @@
                 height: auto;
                 object-fit: contain;
             }
+        }
+        .block{
+            padding: 0 15px;
         }
         .user{
             display: flex;
