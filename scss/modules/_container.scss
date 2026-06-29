@@ -61,13 +61,6 @@
     margin: 0;
     }
 
-// .link-icon-container{
-//     display: flex;
-//     justify-content: left;
-//     align-items: center;
-//     min-width: 25px;
-// }
-
 .section{
     width: 100vw;
     position: relative;
@@ -76,17 +69,6 @@
     margin-left: -50vw;
     margin-right: -50vw;
 }
-
-.partners {
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: min-content;
-    gap: $g-gutter-width;
-    overflow-x: auto;
-}
-
-
-
 
 // Image container
 .img-container {
