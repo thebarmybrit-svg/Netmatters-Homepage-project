@@ -22,8 +22,8 @@ $base__font-size    : 16px;
 $font-size--title   : 64px; 
 $font-size--prim    : 36px;
 $font-size--secn    : 24px;
-$font-size--thrd    : 19px;
-$font-size--small   : 12px;
+$font-size--thrd    : 20px;
+$font-size--small   : 13px;
 $base__line         : 24px;
 $letter-space       : 1px;
 
@@ -172,14 +172,14 @@ $icon-locations: (
 // Icon Themes
 
 $icon-themes: (
-    graduation-cap : $training-brown,
-    devices : $it-blue,
-    embed : $webdev-lavander,
-    display : $dev-blue,
-    phone_in_talk : $telecom-red,
-    shield : $security-magenta,
-    star : $star-yellow,
-    stats-bars : $market-green
+    graduation-cap      : $training-brown,
+    devices             : $it-blue,
+    embed               : $webdev-lavander,
+    display             : $dev-blue,
+    phone_in_talk       : $telecom-red,
+    shield              : $security-magenta,
+    star                : $star-yellow,
+    stats-bars          : $market-green
 );
 
 // Image sizes

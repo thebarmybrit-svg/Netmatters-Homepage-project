@@ -39,6 +39,12 @@
         margin-top: 0;
         padding-top: em(10px);
     }
+    li a{
+        font-size: $font-size--small;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
 
     @include mq(small){
         flex: auto;   

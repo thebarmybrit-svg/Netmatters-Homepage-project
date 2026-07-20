@@ -9,9 +9,9 @@
         grid-auto-flow: column;
         grid-auto-columns: min-content;
         gap: $g-gutter-width;
-        overflow-x: auto; // Used for scrolling, but hides the hover elements
-         padding-top: 350px; 
-        margin-top: -350px;
+        overflow-x: auto;
+        // padding-top: 350px; 
+        // margin-top: -350px;
     }
 
     .item-partner{
@@ -25,6 +25,7 @@
 
             .box{
                 background-color: $meteorite-blue;
+                text-align: center;
                 color: $white;
                 padding: 20px;
                 font-size: .875rem;
@@ -42,7 +43,7 @@
                     color: $white;
                     font-size: .8125rem;
                     line-height: 1.375rem;
-                    margin-bottom: 0;
+                    margin-bottom: 5px;
                     a{
                         color: $white;
                         text-decoration: none;

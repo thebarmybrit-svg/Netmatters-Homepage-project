@@ -12,7 +12,16 @@
         margin-top: 0;
         align-self: flex-start;
         h2{
+            font-size: $font-size--prim;
             font-weight: $font-weight--bold;
+        }
+        .icon-star--coloured{
+                font-size: 40px;
+        }
+        .client-quote{
+            font-weight: 600;
+            font-size: $font-size--thrd;
+            font-style: italic;
         }
         p, .btn{
             color: $white;
