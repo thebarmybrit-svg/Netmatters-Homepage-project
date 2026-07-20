@@ -9,7 +9,7 @@
         top: 0; 
         transition: $trns-duration ease;
         width: 100%;
-        max-width: 750px;
+        // max-width: 750px;
         flex: 0 0 100%;
         margin-top: 10px;
         &:first-child{
@@ -38,7 +38,7 @@
             margin: $g-gutter-width 0;
         } 
         @include mq(medium){
-            max-width: none;
+            // max-width: none;
             flex: 0 1 auto;
         }  
     }
@@ -57,6 +57,9 @@
         }  
         &:hover{
             transition-duration: $trns-duration;
+            .btn{
+                @include bg-colours-darken($ui-colors)
+            }
             span{
                 color: $white;
             }

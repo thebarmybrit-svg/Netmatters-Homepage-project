@@ -68,7 +68,7 @@
 @mixin bg-colours-darken($map) {
 	@each $theme, $colour in $map {
 		&--#{$theme} {
-      background-color: darken($colour, 50%);   
+      background-color: darken($colour, 20%);   
 		}
 	}
 }
@@ -76,7 +76,8 @@
 	@each $theme, $colour in $map {
 		&--#{$theme} {
       &:hover{
-        background-color: darken($colour, 20%);  
+        background-color: $colour;
+        @content;  
       }
 		}
 	}
@@ -204,10 +205,12 @@
      
 @mixin g-columns($columns: $g-col-count) {
   @for $i from 1 through $columns {
-    $context: g-context($g-col-width, $g-col-count ,$g-gutter-width) !global;  
+    $context: g-context($g-col-width, $columns ,$g-gutter-width) !global;  
     $target: ($g-col-width * $i) + ($g-gutter-width * ($i - 1));
+    $calculate-width: percentage($target / $context);
     &--#{$i} {
-      width: percentage($target / $context) !important;
+      flex-basis: $calculate-width;
+      max-width: $calculate-width; 
     }
   }
 }
@@ -217,7 +220,7 @@
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  transition: visibility $trns-duration;
+  transition: visibility $trns-duration ease;
 }
 
 @mixin dropdown-layout-undo(){

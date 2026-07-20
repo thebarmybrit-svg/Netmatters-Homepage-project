@@ -31,6 +31,14 @@
 	text-align: center;
 }
 
+%center-flex{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+
 // For pseudo-elements
 
 %pseudos {
