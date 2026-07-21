@@ -7,23 +7,26 @@
     display: flex;
     flex-wrap: wrap;
     padding-left: $g-gutter-width;
+    padding-bottom: $g-gutter-width;
+    row-gap: em(30px);
     
     @include mq(medium){
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         gap: $g-gutter-width;
-        padding-left: 0%;
     }
 
+    @include mq(large){
+        flex-wrap: nowrap;
+    }
 }
 
-.footer-row{
-    
-    flex: 100%;
-    margin-bottom: em(30px);
+.footer-row {
+    flex: 1 1 100%;
 
-    ul{
-        padding-left: 0px;
-        li{
+    ul {
+        padding-left: 0;
+        margin: 0;
+        li {
             list-style-type: none;
         }
     }
@@ -39,27 +42,71 @@
         margin-top: 0;
         padding-top: em(10px);
     }
-    li a{
+
+    li a {
         font-size: $font-size--small;
-        &:hover{
+        &:hover {
             text-decoration: underline;
         }
     }
 
     @include mq(small){
-        flex: auto;   
+        &:first-child {
+            flex: 1 1 100%;
+        }
+        &:not(:first-child) {
+            flex: 1 1 45%;
+        }
     }
 
-    @include mq(large){
+    @include mq(medium) {
+        &:first-child {
+            flex: 1 1 100%;
+        }
+        &:not(:first-child) {
+            flex: 1 1 calc(25% - #{$g-gutter-width});
+        }
+    }
+    
+    @include mq(large) {
+        &:first-child,
+        &:not(:first-child) {
+            flex: 1 1 0%;
+            max-width: calc(20% - #{$g-gutter-width * 4 / 5}); // Accounts for your gap spacing
+        }
         margin-bottom: 40px;
     }
 }
 
-.footer-logo-container{
+.footer-logo-container {
     max-width: $logo-size__footer--width;
 }
 
-.footer-bottom{
+.footer-social-logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: em(10px);   
+    max-width: em(90px);   
+
+    a {
+        flex: 0 0 calc(50% - em(5px)); 
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        aspect-ratio: 1 / 1;
+    }
+
+    @include mq(small) {
+        max-width: none;   
+        flex-wrap: nowrap; 
+        
+        a {
+            flex: 0 0 auto; 
+        }
+    }
+}
+
+.footer-bottom {
     background-color: $colour-secondary;
     color: $white;
 }

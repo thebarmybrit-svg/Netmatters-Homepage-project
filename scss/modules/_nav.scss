@@ -24,12 +24,12 @@
         list-style-type: none;
         align-items: center;   
         text-align: center; 
-        transition-duration: $trns-duration;
         .nav-header{
             padding-top: em(10px);
             text-decoration: none;
             background-color: transparent;
-            margin-bottom: 10px; 
+            margin-bottom: 10px;
+             position: relative;
             &, p, strong{        
                 color: $white;
                 display: block;
@@ -99,41 +99,40 @@
         
 
         @include mq(small){
-            
-             &.theme{
-                    @include bg-colour-hover($ui-colors);
-                }
+            &.theme{
+                @include bg-colour-hover($ui-colors);
+                @include border-colours-hover($ui-colors);
+            }
 
-                &:hover{
-                    transition-duration: $trns-duration;
-                    .nav-header{
-                        position: relative; 
-                        z-index: 10001;
-                        &::after{
-                            // @include bg-colour-hover($ui-colors);
-                            position: absolute;
-                            content: "";
-                            margin: auto;
-                            display: inline-block;
-                            border-color: currentColor transparent transparent;
-                            border-style: solid;
-                            border-width: 35px 36px 0;
-                            top: 90px;
-                            z-index: 10000;
-                            left: 0;
-                            right: 0;
-                            padding-bottom: 50px;
-                        }
-                    }
-
-                    .icon{
-                        color: $white;
-                    }                    
-                    
-                    .sub-menu-banner{
-                        display: block !important;
+            &:hover{
+                .nav-header{
+                    position: relative; 
+                    z-index: 10001;
+                    &::after{
+                        position: absolute;
+                        content: "";
+                        margin: auto;
+                        display: inline-block;
+                        border-color: transparent;
+                        border-style: solid;
+                        border-width: 40px 86px 0;
+                        top: 100%;
+                        z-index: 10005;
+                        left: 0;
+                        right: 0;
+                        width: 0;
+                        height: 0;
                     }
                 }
+
+                .icon{
+                    color: $white;
+                }                    
+                
+                .sub-menu-banner{
+                    display: block !important;
+                }
+            }
 
             .sub-menu-banner {
                 &.theme{
@@ -143,11 +142,15 @@
                 left: 0;
                 right: 0;
                 width: 100vw;
-
+                padding: 40px 0;
                 left: 50%;
                 transform: translateX(-50%); 
                 z-index: 9999;
-
+                .sub-menu-banner-title{
+                    font-size: $font-size--prim;
+                    width: 100%;
+                    font-weight: 500;
+                }
                 .sub-menu {
                     flex-direction: row;
                     margin: 0 auto;

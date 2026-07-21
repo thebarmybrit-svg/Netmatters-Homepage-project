@@ -13,12 +13,18 @@
         margin-top: 0;
         align-self: flex-start;
         h2{
-            font-size: $font-size--prim;
+            font-size: em($font-size--prim);
             font-weight: $font-weight--bold;
         }
-        .icon-star--coloured{
-                font-size: 40px;
+        .star-rating{
+            display: flex;
+            flex-direction: row;
+            .icon-star-full{
+                font-size: em(48px);
+                color: $star-yellow;
+            }
         }
+        
         .client-quote{
             font-weight: 600;
             font-size: $font-size--thrd;

@@ -142,6 +142,18 @@
 	}
 }
 
+@mixin border-colours-hover($map) {
+	@each $theme, $colour in $map {
+		&--#{$theme} {
+			&:hover {
+				.nav-header::after {
+					border-top-color: $colour;
+				}
+			}
+		}
+	}
+}
+
 // Generating :before or :after pseudo-element shapes
 
 @mixin p-el(
