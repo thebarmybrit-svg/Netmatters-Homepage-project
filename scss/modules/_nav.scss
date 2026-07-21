@@ -4,6 +4,7 @@
 
 .main-nav{
     background-color: $colour-primary;
+    overflow: visible !important;
     @include dropdown-layout();
     @include mq(small){
         @include dropdown-layout-undo();
@@ -13,6 +14,7 @@
 .nav {
     display: flex;
     margin-top: 0px;
+    
     .theme{
         background-color: $colour-primary;
     }
@@ -23,7 +25,8 @@
         align-items: center;   
         text-align: center; 
         transition-duration: $trns-duration;
-        a{
+        .nav-header{
+            padding-top: em(10px);
             text-decoration: none;
             background-color: transparent;
             margin-bottom: 10px; 
@@ -32,13 +35,15 @@
                 display: block;
                 margin: 0;
             }
+            .icon{
+                font-size: $font-size--secn;
+                @include icon-colours-by-theme($icon-themes);
+            }
         }
 
         .sub-menu-banner{
             color: $white;
             background-color: $colour-primary;
-            
-            
             .sub-menu{
                 display: flex;
                 flex-direction: column;
@@ -94,30 +99,36 @@
         
 
         @include mq(small){
+            
              &.theme{
                     @include bg-colour-hover($ui-colors);
                 }
 
                 &:hover{
                     transition-duration: $trns-duration;
-                    > a{
+                    .nav-header{
+                        position: relative; 
+                        z-index: 10001;
                         &::after{
-                            @include bg-colour-hover($ui-colors);
+                            // @include bg-colour-hover($ui-colors);
+                            position: absolute;
                             content: "";
                             margin: auto;
                             display: inline-block;
                             border-color: currentColor transparent transparent;
                             border-style: solid;
                             border-width: 35px 36px 0;
+                            top: 90px;
+                            z-index: 10000;
+                            left: 0;
+                            right: 0;
+                            padding-bottom: 50px;
                         }
                     }
 
-                    span.icon{
-                        display: none;
-                        &.hidden-all{
-                            display: inline-block !important;
-                        }
-                    }
+                    .icon{
+                        color: $white;
+                    }                    
                     
                     .sub-menu-banner{
                         display: block !important;

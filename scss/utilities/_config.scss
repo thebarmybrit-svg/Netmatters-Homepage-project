@@ -21,7 +21,7 @@ $font-weight--ultra-bold : 900;
 $base__font-size    : 16px;
 $font-size--title   : 64px; 
 $font-size--prim    : 36px;
-$font-size--secn    : 24px;
+$font-size--secn    : 23px;
 $font-size--thrd    : 20px;
 $font-size--small   : 13px;
 $base__line         : 24px;
@@ -91,7 +91,7 @@ $ui-colors: (
     sft-dev             : $star-yellow,
     google              : $google-blue,
     trustpilot          : $trustpilot-green,
-    star                : $star-yellow
+    star-full           : $star-yellow
 );
 
 //Icons Coloured 
@@ -108,65 +108,12 @@ $icons-coloured: (
     phone_in_talk       : (location: "phone_in_talk.svg", colour: $telecom-red),
     search              : (location: "search.svg", colour: $black),
     shield              : (location: "shield.svg", colour: $security-magenta),
-    star                : (location: "star-full.svg", colour: $star-yellow) ,
+    star-full           : (location: "star-full.svg", colour: $star-yellow) ,
     stats-bars          : (location: "stats-bars.svg", colour: $market-green),
     // twitter             : (location: "twitter.svg", colour: $black),
     // mouse               : (location: "mouse.svg", colour: $white), 
     // envelop             : (location: "envelop.svg", colour: $white),
     paperplane          : (location: "paperplane.svg", colour: $white)
-);
-
-
-// Icon locations
-
-$icon-locations: (
-    arrow-right         : "arrow-right.svg",
-    briefcase           : "briefcase.svg",
-    bullhorn            : "bullhorn.svg",
-    cart                : "cart.svg",
-    clipboard           : "clipboard.svg",
-    clock               : "clock.svg",
-    cloud               : "cloud.svg",
-    cloud-download      : "cloud-download.svg",
-    cogs                : "cogs.svg",
-    devices             : "devices.svg",
-    display             : "display.svg",
-    drive               : "drive.svg",
-    download            : "download.svg",
-    earth               : "earth.svg",
-    embed               : "embed.svg",
-    envelop             : "envelop.svg",
-    facebook            : "facebook.svg",
-    folder-open         : "folder-open.svg",
-    graduation-cap      : "graduation-cap.svg",
-    handshake-o         : "handshake-o.svg",
-    headphones          : "headphones.svg",
-    help                : "help.svg",
-    instagram           : "instagram.svg",
-    lab                 : "lab.svg",
-    laptop              : "laptop.svg",
-    linkedin            : "linkedin.svg",
-    locked              : "locked.svg",
-    menu                : "menu.svg",
-    meter               : "meter.svg",
-    mobile              : "mobile.svg",
-    money               : "money.svg",
-    mouse               : "mouse.svg",
-    paperplane          : "paperplane.svg",
-    pencil              : "pencil.svg",
-    people_alt          : "people_alt.svg",
-    phone               : "phone.svg",
-    phone_in_talk       : "phone_in_talk.svg",
-    phone-square        : "phone-square.svg",
-    search              : "search.svg",
-    shield              : "shield.svg",
-    shuffle             : "shuffle.svg",
-    star                : "star-full.svg",
-    stats-bars          : "stats-bars.svg",
-    transfer            : "transfer.svg",
-    ticket              : "ticket.svg",
-    trending_up         : "trending_up.svg",
-    twitter             : "twitter.svg"
 );
 
 // Icon Themes
@@ -178,7 +125,7 @@ $icon-themes: (
     display             : $dev-blue,
     phone_in_talk       : $telecom-red,
     shield              : $security-magenta,
-    star                : $star-yellow,
+    star-full           : $star-yellow,
     stats-bars          : $market-green
 );
 

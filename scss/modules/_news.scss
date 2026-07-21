@@ -65,6 +65,7 @@
         &:hover {
             top: -10px; 
             transition: $trns-duration ease;
+            cursor: pointer;
         }
 
         .item{
@@ -82,17 +83,21 @@
             }
         }
         .block{
-            padding: 0 15px;
+            padding: em(30px);
+            box-shadow: 0 3px 35px rgba(0, 0, 0, .1);
         }
         .user{
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            // flex-direction: column;
+            justify-content: left;
             align-items: center;
             width: 100%;
             border-top: 1px $black solid;
-            padding-bottom: 1.5rem;
-            margin-top: 1rem;
+            padding-top: em(30px);
+            margin-top: em(30px);
+            .details{
+                padding-left: em(20px);
+            }
         }
     }
 }

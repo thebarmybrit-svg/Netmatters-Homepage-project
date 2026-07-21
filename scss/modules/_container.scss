@@ -76,3 +76,12 @@
     width: 100%;
     height: auto;
 }
+
+// Icon container
+[class^="icon-container"]{
+    @include bg-colours($ui-colors);
+    margin: 0 auto 17px;
+    padding: 10px;
+    border-radius: $br--round;
+    color: $white;
+}

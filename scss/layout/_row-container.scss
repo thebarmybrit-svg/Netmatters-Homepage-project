@@ -4,7 +4,7 @@
 
 
 .row {
-   @extend %center-flex;
+  @extend %center-flex;
   @extend %clearfix;
   flex-wrap: wrap;
   flex-direction: column;
@@ -12,15 +12,11 @@
   // max-width: 100%;
 
   @include mq(small) {
+    flex-direction: row;
     &:has([class^="grid__col-"]){
       flex-grow: 0;
       flex-shrink: 1;
-      flex-direction: row;
     } 
-  }
- 
-  @include mq(small) {
-    flex-direction: row;
   }
 }
 

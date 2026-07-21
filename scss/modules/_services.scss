@@ -9,7 +9,6 @@
         top: 0; 
         transition: $trns-duration ease;
         width: 100%;
-        // max-width: 750px;
         flex: 0 0 100%;
         margin-top: 10px;
         &:first-child{
@@ -23,12 +22,12 @@
             }
         }
         .theme{
-            @include bg-colour-hover($ui-colors);
+            @include bg-white-to-colour($ui-colors);
             transition: $trns-duration;
         }
         h2, h3, a, a span{
             text-decoration: none;
-            color: $colour-font;
+            color: currentColor;
         }
         .h2{
             display: inline-flex;
@@ -36,9 +35,9 @@
         .btn{
             color: $white;
             margin: $g-gutter-width 0;
+            
         } 
         @include mq(medium){
-            // max-width: none;
             flex: 0 1 auto;
         }  
     }
@@ -50,25 +49,33 @@
         align-items: center;   
         text-align: center;
         height: 100%; 
-        transition-duration: $trns-duration; 
+        transition-duration: $trns-duration;
+        padding: em(30px); 
+        box-shadow: 0 3px 35px rgba(0, 0, 0, .1);
+        .icon-container{
+            @include bg-colours($ui-colors);
+        }
         .icon {
             display: block;
-            margin-bottom: 15px;
+            // margin-bottom: 15px;
+            font-size: em(32px);
+            
         }  
         &:hover{
             transition-duration: $trns-duration;
             .btn{
-                @include bg-colours-darken($ui-colors)
+                background-color: $white;
+                @include text-colours-by-theme($ui-colors);
             }
             span{
                 color: $white;
             }
-            span.icon{
-                display: none;
-                &.hidden-all{
-                    display: inline-block !important;
-                }
+            .icon-container{
+                background-color: $white;
             }
+            .icon {
+                @include icon-colours-by-theme($icon-themes);
+            }    
         }
     }
  }

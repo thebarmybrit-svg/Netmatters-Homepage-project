@@ -10,8 +10,11 @@
         grid-auto-columns: min-content;
         gap: $g-gutter-width;
         overflow-x: auto;
-        // padding-top: 350px; 
-        // margin-top: -350px;
+        &.clients{
+            padding-top: 350px; 
+            margin-top: -350px;
+        }
+       
     }
 
     .item-partner{

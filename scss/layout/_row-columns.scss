@@ -32,12 +32,13 @@
 
 [class^="row__col-"]{
   position: relative;
+  margin-bottom: $g-gutter-width;
   @include mq(small)  {
+    @include doubly(percentage($g-gutter-width / $context));
     margin-top: em(12px);
     margin-bottom: em(12px);
   }
   @include mq(medium){
-    @include doubly(percentage($g-gutter-width / $context));    
     float: left;
     min-height: 1px;
     &:last-of-type {
