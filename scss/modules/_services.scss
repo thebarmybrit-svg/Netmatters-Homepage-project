@@ -3,43 +3,106 @@
 // ==========================================================================
 
 // Our Services
- .our-services {
+.our-services {
     padding: 60px 0;
-    [class^="row__col-"]{
+    display: flex;
+    flex-wrap: wrap;
+    
+    // Negative margins on the parent pull the outer edges flush with your grid container
+    margin-left: -10px;
+    margin-right: -10px;
+
+    .services {
+        position: relative;
+        margin-bottom: $g-gutter-width;
+        
+        // Apply equal spacing to both sides of every item (Total 20px gutter between cards)
+        margin-left: 10px;
+        margin-right: 10px;
+        
+        @include mq(small)  {
+            @include doubly(percentage($g-gutter-width / $context));
+            margin-top: em(12px);
+            margin-bottom: em(12px);
+        }
+        
+        @include mq(medium){
+            min-height: 1px;
+        }
+        
         top: 0; 
         transition: $trns-duration ease;
-        width: 100%;
-        flex: 0 0 100%;
+        width: calc(100% - 20px);
+        flex: 0 0 calc(100% - 20px);
         margin-top: 10px;
+        
         &:first-child{
             max-width: 90%;
         }
-        &:not(:first-child) {
+        
+        &:not(:first-child):not(:last-child) {
             box-shadow: 0px 0px 5px 2px $colour-shadow;
+            
+            @include mq(small){
+                // Row 1, 2, 3: 1 card per row
+                flex: 0 0 calc(100% - 20px);
+                max-width: calc(100% - 20px);
+                
+                // Row 4, 5: 2 cards per row
+                &:nth-child(n+5):nth-child(-n+8) {
+                    flex: 0 0 calc(50% - 20px);
+                    max-width: calc(50% - 20px);
+                }
+            }
+            
+            @include mq(medium){
+                // Row 1: 3 cards per row
+                flex: 0 0 calc(33.333% - 20px);
+                max-width: calc(33.333% - 20px);
+                
+                // Row 2, 3: 2 cards per row
+                &:nth-child(n+5) {
+                    flex: 0 0 calc(50% - 20px);
+                    max-width: calc(50% - 20px);
+                }
+            }
+            
+            @include mq(large){
+                // Row 1: 3 cards per row
+                flex: 0 0 calc(33.333% - 20px);
+                max-width: calc(33.333% - 20px);
+                
+                // Row 2: 4 cards per row
+                &:nth-child(n+5) {
+                    flex: 0 0 calc(25% - 20px) !important;
+                    max-width: calc(25% - 20px) !important;
+                }
+            }
+            
             &:hover {
                 top: -10px; 
                 transition: $trns-duration ease;
             }
         }
+        
         .theme{
             @include bg-white-to-colour($ui-colors);
             transition: $trns-duration;
         }
+        
         h2, h3, a, a span{
             text-decoration: none;
             color: currentColor;
         }
+        
         .h2{
             display: inline-flex;
         }
+        
         .btn{
             color: $white;
             margin: $g-gutter-width 0;
-            
         } 
-        @include mq(medium){
-            flex: 0 1 auto;
-        }  
     }
     
     // Block 
@@ -52,16 +115,17 @@
         transition-duration: $trns-duration;
         padding: em(30px); 
         box-shadow: 0 3px 35px rgba(0, 0, 0, .1);
+        
         .icon-container{
             @include bg-colours($ui-colors);
         }
+        
         .icon {
             display: block;
-            // margin-bottom: 15px;
             font-size: em(32px);
             color: $white;
-            
         }  
+        
         &:hover{
             transition-duration: $trns-duration;
             .btn{
@@ -79,4 +143,4 @@
             }    
         }
     }
- }
+}

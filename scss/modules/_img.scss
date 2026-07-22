@@ -38,12 +38,13 @@
     @include m(cover) {
         display: block;
         width: 100%;
-        height: 100%;
+        height: 550px;
         object-fit: cover;
         justify-content: center;
         align-items: center; 
         @include mq(large){
-            width: fit-content;
+            height: 550px;
+            width: 100vw;
         }
     }
     @include m(site-logo){

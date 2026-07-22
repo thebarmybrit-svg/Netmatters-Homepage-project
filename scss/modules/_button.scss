@@ -8,32 +8,17 @@
     font-weight: $font-weight--medium;
     font-size: $font-size--thrd;
     text-align: center;
-    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     background-image: none;
     border: 1px solid transparent;
     border-radius: $br--default;
-    @include bg-colour-hover-darken($ui-colors);
+    @include bg-colours($ui-colors);
     text-decoration: none;
-    width: fit-content;
     padding: 0.75rem 1.5rem;
     a, p, &{
         color: $white;
     }
-    &[class^="btn--"] {
-        @extend %center-align;
-        @extend %btn;
-        margin-bottom: em(20px, 14px); 
-        @include mq(small) {
-            display:block;
-            width: 100%;
-        }
-        @include mq(medium) { 
-            width: fit-content;
-            display: inline-block;
-            @include doubly(em($g-gutter-width));
-        }
-    }
-
 }
 

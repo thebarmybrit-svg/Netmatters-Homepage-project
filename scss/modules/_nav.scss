@@ -1,12 +1,12 @@
 // ==========================================================================
-// Navigation Container
+// Navigation
 // ==========================================================================
 
 .main-nav{
     background-color: $colour-primary;
     overflow: visible !important;
     @include dropdown-layout();
-    @include mq(small){
+    @include mq(medium){
         @include dropdown-layout-undo();
     }
 }
@@ -19,13 +19,14 @@
         background-color: $colour-primary;
     }
     .nav-parent {
+        padding: em(10px) 0;
         flex: 1rem;
         height: 100%;
         list-style-type: none;
         align-items: center;   
         text-align: center; 
         .nav-header{
-            padding-top: em(10px);
+            
             text-decoration: none;
             background-color: transparent;
             margin-bottom: 10px;
@@ -98,7 +99,7 @@
 
         
 
-        @include mq(small){
+        @include mq(medium){
             &.theme{
                 @include bg-colour-hover($ui-colors);
                 @include border-colours-hover($ui-colors);
@@ -115,7 +116,7 @@
                         display: inline-block;
                         border-color: transparent;
                         border-style: solid;
-                        border-width: 40px 86px 0;
+                        border-width: 40px 69px 0;
                         top: 100%;
                         z-index: 10005;
                         left: 0;
@@ -156,6 +157,16 @@
                     margin: 0 auto;
                 }
             }    
+        }
+
+        @include mq(large){
+            &:hover{
+                .nav-header{
+                    &::after{
+                        border-width: 40px 86px 0;
+                    }
+                }
+                }
         }
     }
 }

@@ -40,6 +40,9 @@
                 color: $white;
             }
         }
+        .btn{
+            @include bg-colour-hover-darken($ui-colors);
+        }
     }
 
 }

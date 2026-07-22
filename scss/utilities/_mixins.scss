@@ -208,7 +208,7 @@
 @mixin dropdown-layout-undo(){
   display: block;
   width: auto;
-  height: auto;
+  height: 100px;
   transform: none;
   transition: none;
 }

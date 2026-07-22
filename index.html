@@ -814,16 +814,16 @@
 
             <div id="main">
                 <div class="our-services">
-                    <div class="container section">
-                        <div class="row">
-                            <div class="row__col-md--12 row__col-lg--12 clearfix">
+                    <div class="container">
+                        <div class="row ">
+                            <div class="services clearfix">
                                 <h2 class="h1 float-left-sm">Our services</h2>
-                                <a class="h2 float-right-sm" href="#">
+                                <a class="h2 float-right-sm hidden-xs" href="#">
                                     View Our Work
                                     <em class="icon icon-arrow-right"></em>
                                 </a>
                             </div>
-                            <div class="row__col-sm--12 row__col-md--3 row__col-lg--5">
+                            <div class="services">
                                 <a href="#" class="block theme--cons-dev">
                                     <span class="icon-container icon-container--cons-dev">
                                         <span class="icon icon-devices"></span>
@@ -837,7 +837,7 @@
                                     </span>
                                 </a>
                             </div>
-                            <div class="row__col-sm--12 row__col-md--3 row__col-lg--5">
+                            <div class="services">
                                 <a href="#" class="block theme--it-supp">
                                     <span class="icon-container icon-container--it-supp">
                                         <span class="icon icon-display"></span>
@@ -851,7 +851,7 @@
                                     </span>
                                 </a>
                             </div>
-                            <div class="row__col-sm--12 row__col-md--3 row__col-lg--5">
+                            <div class="services">
                                 <a href="#" class="block theme--digi-mrk">
                                     <span class="icon-container icon-container--digi-mrk">
                                         <span class="icon icon-stats-bars"></span>
@@ -865,7 +865,7 @@
                                     </span>
                                 </a>
                             </div>
-                            <div class="row__col-sm--5 row__col-md--4 row__col-lg--3">
+                            <div class="services">
                                 <a href="#" class="block theme--tele-serv">
                                     <span class="icon-container icon-container--tele-serv">
                                         <span class="icon icon-phone_in_talk"></span>
@@ -879,7 +879,7 @@
                                     </span>
                                 </a>
                             </div>
-                            <div class="row__col-sm--5 row__col-md--4 row__col-lg--3">
+                            <div class="services">
                                 <a href="#" class="block theme--web-dsner">
                                     <span class="icon-container icon-container--web-dsner">
                                         <span class="icon icon-embed"></span>
@@ -893,7 +893,7 @@
                                     </span>
                                 </a>
                             </div>
-                            <div class="row__col-sm--5 row__col-md--4 row__col-lg--3">
+                            <div class="services">
                                 <a href="#" class="block theme--cbr-scr">
                                     <span class="icon-container icon-container--cbr-scr">
                                         <span class="icon icon-shield"></span>
@@ -907,7 +907,7 @@
                                     </span>
                                 </a>
                             </div>
-                            <div class="row__col-sm--5 row__col-md--4 row__col-lg--3">
+                            <div class="services">
                                 <a href="#" class="block theme--dev-train">
                                     <span class="icon-container icon-container--dev-train">
                                         <span class="icon icon-graduation-cap"></span>
@@ -921,7 +921,12 @@
                                     </span>
                                 </a>
                             </div>
-                            
+                            <div class="services hidden-sm hidden-md hidden-lg">
+                                <a class="h2 float-right-sm" href="#">
+                                    View Our Work
+                                    <em class="icon icon-arrow-right"></em>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1380,157 +1385,160 @@
             </div>
 
             <footer>
-                <div class="container">
-                    <div class="footer-menu">
-                        <div class="footer-row">
-                            <div class="footer-logo-container">
-                                <a href="#">
-                                    <img class="img--footer-logo" src="img/logos/nm-logo-white-med.webp" alt="NetMatters Logo">
-                                </a>
+                <div class="footer-menu">
+                    <div class="container">
+                        <div class="row">
+                            <div class="footer-row">
+                                <div class="footer-logo-container">
+                                    <a href="#">
+                                        <img class="img--footer-logo" src="img/logos/nm-logo-white-med.webp" alt="NetMatters Logo">
+                                    </a>
+                                </div>
+                                <h3>Follow Us On:</h3>
+                                <div class="footer-social-logos">
+                                    <a class="facebook btn--facebook" href="#" target="_blank" rel="noopener">
+                                        <span class="icon-facebook"></span>
+                                    </a>
+                                    <a class="linkedin btn--linkedin" href="#" target="_blank" rel="noopener">
+                                        <span class="icon-linkedin"></span>
+                                    </a>
+                                    <a class="twitter btn--twitter" href="#" target="_blank" rel="noopener">
+                                        <span class="icon-twitter"></span>
+                                    </a>
+                                    <a class="instagram btn--instagram" href="#" target="_blank" rel="noopener">
+                                        <span class="icon-instagram"></span>
+                                    </a>
+                                </div>
                             </div>
-                            <h3>Follow Us On:</h3>
-                            <div class="footer-social-logos">
-                                <a class="facebook btn--primary" href="#" target="_blank" rel="noopener">
-                                    <span class="icon-facebook"></span>
-                                </a>
-                                <a class="linkedin btn--primary" href="#" target="_blank" rel="noopener">
-                                    <span class="icon-linkedin"></span>
-                                </a>
-                                <a class="twitter btn--primary" href="#" target="_blank" rel="noopener">
-                                    <span class="icon-twitter"></span>
-                                </a>
-                                <a class="instergram btn--primary" href="#" target="_blank" rel="noopener">
-                                    <span class="icon-instagram"></span>
-                                </a>
+                            <div class="footer-row">
+                                <h4>About Netmatters</h4>
+                                <ul>
+                                    <li class=" ">
+                                        <a href="#">News</a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">Our Careers</a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">Our Team</a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">Contact Us</a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">Privacy Policy</a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">Cookie Policy</a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">Data Retention</a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">CCTV Policy</a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">Environmental Policy</a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">Sexual Harassment Policy</a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">Modern Slavery Statement</a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">Terms & Conditions</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="footer-row">
+                                <h4>Our Services</h4>
+                                <ul>
+                                    <li class=" ">
+                                        <a href="#">Bespoke Software</a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">IT Support</a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">Digital Marketing</a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">Telecoms Services</a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">Web Design</a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">Cyber Security</a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">Developer Training</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="footer-row">
+                                <h4>Our Industries</h4>
+                                <ul>
+                                    <li class=" ">
+                                        <a href="#">Financial Services</a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">Construction</a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">Retail & E-Commerce</a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">Non-Profits</a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">SME's</a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">Healthcare</a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">Education & Training</a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">Travel & Leisure</a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">Manufacturing & Offshore</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="footer-row">
+                                <h4>Locations</h4>
+                                <ul>
+                                    <li class=" ">
+                                        <a href="#">Cambridge Office</a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">Wymondham Office</a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="#">Great Yarmouth Office</a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
-                        <div class="footer-row">
-                            <h4>About Netmatters</h4>
-                            <ul>
-                                <li class=" ">
-                                    <a href="#">News</a>
-                                </li>
-                                <li class=" ">
-                                    <a href="#">Our Careers</a>
-                                </li>
-                                <li class=" ">
-                                    <a href="#">Our Team</a>
-                                </li>
-                                <li class=" ">
-                                    <a href="#">Contact Us</a>
-                                </li>
-                                <li class=" ">
-                                    <a href="#">Privacy Policy</a>
-                                </li>
-                                <li class=" ">
-                                    <a href="#">Cookie Policy</a>
-                                </li>
-                                <li class=" ">
-                                    <a href="#">Data Retention</a>
-                                </li>
-                                <li class=" ">
-                                    <a href="#">CCTV Policy</a>
-                                </li>
-                                <li class=" ">
-                                    <a href="#">Environmental Policy</a>
-                                </li>
-                                <li class=" ">
-                                    <a href="#">Sexual Harassment Policy</a>
-                                </li>
-                                <li class=" ">
-                                    <a href="#">Modern Slavery Statement</a>
-                                </li>
-                                <li class=" ">
-                                    <a href="#">Terms & Conditions</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="footer-row">
-                            <h4>Our Services</h4>
-                            <ul>
-                                <li class=" ">
-                                    <a href="#">Bespoke Software</a>
-                                </li>
-                                <li class=" ">
-                                    <a href="#">IT Support</a>
-                                </li>
-                                <li class=" ">
-                                    <a href="#">Digital Marketing</a>
-                                </li>
-                                <li class=" ">
-                                    <a href="#">Telecoms Services</a>
-                                </li>
-                                <li class=" ">
-                                    <a href="#">Web Design</a>
-                                </li>
-                                <li class=" ">
-                                    <a href="#">Cyber Security</a>
-                                </li>
-                                <li class=" ">
-                                    <a href="#">Developer Training</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="footer-row">
-                            <h4>Our Industries</h4>
-                            <ul>
-                                <li class=" ">
-                                    <a href="#">Financial Services</a>
-                                </li>
-                                <li class=" ">
-                                    <a href="#">Construction</a>
-                                </li>
-                                <li class=" ">
-                                    <a href="#">Retail & E-Commerce</a>
-                                </li>
-                                <li class=" ">
-                                    <a href="#">Non-Profits</a>
-                                </li>
-                                <li class=" ">
-                                    <a href="#">SME's</a>
-                                </li>
-                                <li class=" ">
-                                    <a href="#">Healthcare</a>
-                                </li>
-                                <li class=" ">
-                                    <a href="#">Education & Training</a>
-                                </li>
-                                <li class=" ">
-                                    <a href="#">Travel & Leisure</a>
-                                </li>
-                                <li class=" ">
-                                    <a href="#">Manufacturing & Offshore</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="footer-row">
-                            <h4>Locations</h4>
-                            <ul>
-                                <li class=" ">
-                                    <a href="#">Cambridge Office</a>
-                                </li>
-                                <li class=" ">
-                                    <a href="#">Wymondham Office</a>
-                                </li>
-                                <li class=" ">
-                                    <a href="#">Great Yarmouth Office</a>
-                                </li>
-                            </ul>
+                        
+                    </div>
+                    
+                </div>
+                <div class="footer-bottom">
+                    <div class="container">
+                        <div class="license">
+                            &copy; Copyright Netmatters 2025. 
+                            <br class="visible-xs">
+                            All rights reserved. - 
+                            <a href="#">Sitemap</a>                        
                         </div>
                     </div>
                 </div>
             </footer>
-            
-            <div class="footer-bottom">
-                <div class="container container-footer-bottom">
-                    <div class="license">
-                        &copy; Copyright Netmatters 2025. 
-                        <br class="visible-xs">
-                        All rights reserved. - 
-                        <a href="#">Sitemap</a>                        
-                    </div>
-                </div>
-            </div>
         </div>
     </body>
 </html>

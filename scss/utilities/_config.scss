@@ -51,6 +51,10 @@ $training-brown         : #ce4125;
 $google-blue            : #4387f6;
 $trustpilot-green       : #00b67b;
 $star-yellow            : #ffa500;
+$facebook-blue          : #3b5998;
+$linkedin-blue          : #0077b5;
+$twitter-blue           : #00aced;
+$instagram-purple       : #d93175;
 
 // Colour usage
 
@@ -78,7 +82,7 @@ $color-palettes: (
 	)
 );
 
-// UI Colors
+// UI Colours
 
 $ui-colors: (
 	primary             : $colour-primary,
@@ -95,7 +99,18 @@ $ui-colors: (
     google              : $google-blue,
     trustpilot          : $trustpilot-green,
     star-full           : $star-yellow
+    
 );
+
+// Social Colours
+
+$social-colors: (
+    facebook            : $facebook-blue,
+    linkedin            : $linkedin-blue,
+    twitter             : $twitter-blue,
+    instagram           : $instagram-purple
+);
+
 
 // Icon Themes
 

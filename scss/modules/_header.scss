@@ -5,7 +5,7 @@
 #header {
     background-color: $white;
     border-bottom: 1px solid #ccc; 
-
+    
     .inner {
         padding: 15px 15px 20px 15px; 
     }
@@ -32,7 +32,7 @@
 
         .icon-phone_in_talk {
             color: $colour-primary;
-            font-size: 32px;
+            font-size: 46px;
         }
     }
 
@@ -93,7 +93,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-
+            cursor: pointer;
             .icon-search {
                 font-size: 22px;
                 color: #1e293b;
@@ -127,7 +127,8 @@
             flex-direction: row;
             gap: 12px;
 
-            a.btn {
+            .btn {
+                @include bg-colour-hover-darken($ui-colors);
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
@@ -179,6 +180,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                cursor: pointer;
             }
         }
         
