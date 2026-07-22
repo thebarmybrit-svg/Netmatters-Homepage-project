@@ -126,6 +126,7 @@
     background-color: $colour-secondary;
     color: $white;
     .license{
+        font-size: em(13px);
         align-self: flex-start;
     }
 }

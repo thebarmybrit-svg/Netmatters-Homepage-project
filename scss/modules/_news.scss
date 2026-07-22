@@ -4,18 +4,11 @@
 
 .latest-articles{
     padding-top: 60px;
-    .headings-container{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        .h1{
-            margin-right: auto;
-        }
-    }
-    .h2{
+   
+    .h1, .h2{
         display: inline-flex;
     }
-    h2, h3, h3 a{
+    h2, a{
         color: $colour-font;
     }
     .btn{
@@ -53,7 +46,7 @@
     }
 
     [class^="row__col-"]{
-        top: 0; 
+        &:not(:first-child){top: 0; 
         display: grid;
         transition: $trns-duration ease;
         align-self: stretch;
@@ -97,6 +90,7 @@
             .details{
                 padding-left: em(20px);
             }
-        }
+        }}
+        
     }
 }

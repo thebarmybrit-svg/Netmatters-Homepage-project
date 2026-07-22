@@ -22,7 +22,7 @@ $base__font-size    : 16px;
 $font-size--title   : 64px; 
 $font-size--prim    : 36px;
 $font-size--secn    : 23px;
-$font-size--thrd    : 20px;
+$font-size--thrd    : 16px;
 $font-size--small   : 13px;
 $base__line         : 24px;
 $letter-space       : 1px;
@@ -116,9 +116,9 @@ $social-colors: (
 
 $icon-themes: (
     graduation-cap      : $training-brown,
-    devices             : $it-blue,
+    devices             : $dev-blue,
     embed               : $webdev-lavander,
-    display             : $dev-blue,
+    display             : $it-blue,
     phone_in_talk       : $telecom-red,
     shield              : $security-magenta,
     star-full           : $star-yellow,

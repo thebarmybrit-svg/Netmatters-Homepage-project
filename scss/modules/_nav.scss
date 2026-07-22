@@ -31,7 +31,7 @@
             background-color: transparent;
             margin-bottom: 10px;
              position: relative;
-            &, p, strong{        
+            &, p, small{        
                 color: $white;
                 display: block;
                 margin: 0;
@@ -55,7 +55,7 @@
                 text-align: left;
                 padding: 0;
                 .sub-menu-banner-title{
-                    font-size: $font-size--secn;
+                    font-size: $font-size--prim;
                     font-weight: $font-weight--bold;
                     text-align: left;
                     flex-basis: 100%;
@@ -72,7 +72,6 @@
 
                     &--sub-menu{
                         flex: 0 0 32%;
-                        font-size: $font-size--thrd;
                         text-align: left;
                     }
 

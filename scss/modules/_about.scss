@@ -34,11 +34,15 @@
             color: $white;
             .client-quote-author{
                 color: $dev-blue;
+                a{
+                    color: $white;
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
             }
-            a{
-                text-decoration: none;
-                color: $white;
-            }
+            
+            
         }
         .btn{
             @include bg-colour-hover-darken($ui-colors);

@@ -7,16 +7,12 @@
     padding: 60px 0;
     display: flex;
     flex-wrap: wrap;
-    
-    // Negative margins on the parent pull the outer edges flush with your grid container
     margin-left: -10px;
     margin-right: -10px;
 
     .services {
         position: relative;
         margin-bottom: $g-gutter-width;
-        
-        // Apply equal spacing to both sides of every item (Total 20px gutter between cards)
         margin-left: 10px;
         margin-right: 10px;
         
