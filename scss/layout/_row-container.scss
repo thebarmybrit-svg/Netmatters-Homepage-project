@@ -7,12 +7,10 @@
   @extend %center-flex;
   @extend %clearfix;
   flex-wrap: wrap;
-  flex-direction: column;
   width: 100%;
-  // max-width: 100%;
-
+  padding: 0 0 10px;
+  
   @include mq(small) {
-    flex-direction: row;
     &:has([class^="grid__col-"]){
       flex-grow: 0;
       flex-shrink: 1;

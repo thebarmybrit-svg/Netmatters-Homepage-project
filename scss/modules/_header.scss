@@ -2,165 +2,186 @@
 // Header Bar
 // ==========================================================================
 
-#header{
+#header {
     background-color: $white;
-    .inner{
-        padding: em(20px) 0px;
+    border-bottom: 1px solid #ccc; 
+
+    .inner {
+        padding: 15px 15px 20px 15px; 
     }
-    .container{
-        // width: 100% !important;
+
+    .logo-container {
+        margin-right: auto;
+        
+        a {
+            display: flex;
+            width: 100%;
+            
+            img {
+                height: 60px;
+                width: auto;
+            }
+        }
+    }
+
+    // Phone Container adjacent to the hamburger button
+    .mobile-container {
         display: flex;
-        flex-direction: column; 
-        max-width: 100vw !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        min-width: 0;
+        align-items: center;
+        margin-right: 20px;
 
-        .row{
-            flex-direction: row;
-            flex-wrap: nowrap;
-            padding: 0;
-            // margin-right: 0;
+        .icon-phone_in_talk {
+            color: $colour-primary;
+            font-size: 32px;
         }
-        .actions{
-            display: flex;
-            float: right;
-            flex: 0 0 auto; 
-            width: max-content;
-            // justify-items: start;
-            @include mq(small){
-                gap: $g-gutter-width;
-                padding: 7px 0px;
-            }
-            @include mq(medium){
-                
-            }
-        }
-
-        .logo-container{
-            margin-right: auto;
-            a{
-                display: flex;
-                flex: 0 1 $logo-size__main--width;
-                min-width: $logo-size__main--width/1.5;
-                width: 100%;
-
-            }
-        }
-
-        a, label {
-            text-align: center;
-            align-items: center;   
-            justify-content: center; 
-        }
-        .btn-group{
-            display: flex;
-            flex-direction: row;
-            a.btn{
-                border-radius: 0px;
-                font-weight: $font-weight--bold;
-                padding: 0 10px;
-                margin-left: em(20px);
-                gap: 10px;
-                border-radius: $br--default;
-            }
-        }
-        label.btn{
-            max-width: $icon-size__standard;
-            float: right;
-        }
-        .mobile-container {
-            // margin-left: auto;
-            .icon{
-                width: $icon-size__large;
-                height: 100%;
-                float: right;
-            }
-        }
-
-    }
-   
-}
-
-.search_form {
-    display: inline-flex;
-    flex-wrap: nowrap;
-    position: relative;
-    .search_input {
-        background-color: $white;
-        min-width: 0;
-        width: 100%;
-        padding-right: 45px;
-        border-radius: $br--default;
-        transition: all $trns-duration ease;
     }
 
-    .search-submit, .search-click-target{
-        background-color: $white;
-        flex: 0 0 auto;
+    // Hamburger Mobile Menu Button Frame
+    label.btn {
         display: flex;
         align-items: center;
         justify-content: center;
-
-        position: absolute;
-        padding: 0;
-        right: 1px;
-        top: 1px;
-        bottom: 1px;
-        width: 40px;
-        border: none;
-        border-radius: $br--default;
-
-        cursor: pointer;
+        background-color: $colour-primary;
+        border-radius: 4px;
+        width: $font-size--title;
+        height: $font-size--title;
         
-    }
-
-    @include mq(small){
-        position: static; 
-        gap: 5px;
-        .search_input {
-            width: auto;
-            flex: 1;
-            padding-right: 12px;
-            border-radius: 0;
-        }
-
-        .search-submit {
-            transition: $trns-duration;
-            background-color: $dev-blue;
-            position: static; 
-            width: auto;
-            padding: 0 20px;
-            border: 1px $black solid;
-            border-radius: 0;
-
-            &:hover{
-                transition: $trns-duration;
-                background-color: darken($dev-blue, 20%);
+        .btn--hamburger {
+            display: flex;
+            
+            .icon-menu {
+                color: $white;
+                font-size: 32px;
             }
         }
     }
+
+    .search-form-wrapper--mobile {
+        display: block;
+        width: 100%;
+
+        .search_form {
+            display: flex;
+            position: relative;
+            width: 100%;
+        }
+
+        .search-bar {
+            width: 100%;
+            height: $font-size--title;
+            background-color: #e5e7eb;
+            border: 2px solid #cbd5e1;
+            border-radius: 3px;
+            padding: 0 50px 0 16px;
+            font-size: 16px;
+            color: #64748b;
+            outline: none;
+
+            &::placeholder {
+                color: $grey;
+            }
+        }
+
+        .search-submit {
+            position: absolute;
+            right: 2px;
+            top: 2px;
+            bottom: 2px;
+            width: 44px;
+            background: transparent;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .icon-search {
+                font-size: 22px;
+                color: #1e293b;
+            }
+        }
+    }
+
+    
+    @include mq(small) {
+        .inner {
+            padding: em(20px) 0px 0px 0px;
+        }
+        .logo-container {
+            a img {
+                height: $font-size--title;
+            }
+        }
+        .actions-container {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+
+            .actions {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+        }
+        .btn-group {
+            display: flex;
+            flex-direction: row;
+            gap: 12px;
+
+            a.btn {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                padding: 12px 24px;
+                font-size: 18px;
+                font-weight: $font-weight--bold;
+                text-transform: uppercase;
+                color: $white;
+                border-radius: $br--default;
+                text-decoration: none;
+                height: $font-size--title;
+
+                p {
+                    margin: 0;
+                }
+
+                span {
+                    font-size: 16px;
+                }
+            }
+        }
+        .search_form {
+            display: flex;
+            align-items: center;
+            position: relative;
+            height: $font-size--title;
+            .search_input {
+                background-color: $white;
+                border: 1px solid #cbd5e1;
+                border-right: none;
+                border-top-left-radius: $br--default;
+                border-bottom-left-radius: $br--default;
+                height: 100%;
+                width: 200px;
+                padding: 0 15px;
+                font-size: 14px;
+                outline: none;
+            }
+            .search-submit {
+                position: static; 
+                background-color: $grey;
+                color: $white;
+                border: 1px solid $grey;
+                border-top-right-radius: $br--default;
+                border-bottom-right-radius: $br--default;
+                width: $font-size--title;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        
+    }
 }
 
-.search-form-wrapper--mobile{
-    width: 90vw;
-    order: 1;
-    .search_form {
-        display: flex;
-        width: 100%;
-    }
-    .search-bar{
-        height: 50px;
-        border-bottom: 2px solid $black;
-    }
-    .search-submit{
-        border-radius: 0;
-        border-top: 1px solid $black;
-        border-right: 1px solid $black;
-        border-bottom: 1px solid $black;
-    }
-    .search-bar, .search-submit {
-        flex-grow: 1;
-        background-color: $grey;
-    }
-}

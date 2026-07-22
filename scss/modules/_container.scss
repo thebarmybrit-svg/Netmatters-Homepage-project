@@ -27,13 +27,14 @@
 
 //primary container
 .container{
-    display: grid;
-    grid-template-columns: auto;
+    display: flex;
+    flex-direction: column; 
+    max-width: 100vw;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 0;
     margin: 0px auto;
     padding: 0px 15px;
-    grid-gap: $g-gutter-width;
-    grid-auto-flow: column;
-    grid-auto-columns: 1fr;
     align-items: center;
     
     @include mq(micro){
@@ -41,7 +42,6 @@
     }
     @include mq(small){
         width: $brkpoint-sm;
-        grid-template-columns: repeat(auto-fit, minmax($g-col-width, 1fr));
     }
 
      @include mq(medium){

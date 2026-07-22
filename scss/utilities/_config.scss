@@ -27,11 +27,14 @@ $font-size--small   : 13px;
 $base__line         : 24px;
 $letter-space       : 1px;
 
+// Define a uniform height variable for the layout elements
+$header-el-height: 48px;
+
 // Descriptive Base Colors
 
 $white : #f5f5f5;
 $black : #0b0b0b;
-$grey  : #e5e5e5;
+$grey  : #94a3b8;
 
 
 $deep-steel-blue        : #323544;
@@ -92,28 +95,6 @@ $ui-colors: (
     google              : $google-blue,
     trustpilot          : $trustpilot-green,
     star-full           : $star-yellow
-);
-
-//Icons Coloured 
-$icons-coloured: (
-	arrow-right         : (location: "arrow-right.svg", colour: $black ),
-    devices             : (location: "devices.svg", colour: $it-blue),
-    embed               : (location: "embed.svg", colour: $webdev-lavander),
-    // facebook            : (location: "facebook.svg", colour: $black ),
-    graduation-cap      : (location: "graduation-cap.svg", colour: $training-brown),
-    // instagram           : (location: "instagram.svg", colour: $black ),
-    display              : (location: "display.svg", colour: $dev-blue),
-    // linkedin            : (location: "linkedin.svg", colour: $black ),
-    menu                : (location: "menu.svg", colour: $black),
-    phone_in_talk       : (location: "phone_in_talk.svg", colour: $telecom-red),
-    search              : (location: "search.svg", colour: $black),
-    shield              : (location: "shield.svg", colour: $security-magenta),
-    star-full           : (location: "star-full.svg", colour: $star-yellow) ,
-    stats-bars          : (location: "stats-bars.svg", colour: $market-green),
-    // twitter             : (location: "twitter.svg", colour: $black),
-    // mouse               : (location: "mouse.svg", colour: $white), 
-    // envelop             : (location: "envelop.svg", colour: $white),
-    paperplane          : (location: "paperplane.svg", colour: $white)
 );
 
 // Icon Themes
