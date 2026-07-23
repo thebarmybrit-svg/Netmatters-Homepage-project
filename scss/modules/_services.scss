@@ -5,40 +5,71 @@
 // Our Services
 .our-services {
     padding: 60px 0;
-    display: flex;
-    flex-wrap: wrap;
+
     margin-left: -10px;
     margin-right: -10px;
 
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+    
+
     .services {
+        display: block;
         position: relative;
         margin-bottom: $g-gutter-width;
         margin-left: 10px;
         margin-right: 10px;
-        
-        @include mq(small)  {
-            @include doubly(percentage($g-gutter-width / $context));
-            margin-top: em(12px);
-            margin-bottom: em(12px);
-        }
-        
-        @include mq(medium){
-            min-height: 1px;
-        }
-        
         top: 0; 
         transition: $trns-duration ease;
         width: calc(100% - 20px);
         flex: 0 0 calc(100% - 20px);
         margin-top: 10px;
         
+        &-link{
+            .icon-arrow-right{
+                padding: 0;
+            }
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+
+        .theme{
+            @include bg-white-to-colour($ui-colors);
+            transition: $trns-duration;
+            width: 100%;
+        }
+        
+        h2, h3, a, a span{
+            text-decoration: none;
+            color: $colour-font;
+        }
+        
+        .h2{
+            display: inline-flex;
+        }
+        
+        .btn{
+            color: $white;
+            margin-top: auto;
+        } 
+
+
         &:first-child{
             max-width: 90%;
         }
         
         &:not(:first-child):not(:last-child) {
+            display: flex;
+            flex-direction: column;
             box-shadow: 0px 0px 5px 2px $colour-shadow;
-            
+            .btn-container{
+                margin-top: auto;
+            }
+
             @include mq(small){
                 // Row 1, 2, 3: 1 card per row
                 flex: 0 0 calc(100% - 20px);
@@ -81,37 +112,31 @@
             }
         }
         
-        .theme{
-            @include bg-white-to-colour($ui-colors);
-            transition: $trns-duration;
+        
+
+        @include mq(small)  {
+            @include doubly(percentage($g-gutter-width / $context));
+            margin-top: em(12px);
+            margin-bottom: em(12px);
         }
         
-        h2, h3, a, a span{
-            text-decoration: none;
-            color: currentColor;
+        @include mq(medium){
+            min-height: 1px;
         }
-        
-        .h2{
-            display: inline-flex;
-        }
-        
-        .btn{
-            color: $white;
-            margin: $g-gutter-width 0;
-        } 
     }
     
-    // Block 
     .block {
         display: flex;
         flex-direction: column; 
+        flex-grow: 1;
         align-items: center;   
         text-align: center;
         height: 100%; 
+        width: 100%;
         transition-duration: $trns-duration;
         padding: em(30px); 
         box-shadow: 0 3px 35px rgba(0, 0, 0, .1);
-        
+        gap: $g-gutter-width;
         .icon-container{
             @include bg-colours($ui-colors);
         }
@@ -126,7 +151,11 @@
             transition-duration: $trns-duration;
             .btn{
                 background-color: $white;
+                // color: inherit;
                 @include text-colours-by-theme($ui-colors);
+                &--star-full{
+                    color: $dev-blue;
+                }
             }
             span{
                 color: $white;

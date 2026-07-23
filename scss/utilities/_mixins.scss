@@ -86,7 +86,7 @@
 	@each $theme, $colour in $map {
 		&--#{$theme} {
       background-color: $colour;
-      transition: background-color $trns-duration ease;
+      // transition: background-color $trns-duration ease;
       &:hover{
         background-color: darken($colour, 20%);  
       }
@@ -98,7 +98,7 @@
   @each $theme, $colour in $map {
 		&--#{$theme} {
       background-color: $white;
-      transition: background-color $trns-duration ease;
+      // transition: background-color $trns-duration ease;
       &:hover{
         background-color: $colour;
       }
@@ -118,7 +118,7 @@
   @each $theme, $colour in $map {
 		&--#{$theme} {
       color: $white;
-      transition: color $trns-duration ease;
+      // transition: color $trns-duration ease;
       &:hover{
         color: $colour;
       }

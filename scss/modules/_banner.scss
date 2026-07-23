@@ -6,27 +6,33 @@
 #banner{
     background-color: $colour-primary;
     width: fit-content;
+    .content{
+        background-color: rgba(0, 0, 0, 0.3);
+    }
     .item{
         position: relative;
         width: 100%;
         overflow: hidden;
     }
 
-    .text{
-        background-color: rgba(0, 0, 0, 0.5);
+    .text {
+        text-align: center;
         p{
             color: $white;
         }
     }
     
-    h1{
-        font-size: em($font-size--prim, 24px);
-    }
+    // h1{
+    //     font-size: em($font-size--prim, 24px);
+    // }
     .btn{
         margin: 0 auto;
         @include bg-colour-hover-darken($ui-colors);
     }
     @include mq(small){
+        .text {
+            text-align: left;
+        }
         h1{
             font-size: $font-size--prim;
         }

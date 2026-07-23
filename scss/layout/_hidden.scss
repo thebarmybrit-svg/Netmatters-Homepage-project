@@ -48,10 +48,6 @@
                 transform: translateX(0);
                 display: block !important;
             }
-            // ~ .dropdown-nav {
-            //     transform: translateX(0);
-            //     display: block !important;
-            // }
             & + .btn--primary .icon-menu {
                 background-image: none;
                 background-color: $security-magenta;
@@ -69,10 +65,6 @@
             ~ #container{
                 grid-template-columns: 1fr #{300px};
             }
-            // ~ .dropdown-nav{
-            //     transform: translateX(0);
-            //     display: block !important;
-            // }
             & + .btn--primary .icon-menu {
                 background-image: none;
                 background-color: $security-magenta;

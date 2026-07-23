@@ -4,9 +4,8 @@
 
 .latest-articles{
     padding-top: 60px;
-   
-    .h1, .h2{
-        display: inline-flex;
+    .headings-container a:hover{
+        text-decoration: underline;
     }
     h2, a{
         color: $colour-font;
@@ -27,10 +26,10 @@
             padding: 2px 5px;
             &:hover{
                 text-decoration: underline;
+                cursor: pointer;
             }
             a{
                 font-size: $font-size--small;
-
             } 
         }
 
@@ -46,7 +45,12 @@
     }
 
     [class^="row__col-"]{
-        &:not(:first-child){top: 0; 
+        .icon-arrow-right{
+            padding: 0;
+        }
+
+        &:not(:first-child):not(:last-child){
+        top: 0; 
         display: grid;
         transition: $trns-duration ease;
         align-self: stretch;
@@ -61,6 +65,8 @@
             cursor: pointer;
         }
 
+            
+        
         .item{
             height: 100%;
             display: flex;
@@ -68,6 +74,14 @@
             justify-content: center;
             align-items: center;
             max-width: 100%; 
+            .article-link{
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 1;
+            }
             img {
                 max-width: 100%;
                 height: auto;

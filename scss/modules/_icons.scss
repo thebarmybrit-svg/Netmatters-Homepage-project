@@ -2,24 +2,22 @@
 // Icons
 // ==========================================================================
 
-// .icon{
-//     @include icons($icon-locations, em($icon-size__standard), em($icon-size__standard));
-//     @include icons-coloured($icons-coloured, em($icon-size__standard), em($icon-size__standard));
-//     @include icons-whiten($icon-locations, em($icon-size__standard), em($icon-size__standard));
-//     margin-top: 10px;
-// }
-
 .icon-arrow-right{
-    margin-top: 5px;
-    margin-left: 10px;
+    padding-left: 10px;
     float: none !important; 
 }
 
 .icon-search{
+    font-size: 22px;
     margin: 5px;
 }
 
-// .hidden-checkbox:checked + .icon-menu {
-//     transition: $trns-duration;
-//     background-image: url('#{$path-img-icon--rel}/cross.svg');
-// }
+.icon-menu {
+    font-size: 32px;
+    color: $white;
+}
+
+.icon-star-full{
+    font-size: em(48px);
+    color: $star-yellow;
+}
