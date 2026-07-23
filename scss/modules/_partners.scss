@@ -25,6 +25,7 @@
             bottom: 100%;
             left: -200px;
             right: -200px;
+            z-index: 3;
 
             .box{
                 background-color: $meteorite-blue;
@@ -47,14 +48,11 @@
                     font-size: .8125rem;
                     line-height: 1.375rem;
                     margin-bottom: 5px;
-                    a{
-                        color: $white;
-                        text-decoration: none;
-                        &:hover{
-                            text-decoration: underline;
-                        }
-                    }
+                    
                 }
+                .btn{
+                       @include bg-colour-hover-darken($ui-colors);
+                    }
             }
             .arrow{
                 position: absolute;

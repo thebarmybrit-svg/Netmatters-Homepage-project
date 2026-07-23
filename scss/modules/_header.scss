@@ -182,5 +182,20 @@
         }
         
     }
+    @include mq(medium){
+        .search_form{
+            .search-submit{
+                border-radius: $br--default;
+            }
+        }
+    }
+    @include mq(large){
+        .search_form{
+            .search-submit{
+                border-bottom-left-radius: 0px;
+                border-top-left-radius: 0px;
+            }
+        }
+    }
 }
 

@@ -13,7 +13,6 @@
             float: left;
         }
     }
-    
 }
 
 .float-right{
@@ -27,6 +26,13 @@
         @include mq(small){
             float: right;
         }
-    }
-    
+    }   
+}
+
+.margin-right{
+    margin-right: auto;
+}
+
+.margin-left{
+    margin-left: auto;
 }

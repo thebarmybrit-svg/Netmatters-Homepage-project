@@ -11,10 +11,9 @@
   padding: 0 0 10px;
   
   @include mq(small) {
-    &:has([class^="grid__col-"]){
-      flex-grow: 0;
-      flex-shrink: 1;
-    } 
+    flex-direction: row;
+    flex-grow: 0;
+    flex-shrink: 0;
   }
 }
 
