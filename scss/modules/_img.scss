@@ -11,8 +11,8 @@
     }
     
     @include m(standard) {
-        width: 100%;
-        height: auto;
+        // width: 100%;
+        height: 275px;
         border: 1px solid palette(grey, x-light);
         border-radius: $br--default;
         object-fit: cover;

@@ -30,9 +30,29 @@
 }
 
 .margin-right{
-    margin-right: auto;
+    &-xs {
+        @include mq(micro){
+            margin-right: auto;
+        }
+    }
+    &-sm {
+        @include mq(small){
+            margin-right: auto;
+        }
+    }
+    
 }
 
 .margin-left{
-    margin-left: auto;
+     &-xs {
+        @include mq(micro){
+            margin-left: auto;
+        }
+    }
+    &-sm {
+        @include mq(small){
+            margin-left: auto;
+        }
+    }
+    
 }

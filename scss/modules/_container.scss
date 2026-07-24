@@ -33,23 +33,23 @@
     margin-left: auto;
     margin-right: auto;
     min-width: 0;
-    margin: 0px auto;
-    padding: 0px 15px;
+    // margin: 0px auto;
+    // padding: 0px 15px;
     align-items: center;
     
     @include mq(micro){
-        min-width: $brkpoint-sm/1.5;
+        min-width: $brkpoint-mob;
     }
     @include mq(small){
-        width: $brkpoint-sm;
+        width: $brkpoint-sm - 10px;
     }
 
      @include mq(medium){
-        width: $brkpoint-md;
+        width: $brkpoint-md - 10px;
     }
 
      @include mq(large){
-        width: $brkpoint-lg;
+        width: $brkpoint-lg - 10px;
     }
 
 }
@@ -84,4 +84,20 @@
     padding: 10px;
     border-radius: $br--round;
     color: $white;
+}
+
+//Button container
+.btn-container{
+    margin-top: auto;
+    &-duo{
+        display: flex;
+        flex-direction: column;
+        gap: $g-gutter-width;
+        @include mq(medium){
+            flex-direction: row;
+        }
+        .btn{
+            width: fit-content;
+        }
+    }
 }

@@ -5,7 +5,6 @@
 .footer-menu {
     display: flex;
     flex-wrap: wrap;
-    padding-left: $g-gutter-width;
     padding-bottom: $g-gutter-width;
     row-gap: em(30px);
     
@@ -125,8 +124,13 @@
 .footer-bottom {
     background-color: $colour-secondary;
     color: $white;
+    padding: 0 15px;
     .license{
+        display: flex;
+        flex-direction: row;
         font-size: em(13px);
         align-self: flex-start;
+        gap: em(13px);
+        p {color: $white;}
     }
 }

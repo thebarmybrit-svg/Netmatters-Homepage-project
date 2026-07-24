@@ -5,23 +5,15 @@
 #header {
     background-color: $white;
     border-bottom: 1px solid #ccc; 
-    
+    .row{
+        flex-wrap: nowrap;
+    }
     .inner {
-        padding: 15px 15px 20px 15px; 
+        padding: 15px 25px 20px 15px; 
     }
 
     .logo-container {
         margin-right: auto;
-        
-        a {
-            display: flex;
-            width: 100%;
-            
-            img {
-                height: 60px;
-                width: auto;
-            }
-        }
     }
 
     // Phone Container adjacent to the hamburger button

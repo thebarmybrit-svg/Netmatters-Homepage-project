@@ -28,6 +28,7 @@
         flex: 0 0 calc(100% - 20px);
         margin-top: 10px;
         
+        
         &-link{
             .icon-arrow-right{
                 padding: 0;
@@ -65,10 +66,9 @@
         &:not(:first-child):not(:last-child) {
             display: flex;
             flex-direction: column;
-            box-shadow: 0px 0px 5px 2px $colour-shadow;
-            .btn-container{
-                margin-top: auto;
-            }
+           box-shadow: 0px 0px 5px 2px $colour-shadow;
+        border-radius: $br--default;
+            
 
             @include mq(small){
                 // Row 1, 2, 3: 1 card per row
@@ -135,8 +135,9 @@
         width: 100%;
         transition-duration: $trns-duration;
         padding: em(30px); 
-        box-shadow: 0 3px 35px rgba(0, 0, 0, .1);
+        border-radius: $br--default;
         gap: $g-gutter-width;
+        
         .icon-container{
             @include bg-colours($ui-colors);
         }

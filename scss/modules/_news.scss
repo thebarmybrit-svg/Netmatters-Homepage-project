@@ -3,7 +3,7 @@
 // ==========================================================================
 
 .latest-articles{
-    padding-top: 60px;
+    padding: 20px;
     .headings-container a:hover{
         text-decoration: underline;
     }
@@ -34,39 +34,34 @@
                 font-size: $font-size--small;
             } 
         }
-
-        .img-container {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
     }
 
     .row{
-        padding: 0;
+        // padding: 0;
         gap: $g-gutter-width;
     }
 
     .article{
-        width: 100%;
-        align-self: baseline;
-        display: flex;
-        flex: 0 0 100%;
+        display: block;
+        position: relative;
         margin-bottom: $g-gutter-width;
-        z-index: 1; 
+        margin-left: 10px;
+        margin-right: 10px;
+        top: 0; 
+        transition: $trns-duration ease;
+        width: calc(100% - 20px);
+        flex: 0 0 calc(100% - 20px);
+        margin-top: 10px;
+        z-index: 1;
 
         .icon-arrow-right{
             padding: 0;
         }
         &:not(:first-child):not(:last-child){
-            position: relative;
-            top: 0; 
-            transition: top $trns-duration ease;
-            @extend .centered;
-            background-color: $white;
+            display: flex;
+            flex-direction: column;
             box-shadow: 0px 0px 5px 2px $colour-shadow;
             border-radius: $br--default;
-            padding: 0;
 
             &:hover {
                 top: -10px; 
@@ -80,6 +75,9 @@
                 justify-content: center;
                 align-items: center;
                 max-width: 100%; 
+                box-shadow: 0px 0px 5px 2px $colour-shadow;
+                border-radius: $br--default;
+
                 .article-link{
                     position: absolute;
                     top: 0;
@@ -116,13 +114,13 @@
         }
 
         @include mq(small) {
-            &:first-child {
-                flex: 0 0 100%; // Full width row
-            }
+            // &:first-child {
+            //     flex: 0 0 100%; // Full width row
+            // }
 
-            &:last-child {
-                flex: 0 0 100%; // Full width row
-            }
+            // &:last-child {
+            //     flex: 0 0 100%; // Full width row
+            // }
 
             &:not(:first-child):not(:last-child) {
                 flex: 1 1 0px; 
