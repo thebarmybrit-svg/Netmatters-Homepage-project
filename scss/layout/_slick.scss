@@ -1,0 +1,50 @@
+// ==========================================================================
+// Slick Handler
+// ==========================================================================
+
+// Slick Navigation Dots Styling
+.slick-dots {
+    position: absolute;
+    bottom: 25px; // Positions dots near the bottom edge of the banner
+    left: 0;
+    right: 0;
+    display: flex !important; // Forces items onto a single line
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 10;
+
+    li {
+        margin: 0 6px;
+        padding: 0;
+        display: inline-block;
+
+        button {
+            font-size: 0; // Completely hides the raw 1, 2, 3 text numbers
+            line-height: 0;
+            display: block;
+            width: 12px;
+            height: 12px;
+            padding: 0;
+            cursor: pointer;
+            color: transparent;
+            border: 2px solid $white; 
+            border-radius: $br--round;
+            background: transparent;
+            outline: none;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                background: rgba(255, 255, 255, 0.4);
+            }
+        }
+
+        // The styling for the currently selected active slide dot
+        &.slick-active button {
+            background: $white; // Solid white fill for the active slide
+            border-color: $white;
+            transform: scale(1.1); // Slightly larger active dot
+        }
+    }
+}

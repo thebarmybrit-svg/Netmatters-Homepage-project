@@ -1,0 +1,173 @@
+// ==========================================================================
+// Sidebar
+// ==========================================================================
+
+.sidebar {
+    background-color: $colour-secondary;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 80vw; 
+    max-width: 340px; 
+    box-sizing: border-box;
+    z-index: 1000;
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .container {
+        width: 100% !important;
+        max-width: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    // Clean, flat menu layout structure
+    > ul,
+    .main > ul {
+        display: flex;
+        flex-direction: column;
+        background-color: $colour-primary;
+
+        // Top main tier section container (e.g., CONSULTANCY & DEVELOPMENT)
+        > li {
+            box-sizing: border-box;
+            border-bottom: 2px solid $colour-shadow;
+            text-align: center;
+
+            // Highlight parent header wrapper block
+            > a {
+                display: flex !important;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                color: $white;
+                text-decoration: none;
+                padding: 1.5rem 1rem;
+                border: 1px solid rgba(255, 255, 255, 0.05);
+
+                // Override and style the icon font layout block
+                span.icon{
+                    display: block !important;
+                    font-size: 23px;
+                    margin-bottom: 0.5rem;
+                    @include icon-colours-by-theme($icon-themes);
+                }
+
+                // Subtitle item layout
+                small {
+                    display: block !important;
+                    font-size: 0.75rem;
+                    font-weight: 500;
+                    letter-spacing: 0.08em;
+                    text-transform: uppercase;
+                    color: $white;
+                    opacity: 0.9;
+                    margin-bottom: 0.15rem;
+                }
+
+                // Main highlighted title body text
+                font-size: 1.15rem;
+                font-weight: 700;
+                letter-spacing: 0.05em;
+                text-transform: uppercase;
+
+                // Remove chevron pseudo elements from parent heading layer
+                &::before, &::after {
+                    display: none !important;
+                }
+            }
+        }
+    }
+
+    // Sub-menu drop components container styling
+    .sub-menu-banner {
+        padding: 0;
+        margin: 0;
+
+        .sub-menu {
+            display: flex;
+            flex-direction: column;
+            background-color: $colour-secondary; // Sub-items fall back to primary dark tone
+        }
+
+        // Title text element inside banner resets to transparent layout block
+        .sub-menu-banner-title {
+            display: none !important; // Hidden since parent .menu-item anchor now handles this label text
+        }
+
+        // Sub-menu inner target elements matching the main tier lines
+        .nav-item--sub-menu {
+            border-bottom: 1px solid $colour-shadow;
+
+            a {
+                display: flex;
+                align-items: center;
+                color: $white;
+                text-decoration: none;
+                font-size: 0.85rem;
+                font-weight: 600;
+                letter-spacing: 0.05em;
+                text-transform: uppercase;
+                padding: 1.1rem 1.2rem;
+
+                &::before {
+                    content: "»";
+                    color: $white;
+                    font-size: 1rem;
+                    margin-right: 0.8rem;
+                    font-weight: bold;
+                }
+
+                &:hover {
+                    background-color: lighten($colour-secondary, 3%);
+                }
+
+                // Hide original layout markup wrappers from the HTML data
+                .link-icon-container,
+                .link-text {
+                    display: inline;
+                    padding: 0;
+                    margin: 0;
+                    background: none;
+                }
+                
+                .link-icon {
+                    display: none !important;
+                }
+            }
+        }
+    }
+}
+
+// Sidebar State Controls
+body.nav-is-active {
+    .sidebar {
+        transform: translateX(0);
+    }
+    .nav-overlay {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+// Overlay Component background
+.nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+}

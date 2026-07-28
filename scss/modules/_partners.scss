@@ -4,18 +4,33 @@
 
 .partners-slideshow{
     position: relative; 
+    z-index: 10;
     .partners {
-        display: grid;
-        grid-auto-flow: column;
-        grid-auto-columns: min-content;
-        gap: $g-gutter-width;
-        overflow-x: clip;
-        &.clients{
+        // Only apply grid if Slick hasn't loaded yet to prevent layout shifts
+        &:not(.slick-initialized) {
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: min-content;
+            gap: $g-gutter-width;
+        }
+
+        &.clients {
             padding-top: 350px; 
             margin-top: -350px;
         }
-       
+
+        &.slick-slider,
+        .slick-list,
+        .slick-track {
+            overflow: visible !important; 
+        }
+
+        .slick-slide {
+            margin: 0 calc($g-gutter-width / 2);
+            position: relative; // Keeps absolute tooltips anchored to the slide
+        }
     }
+
 
     .item-partner{
         .item{
@@ -69,11 +84,9 @@
                 }
             }
         }
-
             &:hover .description{
                 display: block !important;
             }
         }
     }
 }
-

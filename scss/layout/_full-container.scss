@@ -4,7 +4,7 @@
 
 #container{
     display: grid;
-    transition: grid-template-columns 0.3s ease;
+    transition: grid-template-columns 0.3s ease, transform 0.3s ease-in-out;
     overflow-x: clip;
-    width: 100vw;
+    width: 100%;
 }

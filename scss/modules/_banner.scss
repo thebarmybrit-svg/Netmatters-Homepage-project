@@ -3,60 +3,67 @@
 // ==========================================================================
 
 
-#banner{
+#banner {
     background-color: $colour-primary;
-    width: fit-content;
-    .content{
-        background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    // Standard structural overrides for Slick layout stability
+    .banner-slick {
+        display: block;
+        width: 100%;
+        visibility: hidden; // Prevents layout pop before initialization
+
+        &.slick-initialized {
+            visibility: visible;
+        }
     }
-    .item{
+
+    .item {
+        display: block; 
         position: relative;
         width: 100%;
+        height: 550px;
         overflow: hidden;
+        outline: none;
+    }
+    .content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 2;
+        display: flex;
+        align-items: center;
     }
 
     .text {
         text-align: center;
-        p{
-            color: $white;
+        p {
+            color: $white; 
         }
     }
-    
-    // h1{
-    //     font-size: em($font-size--prim, 24px);
-    // }
-    .btn{
+
+    .btn {
         margin: 0 auto;
+        display: inline-block;
         @include bg-colour-hover-darken($ui-colors);
     }
-    @include mq(small){
-        .text {
-            text-align: left;
-        }
-        h1{
-            font-size: $font-size--prim;
-        }
-        p, .btn{
-            font-size: em(20px, $base__font-size);
-        }
-        .btn{
-            font-weight: $font-weight--bold;
-            margin: 0;
-        }
+
+    @include mq(small) {
+        .text { text-align: left; }
+        h1 { font-size: $font-size--prim; }
+        p, .btn { font-size: em(20px, $base__font-size); }
+        .btn { font-weight: $font-weight--bold; margin: 0; }
     }
-    @include mq(medium){
-        h1{
-            font-size: $font-size--title;
-        }
-        .btn{
-            font-size: $font-family--secondary;
-        }
-        .content .row{
-            justify-content: flex-start;
-        }
-        .text{
-            text-align: left;
-            background-color: rgba(0, 0, 0, 0);
-        }
+
+    @include mq(medium) {
+        h1 { font-size: $font-size--title; }
+        .btn { font-size: $font-family--secondary; }
+        .content .row { justify-content: flex-start; }
+        .text { text-align: left; background-color: rgba(0, 0, 0, 0); }
     }
 }

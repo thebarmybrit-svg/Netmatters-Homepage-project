@@ -114,14 +114,6 @@
         }
 
         @include mq(small) {
-            // &:first-child {
-            //     flex: 0 0 100%; // Full width row
-            // }
-
-            // &:last-child {
-            //     flex: 0 0 100%; // Full width row
-            // }
-
             &:not(:first-child):not(:last-child) {
                 flex: 1 1 0px; 
                 align-self: stretch;
