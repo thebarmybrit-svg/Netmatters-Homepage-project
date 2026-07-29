@@ -13,9 +13,6 @@ body {
     margin: 0;
     background-color: $white;
     overflow-x: hidden;
-    &.nav-is-active #page-content-wrapper {
-    transform: translateX(-80vw);
-}
 }
 
 h1, .h1 {

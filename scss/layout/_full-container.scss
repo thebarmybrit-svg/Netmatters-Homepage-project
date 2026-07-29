@@ -2,9 +2,12 @@
 // full Container
 // ==========================================================================
 
-#container{
+#container {
     display: grid;
-    transition: grid-template-columns 0.3s ease, transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out; // Smooth shifting animation
     overflow-x: clip;
     width: 100%;
+    position: relative;
+    z-index: 1; // Sits above the sidebar
+    background-color: $white; // Prevents transparency issues
 }

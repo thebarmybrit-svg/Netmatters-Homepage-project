@@ -149,12 +149,26 @@
 
 // Sidebar State Controls
 body.nav-is-active {
+    #container {
+        // Shifts the webpage left by the exact width/max-width of the sidebar
+        transform: translateX(-80vw); 
+
+        @media (min-width: 425px) { // 340px / 0.8 = 425px
+            transform: translateX(-340px);
+        }
+    }
     .sidebar {
         transform: translateX(0);
     }
     .nav-overlay {
         opacity: 1;
         pointer-events: auto;
+        // Shifts overlay left along with the main container
+        transform: translateX(-80vw);
+
+        @media (min-width: 425px) {
+            transform: translateX(-340px);
+        }
     }
 }
 
@@ -169,5 +183,5 @@ body.nav-is-active {
     z-index: 1000;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
