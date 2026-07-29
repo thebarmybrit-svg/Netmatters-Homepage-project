@@ -119,7 +119,7 @@ $('.partners').slick({
 
 // sliding sidebar menu //
 const hamburgerBtn = document.getElementById("hamburger-toggle");
-const overlay = document.querySelector(".nav-overlay"); // Target class layout token directly
+const overlay = document.getElementById("nav-overlay");
 const body = document.body;
 
 // Toggle menu slide status

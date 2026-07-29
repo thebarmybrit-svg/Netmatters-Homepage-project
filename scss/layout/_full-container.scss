@@ -8,6 +8,6 @@
     overflow-x: clip;
     width: 100%;
     position: relative;
-    z-index: 1; // Sits above the sidebar
+    z-index: 2; 
     background-color: $white; // Prevents transparency issues
 }
