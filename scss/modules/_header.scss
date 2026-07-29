@@ -4,7 +4,9 @@
 
 #header {
     background-color: $white;
-    border-bottom: 1px solid #ccc; 
+    transition: transform 0.3s ease-in-out, position 0.3s ease-in-out;
+    width: 100%;
+    z-index: 999;  
     .row{
         flex-wrap: nowrap;
     }
@@ -86,6 +88,7 @@
         }
     }
 
+     
     
     @include mq(small) {
         .inner {
@@ -180,6 +183,21 @@
                 border-radius: $br--default;
             }
         }
+        &.sticky {
+            position: fixed;
+            top: 0;
+            left: 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            animation: slideDown 0.3s ease-in-out forwards;
+        }
+
+        &.sticky-out {
+            position: fixed;
+            top: 0;
+            left: 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            animation: slideUp 0.3s ease-in-out forwards;
+        }
     }
     @include mq(large){
         .search_form{
@@ -191,3 +209,21 @@
     }
 }
 
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(0); }
+    to { transform: translateY(-100%); }
+}
+
+// Ensure the dynamic spacer collapses completely on small mobile screens
+.header-spacer {
+    display: none;
+    
+    @include mq(medium) {
+        display: block;
+    }
+}
