@@ -10,8 +10,7 @@
     height: 100vh;
     width: 80vw; 
     max-width: 340px; 
-    
-    z-index: 1; // Lowered to 1 so it hides behind the container
+    z-index: 1; // hides behind the container
     overflow-y: auto;
 
     ul {
@@ -19,25 +18,15 @@
         padding: 0;
         margin: 0;
     }
-
-    .container {
-        width: 100% !important;
-        max-width: none !important;
-        padding: 0 !important;
-        margin: 0 !important;
-    }
-
     // Clean, flat menu layout structure
     > ul,
     .main > ul {
         display: flex;
         flex-direction: column;
         background-color: $colour-primary;
-
-        // Top main tier section container (e.g., CONSULTANCY & DEVELOPMENT)
+        // Top main tier section container
         > li {
-            
-            border-bottom: 2px solid $colour-shadow;
+            border-bottom: 3px solid $colour-shadow;
             text-align: center;
 
             // Highlight parent header wrapper block
@@ -113,7 +102,6 @@
                 font-size: 0.85rem;
                 font-weight: 600;
                 letter-spacing: 0.05em;
-                text-transform: uppercase;
                 padding: 1.1rem 1.2rem;
 
                 &::before {
@@ -147,103 +135,91 @@
 
 // Mobile Items
 .mobile-item {
-  width: 100%;
-  list-style: none;
-  padding: 25px;
-  
+    list-style: none;
+    padding: 25px;
+    
 
-  // Main Header Link (e.g., CONSULTANCY & DEVELOPMENT)
-  > a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: $colour-primary;
-    border: 3px solid $colour-shadow;
-    padding: 20px 10px;
-    text-decoration: none;
-    color: $white;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 1.3rem;
-    letter-spacing: 0.5px;
-    text-align: center;
-
-    .icon, [class^="icon-"], [class*=" icon-"] {
-      font-size: 2rem;
-      margin-bottom: 8px;
-      color: #3b78e7; 
-    }
-
-    small {
-      display: block;
-      font-size: 0.75rem;
-      font-weight: normal;
-      letter-spacing: 1px;
-      margin-bottom: 2px;
-    }
-  }
-
-  // Dropdown Sub-menu Container
-  .sub-menu-banner {
-    margin-top: 15px;
-
-    .sub-menu-banner-title {
-      display: none;
-    }
-
-    .sub-menu {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      border: 3px solid $colour-shadow;
-      border-radius: $br--default;
-      overflow: hidden;
-    }
-
-    // Individual List Items
-    .nav-item--sub-menu {
-      border-bottom: 1px solid $colour-shadow;
-
-      &:last-child {
-        border-bottom: none;
-      }
-
-      a {
-        // Changed to flex row to place icon container and text side-by-side
+    // Main Header Link (e.g., CONSULTANCY & DEVELOPMENT)
+    > a {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
-        justify-content: center; 
-        gap: 8px; // Controls horizontal spacing between icon and text
-        padding: 15px 10px;
+        justify-content: center;
+        background-color: $colour-primary;
+        border: 3px solid $colour-shadow;
+        padding: 20px 10px;
         text-decoration: none;
         color: $white;
-        transition: background-color 0.2s ease;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 1.3rem;
+        letter-spacing: 0.5px;
+        text-align: center;
 
-        &:hover {
-          background-color: lighten($colour-primary, 3%);
+        small {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: normal;
+            letter-spacing: 1px;
+            margin-bottom: 2px;
         }
-
-        // Restored display to show the small chevron/icon indicators
-        .link-icon-container {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          color: $white;
-          font-size: 0.8rem;
-        }
-
-        .link-text {
-          font-size: 0.95rem;
-          font-weight: 500;
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
-          line-height: 1.4;
-        }
-      }
     }
-  }
+
+  // Dropdown Sub-menu Container
+    .sub-menu-banner {
+        margin-top: 15px;
+
+        .sub-menu-banner-title {
+            display: none;
+        }
+
+        .sub-menu {  
+            width: auto;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            border: 3px solid $colour-shadow;
+            border-radius: $br--default;
+            overflow: hidden;
+        }
+
+        // Individual List Items
+        .nav-item--sub-menu {
+            border-bottom: 1px solid $colour-shadow;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            a {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center; 
+                gap: 8px; // Controls horizontal spacing between icon and text
+                padding: 15px 10px;
+                text-decoration: none;
+                color: $white;
+                transition: background-color 0.2s ease;
+
+                &:hover {
+                    background-color: lighten($colour-primary, 3%);
+                }
+                
+                .link-icon-container {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: $white;
+                    font-size: 0.8rem;
+                }
+
+                .link-text {
+                    margin-right: auto;
+                }
+            }
+        }
+    }
 }
 
 // Sidebar State Controls
