@@ -223,13 +223,37 @@
 }
 
 // Sidebar State Controls
-body.nav-is-active {
+.nav-is-active {
     #container {
         // Shifts the webpage left by the exact width/max-width of the sidebar
         transform: translateX(-80vw); 
 
         @media (min-width: 425px) { // 340px / 0.8 = 425px
             transform: translateX(-340px);
+        }
+    }
+    #hamburger-toggle {
+        .line {
+            // Forces the pivot point to the absolute horizontal and vertical center
+            transform-origin: center;
+
+            // Line 1 stays at top: 0 but translates down to center before rotating
+            &:nth-child(1) {
+                top: 0;
+                transform: translateY(13px) rotate(45deg);
+            }
+
+            // Vanishes the middle line
+            &:nth-child(2) {
+                opacity: 0;
+                transform: scale(0);
+            }
+
+            // Line 3 stays at top: 16px but translates up to center before rotating
+            &:nth-child(3) {
+                top: 16px;
+                transform: translateY(-13px) rotate(-45deg);
+            }
         }
     }
     .nav-overlay {
