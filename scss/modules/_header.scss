@@ -31,7 +31,7 @@
     }
 
     // Hamburger Mobile Menu Button Frame
-    label.btn {
+    div.btn {
         padding: 0;
         display: flex;
         align-items: center;
@@ -57,13 +57,13 @@
                 width: 100%; // Spans the full 24px width
                 height: 5px; // Gives physical height
                 background-color: $white; 
-                transition: transform 0.3s ease, opacity 0.3s ease;
+                transition: top 0.2s ease 0.2s, transform 0.3s ease, opacity 0.3s ease;
                 transform-origin: center;
 
                 // Manually place the lines vertically
                 &:nth-child(1) { top: 0; }
-                &:nth-child(2) { top: 13px; }
-                &:nth-child(3) { top: 26px; }
+                &:nth-child(2) { top: 11px; }
+                &:nth-child(3) { top: 22px; }
 
                 body.ready & {
                     transition: 
@@ -72,11 +72,11 @@
                         opacity 0.2s ease 0.2s;
                 }
             }
-            body:not(.nav-is-active) & {
+            body.has-opened:not(.nav-is-active) & {
                 .line {
-                    &:nth-child(1) { animation: top-line-close 0.4s ease forwards; }
-                    &:nth-child(2) { animation: middle-line-close 0.4s ease forwards; }
-                    &:nth-child(3) { animation: bottom-line-close 0.4s ease forwards; }
+                    &:nth-child(1) { animation: top-line-close 0.4s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
+                    &:nth-child(2) { animation: middle-line-close 0.4s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
+                    &:nth-child(3) { animation: bottom-line-close 0.4s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
                 }
             }
         }
@@ -247,34 +247,38 @@
 
 // Animation keyframes for opening (Converge -> Spin)
 @keyframes top-line-open {
-    0% { top: 0; transform: translateY(0) rotate(0deg); }
-    50% { top: 0; transform: translateY(13px) rotate(0deg); } // Collapses to center
-    100% { top: 0; transform: translateY(13px) rotate(45deg); } // Spins into X
-}
-@keyframes middle-line-open {
-    0% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0; transform: scale(0); } // Disappears at midpoint
-    100% { opacity: 0; transform: scale(0); }
-}
-@keyframes bottom-line-open {
-    0% { top: 26px; transform: translateY(0) rotate(0deg); }
-    50% { top: 26px; transform: translateY(-13px) rotate(0deg); } // Collapses to center
-    100% { top: 26px; transform: translateY(-13px) rotate(-45deg); } // Spins into X
+    0% { top: 0; transform: rotate(0deg); }
+    50% { top: 11px; transform: rotate(0deg); } // Move to center first
+    100% { top: 11px; transform: rotate(405deg); } // 360° spin + 45° angle = 405°
 }
 
-// Animation keyframes for closing (Unspin -> Separate)
+@keyframes middle-line-open {
+    0% { opacity: 1; transform: scale(1) rotate(0deg); }
+    50% { opacity: 0; transform: scale(0) rotate(180deg); }
+    100% { opacity: 0; transform: scale(0) rotate(360deg); } // Fade out while spinning
+}
+
+@keyframes bottom-line-open {
+    0% { top: 22px; transform: rotate(0deg); } // Updated top position for 5px lines
+    50% { top: 11px; transform: rotate(0deg); } // Move to center first
+    100% { top: 11px; transform: rotate(315deg); } // 360° spin - 45° angle = 315°
+}
+
+// 2. Define Keyframes for Closing (Reversing back to Hamburger)
 @keyframes top-line-close {
-    0% { top: 0; transform: translateY(13px) rotate(45deg); } // Starts from X
-    50% { top: 0; transform: translateY(13px) rotate(0deg); } // Unspins at center
-    100% { top: 0; transform: translateY(0) rotate(0deg); } // Returns to top
+    0% { top: 11px; transform: rotate(405deg); }
+    50% { top: 11px; transform: rotate(0deg); }
+    100% { top: 0; transform: rotate(0deg); }
 }
+
 @keyframes middle-line-close {
-    0% { opacity: 0; transform: scale(0); }
-    50% { opacity: 0; transform: scale(0); } 
-    100% { opacity: 1; transform: scale(1); } // Reappears at the end
+    0% { opacity: 0; transform: scale(0) rotate(360deg); }
+    50% { opacity: 0; transform: scale(0) rotate(180deg); }
+    100% { opacity: 1; transform: scale(1) rotate(0deg); }
 }
+
 @keyframes bottom-line-close {
-    0% { top: 26px; transform: translateY(-13px) rotate(-45deg); } // Starts from X
-    50% { top: 26px; transform: translateY(-13px) rotate(0deg); } // Unspins at center
-    100% { top: 26px; transform: translateY(0) rotate(0deg); } // Returns to bottom
+    0% { top: 11px; transform: rotate(315deg); }
+    50% { top: 11px; transform: rotate(0deg); }
+    100% { top: 22px; transform: rotate(0deg); }
 }

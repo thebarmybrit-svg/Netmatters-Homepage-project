@@ -121,9 +121,14 @@ $('.partners').slick({
 const hamburgerBtn = document.getElementById("hamburger-toggle");
 const overlay = document.getElementById("nav-overlay");
 const body = document.body;
+let menuHasOpened = false; // Track if the menu was ever activated
 
 // Toggle menu slide status
 hamburgerBtn.addEventListener("click", () => {
+    if (!menuHasOpened) {
+        body.classList.add("has-opened");
+        menuHasOpened = true;
+    }
     body.classList.toggle("nav-is-active");
 });
 
