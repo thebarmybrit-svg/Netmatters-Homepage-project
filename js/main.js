@@ -99,19 +99,19 @@ $('.partners').slick({
         {
             breakpoint: 992,
             settings: {
-                slidesToShow: 4
+                slidesToShow: 3
             }
         },
         {
             breakpoint: 768,
             settings: {
-                slidesToShow: 3
+                slidesToShow: 2
             }
         },
         {
             breakpoint: 300,
             settings: {
-                slidesToShow: 2
+                slidesToShow: 1
             }
         }
     ]

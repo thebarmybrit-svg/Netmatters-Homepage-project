@@ -64,6 +64,20 @@
                 &:nth-child(1) { top: 0; }
                 &:nth-child(2) { top: 13px; }
                 &:nth-child(3) { top: 26px; }
+
+                body.ready & {
+                    transition: 
+                        top 0.2s ease 0.2s, 
+                        transform 0.2s ease 0s, 
+                        opacity 0.2s ease 0.2s;
+                }
+            }
+            body:not(.nav-is-active) & {
+                .line {
+                    &:nth-child(1) { animation: top-line-close 0.4s ease forwards; }
+                    &:nth-child(2) { animation: middle-line-close 0.4s ease forwards; }
+                    &:nth-child(3) { animation: bottom-line-close 0.4s ease forwards; }
+                }
             }
         }
     }
@@ -231,21 +245,36 @@
     }
 }
 
-@keyframes slideDown {
-    from { transform: translateY(-100%); }
-    to { transform: translateY(0); }
+// Animation keyframes for opening (Converge -> Spin)
+@keyframes top-line-open {
+    0% { top: 0; transform: translateY(0) rotate(0deg); }
+    50% { top: 0; transform: translateY(13px) rotate(0deg); } // Collapses to center
+    100% { top: 0; transform: translateY(13px) rotate(45deg); } // Spins into X
+}
+@keyframes middle-line-open {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0; transform: scale(0); } // Disappears at midpoint
+    100% { opacity: 0; transform: scale(0); }
+}
+@keyframes bottom-line-open {
+    0% { top: 26px; transform: translateY(0) rotate(0deg); }
+    50% { top: 26px; transform: translateY(-13px) rotate(0deg); } // Collapses to center
+    100% { top: 26px; transform: translateY(-13px) rotate(-45deg); } // Spins into X
 }
 
-@keyframes slideUp {
-    from { transform: translateY(0); }
-    to { transform: translateY(-100%); }
+// Animation keyframes for closing (Unspin -> Separate)
+@keyframes top-line-close {
+    0% { top: 0; transform: translateY(13px) rotate(45deg); } // Starts from X
+    50% { top: 0; transform: translateY(13px) rotate(0deg); } // Unspins at center
+    100% { top: 0; transform: translateY(0) rotate(0deg); } // Returns to top
 }
-
-// Ensure the dynamic spacer collapses completely on small mobile screens
-.header-spacer {
-    display: none;
-    
-    @include mq(medium) {
-        display: block;
-    }
+@keyframes middle-line-close {
+    0% { opacity: 0; transform: scale(0); }
+    50% { opacity: 0; transform: scale(0); } 
+    100% { opacity: 1; transform: scale(1); } // Reappears at the end
+}
+@keyframes bottom-line-close {
+    0% { top: 26px; transform: translateY(-13px) rotate(-45deg); } // Starts from X
+    50% { top: 26px; transform: translateY(-13px) rotate(0deg); } // Unspins at center
+    100% { top: 26px; transform: translateY(0) rotate(0deg); } // Returns to bottom
 }
