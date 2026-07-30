@@ -8,7 +8,7 @@
     top: 0;
     right: 0;
     height: 100vh;
-    width: 80vw; 
+    width: 100vw; 
     max-width: 340px; 
     z-index: 1; // hides behind the container
     overflow-y: auto;
@@ -26,19 +26,23 @@
         background-color: $colour-primary;
         // Top main tier section container
         > li {
-            border-bottom: 3px solid $colour-shadow;
             text-align: center;
 
             // Highlight parent header wrapper block
             > a {
                 display: flex !important;
                 flex-direction: column;
-                align-items: center;
+                align-items: flex-start;
                 justify-content: center;
-                color: $white;
                 text-decoration: none;
                 padding: 1.5rem 1rem;
-                border: 1px solid rgba(255, 255, 255, 0.05);
+                border: 1px solid $colour-shadow;
+
+                // Main highlighted title body text
+                font-size: 1.15rem;
+                font-weight: 700;
+                letter-spacing: 0.05em;
+                text-transform: uppercase;
 
                 // Override and style the icon font layout block
                 span.icon{
@@ -55,23 +59,20 @@
                     font-weight: 500;
                     letter-spacing: 0.08em;
                     text-transform: uppercase;
-                    color: $white;
                     opacity: 0.9;
                     margin-bottom: 0.15rem;
                 }
-
-                // Main highlighted title body text
-                font-size: 1.15rem;
-                font-weight: 700;
-                letter-spacing: 0.05em;
-                text-transform: uppercase;
 
                 // Remove chevron pseudo elements from parent heading layer
                 &::before, &::after {
                     display: none !important;
                 }
             }
+            &:hover > a{
+                background-color: lighten($colour-primary, 3%);
+            }
         }
+        
     }
 
     // Sub-menu drop components container styling
@@ -92,28 +93,19 @@
 
         // Sub-menu inner target elements matching the main tier lines
         .nav-item--sub-menu {
-            border-bottom: 1px solid $colour-shadow;
+            // border-bottom: 1px solid $colour-shadow;
 
             a {
                 display: flex;
                 align-items: center;
-                color: $white;
                 text-decoration: none;
-                font-size: 0.85rem;
-                font-weight: 600;
-                letter-spacing: 0.05em;
                 padding: 1.1rem 1.2rem;
 
                 &::before {
                     content: "»";
-                    color: $white;
                     font-size: 1rem;
                     margin-right: 0.8rem;
                     font-weight: bold;
-                }
-
-                &:hover {
-                    background-color: lighten($colour-secondary, 3%);
                 }
 
                 // Hide original layout markup wrappers from the HTML data
@@ -129,6 +121,10 @@
                     display: none !important;
                 }
             }
+            
+            &:active{
+                border: 1px $white solid;
+            }
         }
     }
 }
@@ -143,17 +139,11 @@
     > a {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: center !important;
         justify-content: center;
-        background-color: $colour-primary;
-        border: 3px solid $colour-shadow;
+        
         padding: 20px 10px;
         text-decoration: none;
-        color: $white;
-        text-transform: uppercase;
-        font-weight: bold;
-        font-size: 1.3rem;
-        letter-spacing: 0.5px;
         text-align: center;
 
         small {
@@ -163,9 +153,11 @@
             letter-spacing: 1px;
             margin-bottom: 2px;
         }
+        
     }
+     
 
-  // Dropdown Sub-menu Container
+     // Dropdown Sub-menu Container
     .sub-menu-banner {
         margin-top: 15px;
 
@@ -178,18 +170,14 @@
             list-style: none;
             padding: 0;
             margin: 0;
-            border: 3px solid $colour-shadow;
+            
             border-radius: $br--default;
             overflow: hidden;
+            
         }
 
         // Individual List Items
         .nav-item--sub-menu {
-            border-bottom: 1px solid $colour-shadow;
-
-            &:last-child {
-                border-bottom: none;
-            }
 
             a {
                 display: flex;
@@ -199,19 +187,12 @@
                 gap: 8px; // Controls horizontal spacing between icon and text
                 padding: 15px 10px;
                 text-decoration: none;
-                color: $white;
                 transition: background-color 0.2s ease;
-
-                &:hover {
-                    background-color: lighten($colour-primary, 3%);
-                }
                 
                 .link-icon-container {
                     display: inline-flex;
                     align-items: center;
                     justify-content: center;
-                    color: $white;
-                    font-size: 0.8rem;
                 }
 
                 .link-text {
