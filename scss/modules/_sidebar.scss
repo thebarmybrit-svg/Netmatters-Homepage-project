@@ -13,6 +13,13 @@
     z-index: 1; // hides behind the container
     overflow-y: auto;
 
+    a{
+        border: 1px transparent solid;
+        &:active, &:focus{
+            border-color: $white;
+        }
+    }
+
     ul {
         list-style: none;
         padding: 0;
@@ -37,12 +44,6 @@
                 text-decoration: none;
                 padding: 1.5rem 1rem;
                 border: 1px solid $colour-shadow;
-
-                // Main highlighted title body text
-                font-size: 1.15rem;
-                font-weight: 700;
-                letter-spacing: 0.05em;
-                text-transform: uppercase;
 
                 // Override and style the icon font layout block
                 span.icon{
@@ -121,10 +122,6 @@
                     display: none !important;
                 }
             }
-            
-            &:active{
-                border: 1px $white solid;
-            }
         }
     }
 }
@@ -148,9 +145,6 @@
 
         small {
             display: block;
-            font-size: 0.75rem;
-            font-weight: normal;
-            letter-spacing: 1px;
             margin-bottom: 2px;
         }
         
