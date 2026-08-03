@@ -23,6 +23,7 @@
         padding: em($img-gutter-width);
         filter: grayscale(100%);
         opacity: 0.6;
+        margin: 0 auto; 
         transition: filter $trns-duration ease, opacity $trns-duration ease;
         &:hover{
             filter: grayscale(0);

@@ -2,19 +2,19 @@
 // Partners
 // ==========================================================================
 
-.partners-slideshow{
+.partners-slideshow {
     position: relative; 
     z-index: 2;
-    &:hover{
+
+    &:hover {
         z-index: 10;
     }
+
     .partners {
-        // Only apply grid if Slick hasn't loaded yet to prevent layout shifts
+        // Safe display rule before Slick kicks in
         &:not(.slick-initialized) {
-            display: grid;
-            grid-auto-flow: column;
-            grid-auto-columns: min-content;
-            gap: $g-gutter-width;
+            display: flex;
+            justify-content: space-around;
         }
 
         &.clients {
@@ -23,70 +23,119 @@
         }
 
         &.slick-slider,
-        .slick-list,
-        .slick-track {
+        .slick-list {
             overflow: visible !important; 
         }
 
+        .slick-track {
+            overflow: visible !important;
+            // Force vertical centering across varying logo heights
+            display: flex !important;
+            align-items: center !important;
+        }
+
         .slick-slide {
-            margin: 0 calc($g-gutter-width / 2);
-            position: relative; // Keeps absolute tooltips anchored to the slide
+            position: relative;
+            z-index: 1; 
+            transition: z-index 0.2s ease;
+            
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+
+            &:hover {
+                z-index: 99; 
+            }
         }
     }
 
-    .item-partner{
-        .item{
-            .description{
-            display: none !important;
-            position: absolute;
-            bottom: 100%;
-            left: -200px;
-            right: -200px;
-            z-index: 3;
+    .item-partner {
+        // Enforce equal block leveling 
+        width: 100%;
+        
+        .item {
+            position: relative; 
+            display: inline-block; // Anchors tooltip strictly to the item area
 
-            .box{
-                background-color: $meteorite-blue;
-                text-align: center;
-                color: $white;
-                padding: 20px;
-                font-size: .875rem;
-                max-width: 280px;
-                margin: 0 auto 50px;
-
-                h3{
-                    position: relative;
-                    font-size: 1.125rem;
-                    color: $white;
-                    padding-bottom: 17px;
-                    margin: 0;
-                }
-                p{
-                    color: $white;
-                    font-size: .8125rem;
-                    line-height: 1.375rem;
-                    margin-bottom: 5px;
-                    
-                }
-                .btn{
-                       @include bg-colour-hover-darken($ui-colors);
-                    }
-            }
-            .arrow{
+            .description {
+                display: none !important;
                 position: absolute;
-                bottom: 10px;
-                left: 50%;
-                margin-left: -36px;
-                &::before{
-                    content: "";
-                    margin: auto;
-                    display: inline-block;
-                    border-color: $meteorite-blue transparent transparent;
-                    border-style: solid;
-                    border-width: 35px 36px 0;
+                bottom: 100%;
+                left: 50%; 
+                transform: translateX(-50%); 
+                z-index: 100;
+                width: 280px; 
+                transition: transform 0.2s ease; // Smooth alignment shifting
+
+                // --- Left Edge Adjustment ---
+                &.edge-left {
+                    left: 0 !important;
+                    right: auto !important;
+                    transform: translateX(20px) !important; // Forces 20px padding from left viewport edge
+
+                    .arrow {
+                        left: 20px !important; // Keeps arrow anchored directly over the logo icon
+                        transform: translateX(0) !important;
+                    }
+                }
+
+                // --- Right Edge Adjustment ---
+                &.edge-right {
+                    left: auto !important;
+                    right: 0 !important;
+                    transform: translateX(-20px) !important; // Forces 20px padding from right viewport edge
+
+                    .arrow {
+                        left: auto !important;
+                        right: 20px !important; // Keeps arrow anchored directly over the logo icon
+                        transform: translateX(0) !important;
+                    }
+                }
+
+                .box {
+                    background-color: $meteorite-blue;
+                    text-align: center;
+                    color: $white;
+                    padding: 20px;
+                    font-size: .875rem;
+                    margin-bottom: 50px;
+
+                    h3 {
+                        position: relative;
+                        font-size: 1.125rem;
+                        color: $white;
+                        padding-bottom: 17px;
+                        margin: 0;
+                    }
+                    p {
+                        color: $white;
+                        font-size: .8125rem;
+                        line-height: 1.375rem;
+                        margin-bottom: 5px;
+                    }
+                    .btn {
+                        @include bg-colour-hover-darken($ui-colors);
+                    }
+                }
+
+                .arrow {
+                    position: absolute;
+                    bottom: 10px;
+                    left: 50%;
+                    transform: translateX(-50%);
+
+                    &::before {
+                        content: "";
+                        margin: auto;
+                        display: inline-block;
+                        border-color: $meteorite-blue transparent transparent;
+                        border-style: solid;
+                        border-width: 35px 36px 0;
+                    }
                 }
             }
-        }
-            &:hover .description{
+
+            &:hover .description {
                 display: block !important;
             }
         }

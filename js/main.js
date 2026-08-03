@@ -81,7 +81,10 @@ $(window).on('resize', function() {
 
 
 // Partners Carousel //
-$('.partners').slick({
+// Initialize Partners Carousel
+const $carousel = $('.partners');
+
+$carousel.slick({
     slidesToShow: 6, 
     slidesToScroll: 1,    
     autoplay: true,        
@@ -90,31 +93,38 @@ $('.partners').slick({
     arrows: false,     
     dots: false,        
     responsive: [
-        {
-            breakpoint: 1260,
-            settings: {
-                slidesToShow: 5
-            }
-        },
-        {
-            breakpoint: 992,
-            settings: {
-                slidesToShow: 3
-            }
-        },
-        {
-            breakpoint: 768,
-            settings: {
-                slidesToShow: 2
-            }
-        },
-        {
-            breakpoint: 300,
-            settings: {
-                slidesToShow: 1
-            }
-        }
+        { breakpoint: 1260, settings: { slidesToShow: 5 } },
+        { breakpoint: 992, settings: { slidesToShow: 3 } },
+        { breakpoint: 768, settings: { slidesToShow: 2 } },
+        { breakpoint: 300, settings: { slidesToShow: 1 } }
     ]
+});
+
+// Dynamic edge detection for tooltips
+$carousel.on('mouseenter', '.item-partner .item', function() {
+    const $description = $(this).find('.description');
+    if (!$description.length) return;
+
+    // Remove old edge classes before measuring
+    $description.removeClass('edge-left edge-right');
+    
+    // Add hover class to override 'display: none' so JS can read its real width
+    $(this).addClass('is-hovered');
+
+    // Use native DOM element to get accurate viewport bounding box
+    const rect = $description[0].getBoundingClientRect();
+    const windowWidth = $(window).width();
+    const buffer = 20; // Explicit minimum padding from the edge of the viewport
+
+    if (rect.left < buffer) {
+        $description.addClass('edge-left');
+    } else if (rect.right > windowWidth - buffer) {
+        $description.addClass('edge-right');
+    }
+}).on('mouseleave', '.item-partner .item', function() {
+    // Clean up hover state and edge classes when mouse leaves
+    $(this).removeClass('is-hovered');
+    $(this).find('.description').removeClass('edge-left edge-right');
 });
 
 // sliding sidebar menu //
