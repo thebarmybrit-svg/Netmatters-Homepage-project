@@ -102,13 +102,6 @@
                 text-decoration: none;
                 padding: 1.1rem 1.2rem;
 
-                &::before {
-                    content: "»";
-                    font-size: 1rem;
-                    margin-right: 0.8rem;
-                    font-weight: bold;
-                }
-
                 // Hide original layout markup wrappers from the HTML data
                 .link-icon-container,
                 .link-text {
