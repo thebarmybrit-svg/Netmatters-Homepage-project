@@ -4,6 +4,8 @@
 
 .latest-articles{
     padding: 20px;
+    position: relative;
+    z-index: 5;
     .headings-container a:hover{
         text-decoration: underline;
     }

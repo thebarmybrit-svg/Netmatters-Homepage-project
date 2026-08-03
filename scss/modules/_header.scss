@@ -4,7 +4,7 @@
 
 #header {
     background-color: $white;
-    transition: transform 0.3s ease-in-out, position 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, position 0.3s;
     width: 100%;
     z-index: 999;  
     .row{
@@ -28,6 +28,20 @@
             color: $colour-primary;
             font-size: 46px;
         }
+    }
+
+
+    &.sticky{
+        position: fixed;
+        top: 0;
+        animation: slideDown 0.3s ease-in-out forwards;
+    }
+
+    /* The Sticky-Out State (Slides Up / Hides) */
+    &.sticky-out {
+        position: fixed;
+        top: 0;
+        animation: slideUp 0.3s ease-in-out forwards;
     }
 
     // Hamburger Mobile Menu Button Frame
@@ -81,7 +95,6 @@
             }
         }
     }
-
     .search-form-wrapper--mobile {
         display: block;
         width: 100%;
@@ -123,9 +136,6 @@
             
         }
     }
-
-     
-    
     @include mq(small) {
         .inner {
             padding: em(20px) 0px 0px 0px;
@@ -281,4 +291,23 @@
     0% { top: 11px; transform: rotate(315deg); }
     50% { top: 11px; transform: rotate(0deg); }
     100% { top: 22px; transform: rotate(0deg); }
+}
+
+// Animation for sticky header
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
 }

@@ -4,7 +4,10 @@
 
 .partners-slideshow{
     position: relative; 
-    z-index: 10;
+    z-index: 2;
+    &:hover{
+        z-index: 10;
+    }
     .partners {
         // Only apply grid if Slick hasn't loaded yet to prevent layout shifts
         &:not(.slick-initialized) {
@@ -30,7 +33,6 @@
             position: relative; // Keeps absolute tooltips anchored to the slide
         }
     }
-
 
     .item-partner{
         .item{
