@@ -4,7 +4,9 @@
 
 #header {
     background-color: $white;
-    border-bottom: 1px solid #ccc; 
+    transition: transform 0.3s ease-in-out, position 0.3s ease-in-out;
+    width: 100%;
+    z-index: 999;  
     .row{
         flex-wrap: nowrap;
     }
@@ -29,7 +31,8 @@
     }
 
     // Hamburger Mobile Menu Button Frame
-    label.btn {
+    div.btn {
+        padding: 0;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -38,9 +41,44 @@
         height: $font-size--title;
         @include bg-colour-hover-darken($ui-colors);
         .btn--hamburger {
-            display: flex;
-            
-            
+            padding: 0;
+            display: inline-block; // Forces the 24px x 18px dimensions to register
+            vertical-align: middle;
+            position: relative;
+            width: 36px;
+            height: 28px;
+            cursor: pointer;
+
+            /* Style for the three individual lines */
+            .line {
+                display: block;
+                position: absolute;
+                left: 0;
+                width: 100%; // Spans the full 24px width
+                height: 5px; // Gives physical height
+                background-color: $white; 
+                transition: top 0.2s ease 0.2s, transform 0.3s ease, opacity 0.3s ease;
+                transform-origin: center;
+
+                // Manually place the lines vertically
+                &:nth-child(1) { top: 0; }
+                &:nth-child(2) { top: 11px; }
+                &:nth-child(3) { top: 22px; }
+
+                body.ready & {
+                    transition: 
+                        top 0.2s ease 0.2s, 
+                        transform 0.2s ease 0s, 
+                        opacity 0.2s ease 0.2s;
+                }
+            }
+            body.has-opened:not(.nav-is-active) & {
+                .line {
+                    &:nth-child(1) { animation: top-line-close 0.4s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
+                    &:nth-child(2) { animation: middle-line-close 0.4s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
+                    &:nth-child(3) { animation: bottom-line-close 0.4s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
+                }
+            }
         }
     }
 
@@ -86,6 +124,7 @@
         }
     }
 
+     
     
     @include mq(small) {
         .inner {
@@ -180,6 +219,21 @@
                 border-radius: $br--default;
             }
         }
+        &.sticky {
+            position: fixed;
+            top: 0;
+            left: 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            animation: slideDown 0.3s ease-in-out forwards;
+        }
+
+        &.sticky-out {
+            position: fixed;
+            top: 0;
+            left: 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            animation: slideUp 0.3s ease-in-out forwards;
+        }
     }
     @include mq(large){
         .search_form{
@@ -191,3 +245,40 @@
     }
 }
 
+// Animation keyframes for opening (Converge -> Spin)
+@keyframes top-line-open {
+    0% { top: 0; transform: rotate(0deg); }
+    50% { top: 11px; transform: rotate(0deg); } // Move to center first
+    100% { top: 11px; transform: rotate(405deg); } // 360° spin + 45° angle = 405°
+}
+
+@keyframes middle-line-open {
+    0% { opacity: 1; transform: scale(1) rotate(0deg); }
+    50% { opacity: 0; transform: scale(0) rotate(180deg); }
+    100% { opacity: 0; transform: scale(0) rotate(360deg); } // Fade out while spinning
+}
+
+@keyframes bottom-line-open {
+    0% { top: 22px; transform: rotate(0deg); } // Updated top position for 5px lines
+    50% { top: 11px; transform: rotate(0deg); } // Move to center first
+    100% { top: 11px; transform: rotate(315deg); } // 360° spin - 45° angle = 315°
+}
+
+// 2. Define Keyframes for Closing (Reversing back to Hamburger)
+@keyframes top-line-close {
+    0% { top: 11px; transform: rotate(405deg); }
+    50% { top: 11px; transform: rotate(0deg); }
+    100% { top: 0; transform: rotate(0deg); }
+}
+
+@keyframes middle-line-close {
+    0% { opacity: 0; transform: scale(0) rotate(360deg); }
+    50% { opacity: 0; transform: scale(0) rotate(180deg); }
+    100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+@keyframes bottom-line-close {
+    0% { top: 11px; transform: rotate(315deg); }
+    50% { top: 11px; transform: rotate(0deg); }
+    100% { top: 22px; transform: rotate(0deg); }
+}

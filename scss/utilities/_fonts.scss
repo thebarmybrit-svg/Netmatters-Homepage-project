@@ -1,14 +1,10 @@
-// ==========================================================================
-// Fonts
-// ==========================================================================
-
 @font-face {
   font-family: 'icomoon';
-  src:  url('../fonts/icomoon.eot?6mzx5f');
-  src:  url('../fonts/icomoon.eot?6mzx5f#iefix') format('embedded-opentype'),
-    url('../fonts/icomoon.ttf?6mzx5f') format('truetype'),
-    url('../fonts/icomoon.woff?6mzx5f') format('woff'),
-    url('../fonts/icomoon.svg?6mzx5f#icomoon') format('svg');
+  src:  url('../fonts/icomoon.eot?pjasr2');
+  src:  url('../fonts/icomoon.eot?pjasr2#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?pjasr2') format('truetype'),
+    url('../fonts/icomoon.woff?pjasr2') format('woff'),
+    url('../fonts/icomoon.svg?pjasr2#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -30,9 +26,6 @@
 }
 
 .icon-weights:before {
-  content: "\e900";
-}
-.icon-weights1:before {
   content: "\e901";
 }
 .icon-moon-stroke:before {
@@ -58,6 +51,9 @@
 }
 .icon-mouse:before {
   content: "\e909";
+}
+.icon-double_arrow:before {
+  content: "\e900";
 }
 .icon-help:before {
   content: "\e90a";
@@ -164,7 +160,7 @@
 .icon-cloud-download:before {
   content: "\e9c2";
 }
-.icon-download3:before {
+.icon-download:before {
   content: "\e9c7";
 }
 .icon-earth:before {
