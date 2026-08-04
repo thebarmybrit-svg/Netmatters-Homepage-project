@@ -3,20 +3,22 @@
 // ==========================================================================
 
 .sidebar {
+    text-transform: uppercase;
     background-color: $colour-secondary;
     position: fixed;
     top: 0;
     right: 0;
     height: 100vh;
-    width: 100vw; 
-    max-width: 340px; 
+    width: 100vw;
+    max-width: 275px; 
     z-index: 1; // hides behind the container
     overflow-y: auto;
 
     a{
-        border: 1px transparent solid;
+        border-bottom: 1px solid $colour-border-rim;
+
         &:active, &:focus{
-            border-color: $white;
+            box-shadow: inset 0 0 0 2px $white; 
         }
     }
 
@@ -110,12 +112,12 @@
                     margin: 0;
                     background: none;
                 }
-                
-                .link-icon {
-                    display: none !important;
-                }
             }
         }
+    }
+
+    @include mq(medium){ 
+        max-width: 340px;
     }
 }
 
@@ -193,11 +195,13 @@
 
 // Sidebar State Controls
 .nav-is-active {
+    overflow: hidden;
+    height: 100%;
     #container {
-        // Shifts the webpage left by the exact width/max-width of the sidebar
-        transform: translateX(-80vw); 
+        transform: translateX(-275px); 
 
-        @media (min-width: 425px) { // 340px / 0.8 = 425px
+        // Use the same media query breakpoint configuration as your sidebar
+        @include mq(medium){ 
             transform: translateX(-340px);
         }
     }
@@ -212,9 +216,9 @@
         opacity: 1;
         pointer-events: auto;
         // Shifts overlay left along with the main container
-        transform: translateX(-80vw);
+        transform: translateX(-275px);
 
-        @media (min-width: 425px) {
+         @include mq(medium){
             transform: translateX(-340px);
         }
     }

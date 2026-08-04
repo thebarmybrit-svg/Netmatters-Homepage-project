@@ -55,11 +55,11 @@
       margin: 16px -24px; 
     }
 
-    p {
-      color: $grey;
-      font-size: 14px;
-      line-height: 1.6;
-      margin: 0;
+    p a{
+      color: $colour-font;
+      &:hover{
+        text-decoration: underline;
+      }
     }
   }
 

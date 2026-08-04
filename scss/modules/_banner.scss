@@ -9,16 +9,82 @@
     position: relative;
     overflow: hidden;
 
-    // Standard structural overrides for Slick layout stability
     .banner-slick {
+    display: block;
+    width: 100%;
+    visibility: hidden;
+
+    &.slick-initialized {
+        visibility: visible;
+    }
+
+    .slick-dots {
+        position: absolute;
+        bottom: 25px; // Positions the dots over the banner
         display: block;
         width: 100%;
-        visibility: hidden; // Prevents layout pop before initialization
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-align: center;
+        z-index: 10;
 
-        &.slick-initialized {
-            visibility: visible;
+        li {
+            position: relative;
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin: 0 6px;
+            padding: 0;
+            cursor: pointer;
+            vertical-align: middle;
+
+            button {
+                font-size: 0;
+                line-height: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 16px;
+                height: 16px;
+                padding: 0;
+                cursor: pointer;
+                color: transparent;
+                border: 0;
+                outline: none;
+                background: transparent;
+
+                &:before {
+                    display: none; // Removes default Slick unicode dot
+                }
+
+                // Inactive Dot Style (Solid, semi-transparent white)
+                span {
+                    display: block;
+                    width: 8px;
+                    height: 8px;
+                    border: 0px solid transparent;
+                    border-radius: 50%;
+                    background: rgba(255, 255, 255, 0.5); // Dimmed inactive state
+                    transition: all 0.2s ease-in-out;
+                    box-sizing: border-box;
+                }
+            }
+
+            // Active Dot Style (Nested ring and center dot)
+            &.slick-active {
+                button span {
+                    width: 16px; // Expands to form the outer ring
+                    height: 16px;
+                    border: 2px solid $white; // Outer white border
+                    background: $white; // Inner dot color
+                    background-clip: content-box; 
+                    padding: 3px; // Creates the clear gap between ring and inner dot
+                }
+            }
         }
     }
+}
 
     .item {
         display: block; 

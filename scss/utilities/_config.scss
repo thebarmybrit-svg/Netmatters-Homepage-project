@@ -41,6 +41,7 @@ $deep-steel-blue        : #323544;
 $meteorite-blue         : #333645;
 $glowing-sun            : #cdcabb;
 $darkest-sea            : #212330;
+$midnight-express       : #282c3a;
 $dev-blue               : #67809f;
 $it-blue                : #4082d6;
 $market-green           : #2ecc71;
@@ -55,6 +56,7 @@ $facebook-blue          : #3b5998;
 $linkedin-blue          : #0077b5;
 $twitter-blue           : #00aced;
 $instagram-purple       : #d93175;
+$curious-blue           : #337ab7;
 
 // Colour usage
 
@@ -62,7 +64,8 @@ $colour-primary     : $deep-steel-blue;
 $colour-secondary   : $darkest-sea;
 $colour-font        : $meteorite-blue;
 $colour-inverse     : $glowing-sun;
-$colour-accent      : #337ab7;
+$colour-accent      : $curious-blue;
+$colour-border-rim  : $midnight-express;
 $colour-shadow      : rgba($black, .2);
 
 // Color Palette Modifiers
@@ -89,6 +92,7 @@ $ui-colors: (
 	primary             : $colour-primary,
     secondary           : $colour-secondary,
     primary-inverse     : $colour-inverse,
+    grey                : $grey, 
 	cons-dev            : $dev-blue,
 	it-supp             : $it-blue,
 	digi-mrk            : $market-green,

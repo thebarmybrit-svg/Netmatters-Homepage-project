@@ -12,54 +12,61 @@ if (typeof jQuery !== 'undefined' && !jQuery.type) {
 const $header = $('#header');
 let lastScrollY = $(window).scrollTop();
 let timeoutId = null;
-
+const mediumBreakpoint = 992;
 // Dynamically insert the layout placeholder spacer right after the header
 const $spacer = $('<div class="header-spacer"></div>').insertAfter($header);
-
 
 $(window).on('scroll', function() {
     const currentScrollY = $(window).scrollTop();
     const headerHeight = $header.outerHeight();
 
-    // User scrolls UP and is away from the top area
-    if (currentScrollY < lastScrollY && currentScrollY > 150) {
-        clearTimeout(timeoutId);
-        
-        // Set spacer height immediately to absorb the layout gap before header floats
-        $spacer.height(headerHeight); 
-        $header.removeClass('sticky-out').addClass('sticky');
-    } 
-    // User scrolls DOWN or returns to the absolute top of the page
-    else {
+    // 1. User returns to the top area: Transition smoothly back to static
+    if (currentScrollY <= 150) {
         if ($header.hasClass('sticky')) {
-            $header.removeClass('sticky').addClass('sticky-out');
-            
             clearTimeout(timeoutId);
+            // Switch to a specialized top-transition state
+            $header.removeClass('sticky sticky-out').addClass('sticky-top');
+            
             timeoutId = setTimeout(() => {
-                $header.removeClass('sticky-out');
-                // Collapse the layout spacer smoothly once the header is safely static again
-                $spacer.height(0);
-            }, 300); // Matches the 0.3s SCSS animation duration
-        } else if (currentScrollY <= 150) {
-            // Safety cleanup if scrolling fast near the top boundary
-            $header.removeClass('sticky sticky-out');
-            $spacer.height(0);
+                // Completely clean up and return to normal layout flow after transition ends
+                $header.removeClass('sticky-top');
+                $spacer.css('height', 0);
+            }, 300); // Matches the 0.3s CSS transition
+        } else if (!$header.hasClass('sticky-top')) {
+            // Safety cleanup if they are already at the top without active sticky states
+            $spacer.css('height', 0);
         }
+    } 
+    // 2. User scrolls UP: Slide sticky header IN
+    else if (currentScrollY < lastScrollY) {
+        clearTimeout(timeoutId);
+        $spacer.css('height', headerHeight); 
+        $header.removeClass('sticky-out sticky-top').addClass('sticky');
+    } 
+    // 3. User scrolls DOWN: Slide sticky header OUT
+    else if (currentScrollY > lastScrollY && $header.hasClass('sticky')) {
+        clearTimeout(timeoutId);
+        $header.removeClass('sticky sticky-top').addClass('sticky-out');
+        
+        timeoutId = setTimeout(() => {
+            $header.removeClass('sticky-out');
+            $spacer.css('height', 0);
+        }, 300);
     }
 
     lastScrollY = currentScrollY;
 });
 
-// Reset layout calculations smoothly if user resizes the browser window
+// Reset layout calculations if user resizes the browser window
 $(window).on('resize', function() {
     if ($(window).width() < mediumBreakpoint) {
-        $header.removeClass('sticky sticky-out');
-        $spacer.height(0);
+        clearTimeout(timeoutId);
+        $header.removeClass('sticky sticky-out sticky-top');
+        $spacer.css('height', 0);
     }
 });
 
-// Banner Carosel //
- $('.banner-slick').slick({
+$('.banner-slick').slick({
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -68,7 +75,11 @@ $(window).on('resize', function() {
     adaptiveHeight: false,
     autoplay: true,
     autoplaySpeed: 5000,
-    accessibility: false 
+    accessibility: false,
+    // Required to create the inner dot element
+    customPaging: function(slider, i) {
+        return '<button type="button"><span></span></button>';
+    }
 });
 
 
@@ -83,7 +94,12 @@ $carousel.slick({
     autoplaySpeed: 2000,  
     infinite: true,    
     arrows: false,     
-    dots: false,        
+    dots: false,
+    accesibility: false,
+    draggable: false,
+    swipe: false,
+    touchMove: false,
+    swipeToSlide: false,        
     responsive: [
         { breakpoint: 1260, settings: { slidesToShow: 5 } },
         { breakpoint: 992, settings: { slidesToShow: 3 } },

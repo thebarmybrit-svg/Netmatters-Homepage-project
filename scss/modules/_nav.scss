@@ -26,11 +26,11 @@
         align-items: center;   
         text-align: center; 
         .nav-header{
-            
+            text-transform: uppercase;
             text-decoration: none;
             background-color: transparent;
             margin-bottom: 10px;
-             position: relative;
+            position: relative;
             &, p, small{        
                 color: $white;
                 display: block;
