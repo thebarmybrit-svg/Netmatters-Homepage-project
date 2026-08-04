@@ -16,16 +16,8 @@ let timeoutId = null;
 // Dynamically insert the layout placeholder spacer right after the header
 const $spacer = $('<div class="header-spacer"></div>').insertAfter($header);
 
-const mediumBreakpoint = 768; 
 
 $(window).on('scroll', function() {
-    // Enforce rule to disable functionality completely on small viewports
-    if ($(window).width() < mediumBreakpoint) {
-        $header.removeClass('sticky sticky-out');
-        $spacer.height(0);
-        return;
-    }
-
     const currentScrollY = $(window).scrollTop();
     const headerHeight = $header.outerHeight();
 
