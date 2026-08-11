@@ -5,7 +5,7 @@
 // Import fonts if they are defined
 
 @if variable-exists($name: font-family--import){
-  @import url($font-family--import);
+  	@import url($font-family--import);
 }
 
 // Calculate em values
@@ -23,6 +23,6 @@
 // Set the "context" width for the grid
 
 @function g-context($g-col-width, $g-col-count ,$g-gutter-width) {
-  $g-context: ($g-col-width * $g-col-count) + ($g-gutter-width * ($g-col-count - 1));
-  @return $g-context;
+	$g-context: ($g-col-width * $g-col-count) + ($g-gutter-width * ($g-col-count - 1));
+	@return $g-context;
 }

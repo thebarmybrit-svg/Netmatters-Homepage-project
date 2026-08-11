@@ -5,44 +5,44 @@
 // Calculate grid columns
 
 .row__col-xs {
-  @include mq(micro){
-    @include g-columns;
-  }
+	@include mq(micro){
+		@include g-columns;
+	}
 }
 
 .row__col-sm {
-  @include mq(small){
-    @include g-columns;
-  }
+	@include mq(small){
+		@include g-columns;
+	}
 }
 
 .row__col-md {
-  @include mq(medium) {
-    @include g-columns;
-  }
+	@include mq(medium) {
+		@include g-columns;
+	}
 }
 
 .row__col-lg{
-  @include mq(large){
-    @include g-columns($g-col-count-lg);
-  }
+	@include mq(large){
+		@include g-columns($g-col-count-lg);
+	}
 }
 
 // Column styles
 
 [class^="row__col-"]{
-  position: relative;
-  margin-bottom: $g-gutter-width;
-  @include mq(small)  {
-    @include doubly(percentage($g-gutter-width / $context));
-    margin-top: em(12px);
-    margin-bottom: em(12px);
-  }
-  @include mq(medium){
-    float: left;
-    min-height: 1px;
-    &:last-of-type {
-      float: right;
-    }
-  }
+	position: relative;
+	margin-bottom: $g-gutter-width;
+	@include mq(small)  {
+		@include doubly(percentage($g-gutter-width / $context));
+		margin-top: em(12px);
+		margin-bottom: em(12px);
+	}
+	@include mq(medium){
+		float: left;
+		min-height: 1px;
+		&:last-of-type {
+		float: right;
+		}
+	}
 }

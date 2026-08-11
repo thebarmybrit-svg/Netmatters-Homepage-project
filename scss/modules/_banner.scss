@@ -120,7 +120,6 @@
     }
 
     @include mq(small) {
-        .text { text-align: left; }
         h1 { font-size: $font-size--prim; }
         p, .btn { font-size: em(20px, $base__font-size); }
         .btn { font-weight: $font-weight--bold; margin: 0; }

@@ -5,11 +5,11 @@
 // Clearfix
 
 %clearfix {
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
 }
 
 // Screen reader text
@@ -42,9 +42,9 @@
 // For pseudo-elements
 
 %pseudos {
-  display: block;
-  content: ''; 
-  position: absolute;
+	display: block;
+	content: ''; 
+	position: absolute;
 }
 
 // Center elements

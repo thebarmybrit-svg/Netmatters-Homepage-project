@@ -4,16 +4,16 @@
 
 
 .row {
-  @extend %center-flex;
-  @extend %clearfix;
-  flex-wrap: wrap;
-  width: 100%;
-  padding: 20px 30px 20px 20px;
-  
-  @include mq(small) {
-    flex-direction: row;
-    flex-grow: 0;
-    flex-shrink: 0;
-  }
+	@extend %center-flex;
+	@extend %clearfix;
+	flex-wrap: wrap;
+	width: 100%;
+	padding: 20px 30px 20px 20px;
+	
+	@include mq(small) {
+		flex-direction: row;
+		flex-grow: 0;
+		flex-shrink: 0;
+	}
 }
 

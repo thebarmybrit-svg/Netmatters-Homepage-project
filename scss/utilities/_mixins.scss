@@ -7,51 +7,51 @@
 
 @mixin e($element) {
 	&__#{$element} {
-    @content;
-  }
+		@content;
+	}
 }
 @mixin m($modifier) {
-  &--#{$modifier} {
-    @content;
-  }
+	&--#{$modifier} {
+		@content;
+	}
 }
 
 // Media queries
 
 @mixin mq($break) {
-  @if $break == "micro" {
-    @media (min-width: $brkpoint-xs) and (max-width: ($brkpoint-sm - 1)) {
-      @content;
-    }
-  }
-  @else if $break == "small" {
-    @media (min-width: $brkpoint-sm){
-      @content;
-    }
-  }
-  @else if $break == "small-only" {
-    @media (min-width: $brkpoint-sm) and (max-width: ($brkpoint-md - 1)){
-      @content;
-    }
-  }
-  @else if $break == "medium" {
-    @media (min-width: $brkpoint-md) {
-      @content;
-    }
-  }
-  @else if $break == "medium-only" {
-    @media (min-width: $brkpoint-md) and (max-width: ($brkpoint-lg - 1)){
-      @content;
-    }
-  }
-  @else if $break == "large" {
-    @media (min-width: $brkpoint-lg) {
-      @content;
-    }
-  }
-   @else {
-   	@error "Whoops! No value could be retrieved for `#{$break}`. "
-  }
+	@if $break == "micro" {
+		@media (min-width: $brkpoint-xs) and (max-width: ($brkpoint-sm - 1)) {
+		@content;
+		}
+	}
+	@else if $break == "small" {
+		@media (min-width: $brkpoint-sm){
+		@content;
+		}
+	}
+	@else if $break == "small-only" {
+		@media (min-width: $brkpoint-sm) and (max-width: ($brkpoint-md - 1)){
+		@content;
+		}
+	}
+	@else if $break == "medium" {
+		@media (min-width: $brkpoint-md) {
+		@content;
+		}
+	}
+	@else if $break == "medium-only" {
+		@media (min-width: $brkpoint-md) and (max-width: ($brkpoint-lg - 1)){
+		@content;
+		}
+	}
+	@else if $break == "large" {
+		@media (min-width: $brkpoint-lg) {
+		@content;
+		}
+	}
+	@else {
+		@error "Whoops! No value could be retrieved for `#{$break}`. "
+	}
 }
 
      
@@ -68,16 +68,16 @@
 @mixin bg-colours-darken($map) {
 	@each $theme, $colour in $map {
 		&--#{$theme} {
-      background-color: darken($colour, 20%);   
+     		 background-color: darken($colour, 20%);   
 		}
 	}
 }
 @mixin bg-colour-hover($map) {
 	@each $theme, $colour in $map {
 		&--#{$theme} {
-      &:hover{
-        background-color: $colour;
-      }
+			&:hover{
+				background-color: $colour;
+			}
 		}
 	}
 }
@@ -85,11 +85,11 @@
 @mixin bg-colour-hover-darken($map) {
 	@each $theme, $colour in $map {
 		&--#{$theme} {
-      background-color: $colour;
-      // transition: background-color $trns-duration ease;
-      &:hover{
-        background-color: darken($colour, 20%);  
-      }
+			background-color: $colour;
+			// transition: background-color $trns-duration ease;
+			&:hover{
+				background-color: darken($colour, 20%);  
+			}
 		}
 	}
 }
@@ -97,11 +97,11 @@
 @mixin bg-white-to-colour($map){
   @each $theme, $colour in $map {
 		&--#{$theme} {
-      background-color: $white;
-      // transition: background-color $trns-duration ease;
-      &:hover{
-        background-color: $colour;
-      }
+			background-color: $white;
+			// transition: background-color $trns-duration ease;
+			&:hover{
+				background-color: $colour;
+			}
 		}
 	}
 }
@@ -117,11 +117,11 @@
 @mixin text-white-to-colour($map){
   @each $theme, $colour in $map {
 		&--#{$theme} {
-      color: $white;
-      // transition: color $trns-duration ease;
-      &:hover{
-        color: $colour;
-      }
+			color: $white;
+			// transition: color $trns-duration ease;
+			&:hover{
+				color: $colour;
+			}
 		}
 	}
 }
@@ -137,7 +137,7 @@
 @mixin border-colour-darken($map, $sz: 2px, $stl: solid) {
 	@each $theme, $colour in $map {
 		&--#{$theme} {
-      border-top: darken($colour, 20%) $sz $stl;  
+      		border-top: darken($colour, 20%) $sz $stl;  
 		}
 	}
 }
@@ -161,15 +161,15 @@
 	$el-w: null,
 	$el-h: null) {
 	@if $el == "before" or $el == "after" { 
-	  &:#{$el} {
-		  @extend %pseudos;
-		  width: $el-w;
-	  	height: $el-h;
-	    @content;
-	  }
+		&:#{$el} {
+			@extend %pseudos;
+			width: $el-w;
+			height: $el-h;
+			@content;
+		}
 	} 
 	@else {
-    @error "`#{$el}` is not a valid pseudo-element.";
+    	@error "`#{$el}` is not a valid pseudo-element.";
 	}
 }
       
@@ -177,38 +177,38 @@
 
 @mixin doubly($margin: 1em) {
 	& + & {
-	  margin-left: $margin;
-    @content;
+	  	margin-left: $margin;
+    	@content;
 	}
 }
 
 // Grid Columns
      
 @mixin g-columns($columns: $g-col-count) {
-  @for $i from 1 through $columns {
-    $context: g-context($g-col-width, $columns ,$g-gutter-width) !global;  
-    $target: ($g-col-width * $i) + ($g-gutter-width * ($i - 1));
-    $calculate-width: percentage($target / $context);
-    &--#{$i} {
-      flex-basis: $calculate-width;
-      max-width: $calculate-width;
-      margin: 0 $g-gutter-width; 
-    }
-  }
+  	@for $i from 1 through $columns {
+		$context: g-context($g-col-width, $columns ,$g-gutter-width) !global;  
+		$target: ($g-col-width * $i) + ($g-gutter-width * ($i - 1));
+		$calculate-width: percentage($target / $context);
+		&--#{$i} {
+			flex-basis: $calculate-width;
+			max-width: $calculate-width;
+			margin: 0 $g-gutter-width; 
+		}
+  	}
 }
 
 @mixin dropdown-layout($width: 50%){
-  height: 100vh;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  transition: visibility $trns-duration ease;
+	height: 100vh;
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+	transition: visibility $trns-duration ease;
 }
 
 @mixin dropdown-layout-undo(){
-  display: block;
-  width: auto;
-  height: 100px;
-  transform: none;
-  transition: none;
+	display: block;
+	width: auto;
+	height: 100px;
+	transform: none;
+	transition: none;
 }

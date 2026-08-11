@@ -8,6 +8,10 @@
     padding-bottom: $g-gutter-width;
     row-gap: em(30px);
     
+    .row{
+        padding: 0 em(15px);
+    }
+
     @include mq(medium){
         flex-wrap: wrap;
         gap: $g-gutter-width;
@@ -26,6 +30,7 @@
     }
     &:not(:first-child){
         padding: 0 15px;
+        margin-bottom: 30px;
     }
     ul {
         padding-left: 0;
@@ -43,7 +48,6 @@
         text-transform: uppercase;
         font-size: em(14px);
         margin-bottom: em(26px);
-        margin-top: 0;
         padding-top: em(10px);
     }
 
@@ -77,7 +81,9 @@
         &:not(:first-child) {
             flex: 1 1 0%;
         }
-        margin-bottom: 40px;
+        h3, h4{
+            margin-top: 0;
+        }
     }
 }
 
