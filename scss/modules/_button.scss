@@ -4,9 +4,9 @@
 
 .btn {
 	display: inline-flex;
+    text-transform: uppercase;
     margin-bottom: 0;
     font-weight: $font-weight--medium;
-    font-size: $font-size--thrd;
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -16,7 +16,7 @@
     border-radius: $br--default;
     @include bg-colours($ui-colors);
     text-decoration: none;
-    padding: 0.75rem 1.5rem;
+    padding: em(5px) em(15px);
     a, p, &{
         color: $white;
     }

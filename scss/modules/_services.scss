@@ -62,12 +62,17 @@
         &:first-child{
             max-width: 90%;
         }
+
+        &:last-child{
+            display: flex;
+            justify-content: center;
+        }
         
         &:not(:first-child):not(:last-child) {
             display: flex;
             flex-direction: column;
-           box-shadow: 0px 0px 5px 2px $colour-shadow;
-        border-radius: $br--default;
+            box-shadow: 0px 0px 5px 2px $colour-shadow;
+            border-radius: $br--default;
             
 
             @include mq(small){
@@ -134,7 +139,7 @@
         height: 100%; 
         width: 100%;
         transition-duration: $trns-duration;
-        padding: em(30px); 
+        padding: $g-gutter-width; 
         border-radius: $br--default;
         gap: $g-gutter-width;
         

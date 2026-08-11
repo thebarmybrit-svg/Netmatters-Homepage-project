@@ -67,30 +67,30 @@
                 width: 280px; 
                 transition: transform 0.2s ease; // Smooth alignment shifting
 
-                // --- Left Edge Adjustment ---
-                &.edge-left {
-                    left: 0 !important;
-                    right: auto !important;
-                    transform: translateX(20px) !important; // Forces 20px padding from left viewport edge
+                // // --- Left Edge Adjustment ---
+                // &.edge-left {
+                //     left: 0 !important;
+                //     right: auto !important;
+                //     transform: translateX(20px) !important; // Forces 20px padding from left viewport edge
 
-                    .arrow {
-                        left: 20px !important; // Keeps arrow anchored directly over the logo icon
-                        transform: translateX(0) !important;
-                    }
-                }
+                //     .arrow {
+                //         left: 20px !important; // Keeps arrow anchored directly over the logo icon
+                //         transform: translateX(0) !important;
+                //     }
+                // }
 
-                // --- Right Edge Adjustment ---
-                &.edge-right {
-                    left: auto !important;
-                    right: 0 !important;
-                    transform: translateX(-20px) !important; // Forces 20px padding from right viewport edge
+                // // --- Right Edge Adjustment ---
+                // &.edge-right {
+                //     left: auto !important;
+                //     right: 0 !important;
+                //     transform: translateX(-20px) !important; // Forces 20px padding from right viewport edge
 
-                    .arrow {
-                        left: auto !important;
-                        right: 20px !important; // Keeps arrow anchored directly over the logo icon
-                        transform: translateX(0) !important;
-                    }
-                }
+                //     .arrow {
+                //         left: auto !important;
+                //         right: 20px !important; // Keeps arrow anchored directly over the logo icon
+                //         transform: translateX(0) !important;
+                //     }
+                // }
 
                 .box {
                     background-color: $meteorite-blue;

@@ -43,6 +43,10 @@
 %hdln-sec {
 	color: $white;
 	letter-spacing: $letter-space;
-	font-weight: $font-weight--light;
+	font-weight: $font-weight--medium;
 	font-size: em($font-size--secn);
+}
+
+%hdln-ter{
+	font-weight: $font-weight--medium;
 }

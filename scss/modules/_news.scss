@@ -59,6 +59,16 @@
         .icon-arrow-right{
             padding: 0;
         }
+
+        &:last-child{
+            display: flex;
+            justify-content: center;
+            &:hover a{
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+
         &:not(:first-child):not(:last-child){
             display: flex;
             flex-direction: column;
@@ -88,11 +98,6 @@
                     left: 0;
                     z-index: 2;
                 }
-                img {
-                    max-width: 100%;
-                    height: auto;
-                    object-fit: contain;
-                }
             }
 
             .block{
@@ -110,9 +115,6 @@
                     padding-left: em(20px);
                 }
             }
-        }
-        &:last-child:hover{
-            text-decoration: underline;
         }
 
         @include mq(small) {

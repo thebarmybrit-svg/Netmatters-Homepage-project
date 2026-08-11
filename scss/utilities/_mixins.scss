@@ -198,7 +198,6 @@
 }
 
 @mixin dropdown-layout($width: 50%){
-	height: 100vh;
 	overflow-y: auto;
 	display: flex;
 	flex-direction: column;
@@ -208,7 +207,7 @@
 @mixin dropdown-layout-undo(){
 	display: block;
 	width: auto;
-	height: 100px;
+	height: 114px;
 	transform: none;
 	transition: none;
 }
