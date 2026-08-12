@@ -17,6 +17,7 @@
     @include bg-colours($ui-colors);
     text-decoration: none;
     padding: em(5px) em(15px);
+    gap: em(10px);
     a, p, &{
         color: $white;
     }

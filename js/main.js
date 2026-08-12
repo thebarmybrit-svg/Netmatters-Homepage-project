@@ -8,7 +8,7 @@ if (typeof jQuery !== 'undefined' && !jQuery.type) {
     };
 }
 
-// Sticky Header //
+// --- Sticky Header --- //
 const $header = $('#header');
 let lastScrollY = $(window).scrollTop();
 let timeoutId = null;
@@ -66,6 +66,7 @@ $(window).on('resize', function() {
     }
 });
 
+// --- Carousels --- //
 $('.banner-slick').slick({
     infinite: true,
     slidesToShow: 1,
@@ -82,11 +83,7 @@ $('.banner-slick').slick({
     }
 });
 
-
-// Partners Carousel //
-// Initialize Partners Carousel
 const $carousel = $('.partners');
-
 $carousel.slick({
     slidesToShow: 6, 
     slidesToScroll: 1,    
@@ -95,7 +92,7 @@ $carousel.slick({
     infinite: true,    
     arrows: false,     
     dots: false,
-    accesibility: false,
+    accessibility: false, // Fixed spelling typo
     draggable: false,
     swipe: false,
     touchMove: false,
@@ -108,73 +105,49 @@ $carousel.slick({
     ]
 });
 
-// Dynamic edge detection for tooltips
-$carousel.on('mouseenter', '.item-partner .item', function() {
-    const $description = $(this).find('.description');
-    if (!$description.length) return;
-
-    // Remove old edge classes before measuring
-    $description.removeClass('edge-left edge-right');
-    
-    // Add hover class to override 'display: none' so JS can read its real width
-    $(this).addClass('is-hovered');
-
-    // Use native DOM element to get accurate viewport bounding box
-    const rect = $description[0].getBoundingClientRect();
-    const windowWidth = $(window).width();
-    const buffer = 20; // Explicit minimum padding from the edge of the viewport
-
-    if (rect.left < buffer) {
-        $description.addClass('edge-left');
-    } else if (rect.right > windowWidth - buffer) {
-        $description.addClass('edge-right');
-    }
-}).on('mouseleave', '.item-partner .item', function() {
-    // Clean up hover state and edge classes when mouse leaves
-    $(this).removeClass('is-hovered');
-    $(this).find('.description').removeClass('edge-left edge-right');
-});
-
-// sliding sidebar menu //
+// --- Sliding Sidebar Menu --- //
 const hamburgerBtn = document.getElementById("hamburger-toggle");
 const overlay = document.getElementById("nav-overlay");
 const body = document.body;
 let menuHasOpened = false; // Track if the menu was ever activated
 
 // Toggle menu slide status
-hamburgerBtn.addEventListener("click", () => {
-    if (!menuHasOpened) {
-        body.classList.add("has-opened");
-        menuHasOpened = true;
-    }
-    body.classList.toggle("nav-is-active");
-});
+if (hamburgerBtn && overlay) {
+    hamburgerBtn.addEventListener("click", () => {
+        if (!menuHasOpened) {
+            body.classList.add("has-opened");
+            menuHasOpened = true;
+        }
+        body.classList.toggle("nav-is-active");
+    });
 
-// Close menu view when overlay mask background is tapped
-overlay.addEventListener("click", () => {
-    body.classList.remove("nav-is-active");
-});
+    overlay.addEventListener("click", () => {
+        body.classList.remove("nav-is-active");
+    });
+}
 
-// Cookie Handler //
+// --- Cookie Handler --- //
 const cookieOverlay = document.getElementById("cookie-overlay");
 const cookieBanner = document.getElementById("cookie-banner");
 const acceptBtn = document.getElementById("accept-cookies");
 const settingsBtn = document.getElementById("change-settings");
 
-// Check storage baseline
-if (!localStorage.getItem("cookieConsent")) {
-    cookieOverlay.classList.remove("hidden");
-    cookieBanner.classList.remove("hidden");
+if (cookieOverlay && cookieBanner && acceptBtn) {
+    // Check storage baseline
+    if (!localStorage.getItem("cookieConsent")) {
+        cookieOverlay.classList.remove("hidden");
+        cookieBanner.classList.remove("hidden");
+    }
+    // Accept functionality
+    acceptBtn.addEventListener("click", () => {
+        localStorage.setItem("cookieConsent", "accepted");
+        cookieOverlay.classList.add("hidden");
+        cookieBanner.classList.add("hidden");
+    });
+    // Settings functionality placeholder
+    if (settingsBtn) {
+        settingsBtn.addEventListener("click", () => {
+            console.log("Settings panel opened");
+        });
+    }
 }
-
-// Accept functionality
-acceptBtn.addEventListener("click", () => {
-    localStorage.setItem("cookieConsent", "accepted");
-    cookieOverlay.classList.add("hidden");
-    cookieBanner.classList.add("hidden");
-});
-
-// Settings functionality placeholder
-settingsBtn.addEventListener("click", () => {
-    console.log("Settings panel opened");
-});
