@@ -10,6 +10,7 @@ if (typeof jQuery !== 'undefined' && !jQuery.type) {
 
 // --- Sticky Header --- //
 const $header = $('#header');
+const headerHeight = $header.outerHeight();
 let lastScrollY = $(window).scrollTop();
 let timeoutId = null;
 const mediumBreakpoint = 992;
@@ -18,8 +19,8 @@ const $spacer = $('<div class="header-spacer"></div>').insertAfter($header);
 
 $(window).on('scroll', function() {
     const currentScrollY = $(window).scrollTop();
-    const headerHeight = $header.outerHeight();
-
+    
+    console.log(currentScrollY);
     // 1. User returns to the top area: Transition smoothly back to static
     if (currentScrollY <= 150) {
         if ($header.hasClass('sticky')) {
@@ -105,15 +106,16 @@ $carousel.slick({
     ]
 });
 
-// --- Sliding Sidebar Menu --- //
 const hamburgerBtn = document.getElementById("hamburger-toggle");
 const overlay = document.getElementById("nav-overlay");
 const body = document.body;
-let menuHasOpened = false; // Track if the menu was ever activated
+let menuHasOpened = false; 
 
-// Toggle menu slide status
 if (hamburgerBtn && overlay) {
     hamburgerBtn.addEventListener("click", () => {
+        // Lock the header to the current scroll position when opening
+        document.getElementById("header").style.top = lastScrollY + "px";
+        
         if (!menuHasOpened) {
             body.classList.add("has-opened");
             menuHasOpened = true;
@@ -122,7 +124,17 @@ if (hamburgerBtn && overlay) {
     });
 
     overlay.addEventListener("click", () => {
+        // Remove the active class to trigger the closing animation
         body.classList.remove("nav-is-active");
+        
+        // Wait for the CSS transition to finish before snapping header to 0
+        // Change 300 to match the exact duration (in ms) of your CSS sidebar transition
+        setTimeout(() => {
+            // Only reset if the user didn't instantly reopen it
+            if (!body.classList.contains("nav-is-active")) {
+                document.getElementById("header").style.top = "0px";
+            }
+        }, 300); 
     });
 }
 

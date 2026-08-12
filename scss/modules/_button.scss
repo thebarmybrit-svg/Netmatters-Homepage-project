@@ -5,7 +5,9 @@
 .btn {
 	display: inline-flex;
     text-transform: uppercase;
-    margin-bottom: 0;
+    line-height: 50px; 
+    margin: 0; 
+    font-size: $font-size--thrd;
     font-weight: $font-weight--medium;
     text-align: center;
     align-items: center;
@@ -21,5 +23,12 @@
     a, p, &{
         color: $white;
     }
-}
 
+    &--about{
+        padding: em(10px) em(30px);
+    }
+
+    &--banner{
+        padding: em(5px) em(20px);
+    }
+}

@@ -9,81 +9,86 @@
     overflow: hidden;
 
     .banner-slick {
-    display: block;
-    width: 100%;
-    visibility: hidden;
-
-    &.slick-initialized {
-        visibility: visible;
-    }
-
-    .slick-dots {
-        position: absolute;
-        bottom: 25px; // Positions the dots over the banner
         display: block;
         width: 100%;
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        text-align: center;
-        z-index: 10;
+        visibility: hidden;
 
-        li {
-            position: relative;
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-            margin: 0 6px;
+        &.slick-initialized {
+            visibility: visible;
+        }
+
+        .slick-dots {
+            position: absolute;
+            bottom: 25px; // Positions the dots over the banner
+            display: block;
+            width: 100%;
             padding: 0;
-            cursor: pointer;
-            vertical-align: middle;
+            margin: 0;
+            list-style: none;
+            text-align: center;
+            z-index: 10;
 
-            button {
-                font-size: 0;
-                line-height: 0;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+            li {
+                position: relative;
+                display: inline-block;
                 width: 16px;
                 height: 16px;
+                margin: 0 6px;
                 padding: 0;
                 cursor: pointer;
-                color: transparent;
-                border: 0;
-                outline: none;
-                background: transparent;
+                vertical-align: middle;
 
-                &:before {
-                    display: none; // Removes default Slick unicode dot
-                }
-
-                // Inactive Dot Style (Solid, semi-transparent white)
-                span {
-                    display: block;
-                    width: 8px;
-                    height: 8px;
-                    border: 0px solid transparent;
-                    border-radius: 50%;
-                    background: rgba(255, 255, 255, 0.5); // Dimmed inactive state
-                    transition: all 0.2s ease-in-out;
-                    box-sizing: border-box;
-                }
-            }
-
-            // Active Dot Style (Nested ring and center dot)
-            &.slick-active {
-                button span {
-                    width: 16px; // Expands to form the outer ring
+                button {
+                    font-size: 0;
+                    line-height: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 16px;
                     height: 16px;
-                    border: 2px solid $white; // Outer white border
-                    background: $white; // Inner dot color
-                    background-clip: content-box; 
-                    padding: 3px; // Creates the clear gap between ring and inner dot
+                    padding: 0;
+                    cursor: pointer;
+                    color: transparent;
+                    border: 0;
+                    outline: none;
+                    background: transparent;
+
+                    &:before {
+                        display: none; // Removes default Slick unicode dot
+                    }
+
+                    // Inactive Dot Style (Solid, semi-transparent white)
+                    span {
+                        display: block;
+                        width: 8px;
+                        height: 8px;
+                        border: 0px solid transparent;
+                        border-radius: 50%;
+                        background: rgba(255, 255, 255, 0.5); // Dimmed inactive state
+                        transition: all 0.2s ease-in-out;
+                        box-sizing: border-box;
+                    }
+                }
+
+                // Active Dot Style (Nested ring and center dot)
+                &.slick-active {
+                    button span {
+                        width: 16px; // Expands to form the outer ring
+                        height: 16px;
+                        border: 2px solid $white; // Outer white border
+                        background: $white; // Inner dot color
+                        background-clip: content-box; 
+                        padding: 3px; // Creates the clear gap between ring and inner dot
+                    }
                 }
             }
         }
     }
-}
+    // h1 { font-size: $font-size--prim; }
+    p {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+    }
 
     .item {
         display: block; 
@@ -108,7 +113,8 @@
     .text {
         text-align: center;
         p {
-            color: $white; 
+            color: $white;
+            font-weight: $font-weight--bold; 
         }
     }
 
@@ -119,15 +125,19 @@
     }
 
     @include mq(small) {
-        h1 { font-size: $font-size--prim; }
-        p, .btn { font-size: em(20px, $base__font-size); }
-        .btn { font-weight: $font-weight--bold; margin: 0; }
+        
     }
 
     @include mq(medium) {
         h1 { font-size: $font-size--title; }
-        .btn { font-size: $font-family--secondary; }
+        p{
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+        }
         .content .row { justify-content: flex-start; }
-        .text { text-align: left; background-color: rgba(0, 0, 0, 0); }
+        .text { 
+            text-align: left; 
+            background-color: rgba(0, 0, 0, 0); 
+        }
     }
 }
