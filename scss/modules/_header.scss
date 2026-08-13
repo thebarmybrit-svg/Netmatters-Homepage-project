@@ -3,19 +3,19 @@
 // ==========================================================================
 
 #header {
-    transition: transform 0.3s ease, background-color 0.3s ease, padding 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease-in-out, padding 0.3s ease;
     position: relative; 
     top: 0;
     left: 0;
     width: 100%;
     z-index: 999;
+    .inner {
+        padding: em(20px) 0px;
+    }
     .row{
         flex-wrap: nowrap;
     }
-    .inner {
-        padding: 15px 25px 20px 15px; 
-    }
-
+    
     .logo-container {
         margin-right: auto;
     }
@@ -64,8 +64,8 @@
         align-items: center;
         justify-content: center;
         border-radius: 4px;
-        width: $font-size--title;
-        height: $font-size--title;
+        width: 56px;
+        height: 56px;
         @include bg-colour-hover-darken($ui-colors);
         .btn--hamburger {
             padding: 0;
@@ -111,6 +111,7 @@
     .search-form-wrapper--mobile {
         display: block;
         width: 100%;
+        margin-top: 11px;
 
         .search_form {
             display: flex;
@@ -150,9 +151,7 @@
         }
     }
     @include mq(small) {
-        .inner {
-            padding: em(20px) 0px 0px 0px;
-        }
+
         .logo-container {
             a img {
                 height: $font-size--title;
@@ -162,17 +161,19 @@
             display: flex;
             align-items: center;
             margin-left: auto;
+            padding: 0 15px;
 
             .actions {
                 display: flex;
                 align-items: center;
-                gap: 15px;
+                gap: 20px;
+                
             }
         }
         .btn-group {
             display: flex;
             flex-direction: row;
-            gap: 12px;
+            gap: 20px;
 
             .btn {
                 @include bg-colour-hover-darken($ui-colors);
@@ -180,13 +181,15 @@
                 align-items: center;
                 justify-content: center;
                 gap: 8px;
-                padding: 12px 24px;
+                padding: 5px 15px;
                 font-size: 18px;
-                font-weight: $font-weight--bold;
+                // font-weight: $font-weight--bold;
                 color: $white;
                 border-radius: $br--default;
                 text-decoration: none;
-                height: $font-size--title;
+                height: 56px;
+                line-height: 46px;
+                float: left;
 
                 p {
                     margin: 0;
@@ -201,7 +204,7 @@
             display: flex;
             align-items: center;
             position: relative;
-            height: $font-size--title;
+            height: 56px;
             .search_input {
                 background-color: $white;
                 border: 1px solid $colour-search-bdr;
@@ -209,7 +212,7 @@
                 border-top-left-radius: $br--default;
                 border-bottom-left-radius: $br--default;
                 height: 100%;
-                width: 200px;
+                width: 240px;
                 padding: 0 15px;
                 font-size: 14px;
                 outline: none;

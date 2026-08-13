@@ -68,7 +68,7 @@
 @mixin bg-colours-darken($map) {
 	@each $theme, $colour in $map {
 		&--#{$theme} {
-     		 background-color: darken($colour, 20%);   
+     		background-color: darken($colour, 20%);   
 		}
 	}
 }

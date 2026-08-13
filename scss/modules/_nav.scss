@@ -42,7 +42,6 @@
         }
 
         .sub-menu-banner{
-            
             color: $white;
             background-color: $colour-primary;
             .sub-menu{
@@ -98,6 +97,10 @@
         
 
         @include mq(medium){
+            small{
+                font-size: 10px;
+                padding-top: 10px;
+            }
             &.theme{
                 @include bg-colour-hover($ui-colors);
                 @include border-colours-hover($ui-colors);
@@ -114,7 +117,7 @@
                         display: inline-block;
                         border-color: transparent;
                         border-style: solid;
-                        border-width: 40px 69px 0;
+                        border-width: 40px 66px 0;
                         top: 100%;
                         z-index: 10005;
                         left: 0;
@@ -139,7 +142,7 @@
                     @include bg-colours-darken($ui-colors);
                 }
                 position: absolute;
-                top: 242px;
+                top: 211px;
                 width: 100vw;
                 padding: 40px 0;
                 left: 50%;
@@ -161,7 +164,7 @@
             &:hover{
                 .nav-header{
                     &::after{
-                        border-width: 40px 85px 0;
+                        border-width: 40px 79px 0;
                         width: 8px;
                     }
                 }

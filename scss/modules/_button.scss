@@ -3,7 +3,7 @@
 // ==========================================================================
 
 .btn {
-	display: inline-flex;
+	display: inline-block;
     text-transform: uppercase;
     line-height: 50px; 
     margin: 0; 
@@ -18,17 +18,27 @@
     border-radius: $br--default;
     @include bg-colours($ui-colors);
     text-decoration: none;
-    padding: em(5px) em(15px);
+    padding: 5px 15px;
     gap: em(10px);
     a, p, &{
         color: $white;
     }
 
     &--about{
-        padding: em(10px) em(30px);
+        height: auto;
+        font-size: 18px;
+        line-height: 35px;
+        padding: 10px 30px;
+        margin-bottom: 17px !important;
+        @include mq(small-only){
+            margin-bottom: 50px !important;
+        }
+        @include mq(medium-only){
+            margin-bottom: 17px;
+        }
     }
 
     &--banner{
-        padding: em(5px) em(20px);
+        padding: 5px 20px;
     }
 }

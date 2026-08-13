@@ -8,9 +8,6 @@
     padding-bottom: $g-gutter-width;
     row-gap: em(30px);
     
-    .row{
-        padding: 0 em(15px);
-    }
 
     @include mq(medium){
         flex-wrap: wrap;
@@ -25,11 +22,12 @@
 .footer-row {
     align-self: flex-start;
     flex: 1 1 100%;
-    &:first-child{
-        padding-right: $g-gutter-width;
+    &.footer-company-info{
+        padding-right: 60px;
+        width: 300px;
     }
     &:not(:first-child){
-        padding: 0 15px;
+        // padding: 0 15px;
         margin-bottom: 30px;
     }
     ul {
@@ -37,6 +35,8 @@
         margin: 0;
         li {
             list-style-type: none;
+            font-size: .8125rem;
+            line-height: 1.375rem;
         }
     }
 
@@ -77,6 +77,9 @@
     }
     
     @include mq(large) {
+        &.footer-company-info{
+            width: 400px;
+        }
         &:first-child,
         &:not(:first-child) {
             flex: 1 1 0%;
@@ -130,13 +133,24 @@
 .footer-bottom {
     background-color: $colour-secondary;
     color: $white;
-    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    font-size: .8125rem;
+    padding-top: 10px;
+    width: 100%;
+    left: 0;
+    border: 0;
     .license{
+        text-decoration: none;
+        list-style: none;
+        color: $white;
         display: flex;
-        flex-direction: row;
-        font-size: em(13px);
-        align-self: flex-start;
-        gap: em(13px);
-        p {color: $white;}
+        
+        flex-direction: column;
+        padding: 5px 0 10px;
+        width: 100%;
+        @include mq(small){
+            flex-direction: row;
+        }
     }
 }

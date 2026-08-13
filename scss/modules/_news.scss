@@ -3,7 +3,7 @@
 // ==========================================================================
 
 .latest-articles{
-    padding: 20px;
+    padding-top: 50px;
     position: relative;
     z-index: 5;
     .headings-container a:hover{
@@ -21,13 +21,15 @@
         margin-bottom: auto;
         .category {
             position: absolute;
-            top: em(5px);    
+            right: 0;
+            color: #fff;
+            font-size: .75rem;
+            padding: 0 10px;
+            line-height: 1.438rem;
+            text-transform: uppercase;
+            top: 10px;
             right: 0;   
             z-index: 3;   
-            pointer-events: auto;
-            padding: 2px 5px;
-            color: $white;
-            font-weight: bold;
             &:hover{
                 text-decoration: underline;
                 cursor: pointer;

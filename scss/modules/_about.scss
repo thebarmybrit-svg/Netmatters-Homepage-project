@@ -27,7 +27,7 @@
         .star-rating{
             display: flex;
             flex-direction: row;
-            
+            gap: 5px;
         }
         
         .client-quote{
@@ -53,5 +53,6 @@
             @include bg-colour-hover-darken($ui-colors);
         }
     }
+
 
 }
