@@ -8,7 +8,7 @@
 	@extend %clearfix;
 	flex-wrap: wrap;
 	width: 100%;
-	margin: 0 -15px;
+	// margin: 0 -15px;
 	
 	@include mq(small) {
 		flex-direction: row;

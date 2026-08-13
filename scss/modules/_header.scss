@@ -25,10 +25,12 @@
         display: flex;
         align-items: center;
         margin-right: 20px;
+        margin-left: 20px;
 
         .icon-phone_in_talk {
             color: $colour-primary;
             font-size: 32px;
+            // margin-left: 10px;
         }
     }
 
@@ -63,8 +65,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        border-radius: 4px;
-        width: 56px;
+        border-radius: 3px;
+        width: 63px;
         height: 56px;
         @include bg-colour-hover-darken($ui-colors);
         .btn--hamburger {
@@ -73,16 +75,16 @@
             vertical-align: middle;
             position: relative;
             width: 36px;
-            height: 28px;
+            height: 26px;
             cursor: pointer;
 
             /* Style for the three individual lines */
             .line {
                 display: block;
                 position: absolute;
-                left: 0;
-                width: 100%; // Spans the full 24px width
-                height: 5px; // Gives physical height
+                left: 2px;
+                width: 90%; // Spans the full 24px width
+                height: 4px; // Gives physical height
                 background-color: $white; 
                 transition: top 0.2s ease 0.2s, transform 0.3s ease, opacity 0.3s ease;
                 transform-origin: center;
@@ -153,10 +155,9 @@
     @include mq(small) {
 
         .logo-container {
-            a img {
-                height: $font-size--title;
-            }
+            margin-right: auto;
         }
+        
         .actions-container {
             display: flex;
             align-items: center;
