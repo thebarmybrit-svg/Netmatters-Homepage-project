@@ -9,6 +9,9 @@
     .headings-container a:hover{
         text-decoration: underline;
     }
+    .h2{
+        font-weight: $font-weight--bold;
+    }
     h2, a{
         color: $colour-font;
     }
