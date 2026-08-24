@@ -1,4 +1,6 @@
 <?php
+
+const BASE_PATH = __DIR__.'/../';
 //load .env file
 require_once realpath(__DIR__ . "/vendor/autoload.php");
 use Dotenv\Dotenv;
