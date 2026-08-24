@@ -1,12 +1,34 @@
 <?php
 
 const BASE_PATH = __DIR__.'/../';
-//load .env file
-require_once realpath(__DIR__ . "/vendor/autoload.php");
+
+function base_path($path) {
+    return BASE_PATH . $path;
+}
+
+// 1. Load dependencies
+require_once __DIR__ . '/../vendor/autoload.php';
+
 use Dotenv\Dotenv;
-$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv = Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
-//get app name from .env file
-$appName = $_ENV['APP_NAME'];
-//echo the app name
-echo $appName;
+
+// 2. Instantiate the Router BEFORE loading routes
+$router = new \Core\Router();
+
+// 3. Load the routes (this injects the definitions into the $router instance above)
+require base_path('routes.php');
+
+// 4. Parse the incoming request URL and Method
+$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
+
+// Normalize the URI for local subfolder setups
+$uri = str_replace('/public', '', $uri); 
+if ($uri === '') { 
+    $uri = '/'; 
+}
+
+$method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
+
+// 5. Dispatch the route
+$router->route($uri, $method);

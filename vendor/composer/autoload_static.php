@@ -146,6 +146,7 @@ class ComposerStaticInitbb44c920d0230c06f20c561d87ea9231
         'C' =>
         array (
             'Cron\\' => 5,
+            'Core\\' => 5,
             'Carbon\\Doctrine\\' => 16,
             'Carbon\\' => 7,
         ),
@@ -425,6 +426,10 @@ class ComposerStaticInitbb44c920d0230c06f20c561d87ea9231
         'Cron\\' =>
         array (
             0 => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron',
+        ),
+        'Core\\' =>
+        array (
+            0 => __DIR__ . '/../..' . '/Core',
         ),
         'Carbon\\Doctrine\\' =>
         array (
