@@ -52,8 +52,11 @@ class Router
 
     public function route($uri, $method)
     {
+        // Extract only the path component of the URL (e.g., '/contact-us?id=1' becomes '/contact-us')
+        $path = parse_url($uri, PHP_URL_PATH);
+
         foreach ($this->routes as $route) {
-            if ($route['uri'] === $uri && $route['method'] === strtoupper($method)) {
+            if ($route['uri'] === $path && $route['method'] === strtoupper($method)) {
                 return require base_path('Http/controllers/' . $route['controller']);
             }
         }

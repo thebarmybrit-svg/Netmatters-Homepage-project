@@ -9,9 +9,9 @@
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
         <link rel="manifest" href="/favicon/site.webmanifest">
-        <link rel="stylesheet" href="js/slick/slick.css">
-        <link rel="stylesheet" href="js/slick/slick-theme.css">
-        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="/js/slick/slick.css">
+        <link rel="stylesheet" href="/js/slick/slick-theme.css">
+        <link rel="stylesheet" href="/css/styles.css">
     </head>
     <body>
         <div id="nav-overlay" class="nav-overlay"></div>
@@ -22,8 +22,8 @@
                         <div class="container">
                             <div class="row">
                                 <div class="logo-container">
-                                    <a href="#">
-                                        <img class="img--site-logo" src="img/logos/f-logo.webp" alt="NetMatters Logo">
+                                    <a href="/">
+                                        <img class="img--site-logo" src="/img/logos/f-logo.webp" alt="NetMatters Logo">
                                     </a>
                                 </div>
                                 <div class="hidden-sm hidden-md hidden-lg mobile-container">
@@ -38,7 +38,7 @@
                                                 <span class="icon-mouse"></span>
                                                 <p>Support</p>
                                             </a>
-                                            <a class="btn btn--grey hidden-xs hidden-sm" href="#" target="_blank">
+                                            <a class="btn btn--grey hidden-xs hidden-sm" href="/contact-us" target="_blank">
                                                 <span class="icon-paperplane"></span>
                                                 <p>Contact</p>
                                             </a>

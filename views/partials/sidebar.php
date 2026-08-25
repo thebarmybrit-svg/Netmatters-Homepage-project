@@ -2,7 +2,7 @@
     <div class="main hidden-md hidden-lg">
         <ul class="sidebar-menu-mobile">
             <li class="hidden-md hidden-lg mobile-item">
-                <a href="#">
+                <a href="/contact-us">
                     Contact Us
                 </a>
             </li>
@@ -632,7 +632,7 @@
             </div>
         </li>
         <li class="menu-item">
-            <a href="#">
+            <a href="/contact-us">
                 Contact Us
             </a>
             <div class="sub-menu-banner">
