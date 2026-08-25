@@ -264,14 +264,12 @@
         </div>
 
     </div>
-
-
-    <?php require('partials/footer.php') ?>
+ 
 </div>
-
+<?php require('partials/footer.php') ?>
 
 <?php require('partials/sidebar.php') ?>
 
 <?php require('partials/cookies.php') ?>
 
-<?php require('partials/script_footer.php') ?>
+<?php require('partials/ender.php') ?>
