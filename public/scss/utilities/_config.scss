@@ -57,6 +57,7 @@ $linkedin-blue          : #0077b5;
 $twitter-blue           : #00aced;
 $instagram-purple       : #d93175;
 $curious-blue           : #337ab7;
+$danger-red             : #bd0e08;
 
 // Colour usage
 
@@ -156,6 +157,7 @@ $br--round      : 50%;
 // Transitions
 
 $trns-duration  : .5s;
+$transition-fast: $trns-duration ease-in-out;
 
 // Path to Assets
 

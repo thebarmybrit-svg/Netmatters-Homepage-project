@@ -2,7 +2,126 @@
 // Location Addresses
 // ==========================================================================
 
-#office-addresses{
-
+#office-addresses {
+    padding: 60px 0;
     
+    /* --- Layout Row --- */
+    .office-address-row {
+        display: flex;
+        flex-direction: column; /* Stacks everything (header + cards) on base views */
+        gap: 30px;
+        
+
+        @include mq("medium") {
+            flex-direction: row; 
+            flex-wrap: wrap; /* Allows the header to sit on row 1 and cards to wrap onto row 2 */
+            justify-content: space-between;
+        }
+    }
+
+    /* --- Section Heading --- */
+    .headings-container {
+        width: 100%; /* Spans full horizontal width on all viewports, locking it into its own row */
+
+        h2.h1 {
+            font-size: 2.2rem;
+            color: $colour-primary;
+            font-weight: $font-weight--bold ;
+            margin-bottom: 10px; /* Reduced to balance out the flexbox gap */
+            width: 100%;
+        }
+    }
+
+    /* --- Office Card Base --- */
+    .address.article {
+        width: 100%;
+        background: $white;
+        border-radius: 12px;
+        border: $grey 1px solid;
+        box-shadow: 0 10px 30px $colour-shadow;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+
+        @include mq("medium") {
+            /* Sets card size to roughly 1/3 of the row space minus the gap */
+            flex: 0 1 calc(33.333% - 20px); 
+        }
+
+        .item {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            position: relative;
+
+            /* --- Image Containers --- */
+            .img-content-container, 
+            .img-container {
+                display: block;
+                width: 100%;
+                height: 220px;
+            }
+
+            .img-full {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            /* --- Card Inner Content Block --- */
+            .block {
+                padding: 30px;
+                display: flex;
+                flex-direction: column;
+                flex-grow: 1;
+
+                /* Card Titles */
+                .h2 {
+                    margin: 0 0 15px 0;
+                    font-size: 1.5rem;
+
+                    a {
+                        color: $colour-primary;
+                        text-decoration: none;
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+                /* Address Details */
+                .p {
+                    font-size: 0.95rem;
+                    line-height: 1.6;
+                    margin: 0 0 25px 0;
+                    min-height: 120px; /* Equalizes text block height */
+                }
+
+                /* --- Phone Numbers --- */
+                .user.tel {
+                    order: 1;
+                    margin-bottom: 20px;
+
+                    .h3.text-web {
+                        display: inline-block;
+                        font-size: 1.8rem;
+                        font-weight: 700;
+                        color: $webdev-lavander;
+                        text-decoration: none;
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+                /* --- CTA Button --- */
+                .btn {
+                    order: 2;
+                    width: fit-content;
+                    border-radius: $br--default;
+                    @include bg-colour-hover-darken($ui-colors);
+                }
+            }
+        }
+    }
 }
