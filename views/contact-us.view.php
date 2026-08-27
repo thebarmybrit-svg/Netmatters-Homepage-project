@@ -10,115 +10,6 @@
         </div>
     </div>
 
-    <!-- <div id="office-addresses">
-        <div class="service-list container">
-            <div class="row office-address-row">
-                <div class="block address address-cambridge">
-                    <div class="image">
-                        <a href="#">
-                            <img src="/img/cambridge.jpg" alt="Cambridge Office" class="img-full">
-                        </a>
-                    </div>
-                    <div class="content">
-                        <p class="h2">
-                            <a href="#">
-                                Cambridge Office
-                            </a>
-                        </p>
-                        <p class="p">
-                            Unit 1.31,
-                            <br>
-                            St John's Innovation Centre,
-                            <br>
-                            Cowley Road,
-                            Milton,
-                            <br>
-                            Cambridge,
-                            <br>
-                            CB4 0WS
-                        </p>
-                        <div class="tel">
-                            <a href="tel:#" class="h3 text-web">
-                                01223 37 57 72
-                            </a>
-                        </div>
-                        <div class="view-more">
-                            <a href="#" class="btn btn-web">View More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="block address address-wymondham">
-                    <div class="image">
-                        <a href="#">
-                            <img src="/img/wymondham.jpg" alt="Wymondham Office" class="img-full">
-                        </a>
-                    </div>
-                    <div class="content">
-                        <p class="h2">
-                            <a href="#">
-                                Wymondham Office
-                            </a>
-                        </p>
-                        <p class="p">
-                            Unit 15,
-                            <br>
-                            Penfold Drive,
-                            <br>
-                            Gateway 11 Business Park,
-                            <br>
-                            Wymondham, Norfolk,
-                            <br>
-                            NR18 0WZ
-                        </p>
-                        <div class="tel">
-                            <a href="tel:#" class="h3 text-web">
-                                01603 70 40 20
-                            </a>
-                        </div>
-                        <div class="view-more">
-                            <a href="#" class="btn btn-web">View More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="block address address-yarmouth">
-                    <div class="image">
-                        <a href="#">
-                            <img src="/img/yarmouth-2.jpg" alt="Great Yarmouth Office" class="img-full">
-                        </a>
-                    </div>
-                    <div class="content">
-                        <p class="h2">
-                            <a href="#">
-                                Great Yarmouth Office
-                            </a>
-                        </p>
-                        <p class="p">
-                            Suite F23,
-                            <br>
-                            Beacon Innovation Centre,
-                            <br>
-                            Beacon Park, Gorleston,
-                            <br>
-                            Great Yarmouth, Norfolk,
-                            <br>
-                            NR31 7RA
-                        </p>
-                        <div class="tel">
-                            <a href="tel:#" class="h3 text-web">
-                                01493 60 32 04
-                            </a>
-                        </div>
-                        <div class="view-more">
-                            <a href="#" class="btn btn-web">View More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
     <div id="office-addresses">
         <div class="service-list container">
             <div class="row office-address-row">
@@ -244,10 +135,10 @@
     </div>
 
     <div id="contact-form">
-        <div class="section container">
+        <div class="container">
             <div class="row">
                 <!-- Contact Details -->
-                <div class="col-md-4">
+                <div class="contact-details">
                     <div class="cms-block" id="partial-166971">
                         <p><strong>Email us on:</strong></p>
                         <p><a href="mailto:sales@netmatters.com" class="h3 text-web">sales@netmatters.com</a></p>
@@ -261,7 +152,7 @@
                 </div>
 
                 <!-- Out of Hours Support -->
-                <div class="col-md-8">
+                <div class="OoH-Support">
                     <div class="cms-block" id="partial-166974">
                         <div class="container">
                             <div class="accordion out-of-hours">

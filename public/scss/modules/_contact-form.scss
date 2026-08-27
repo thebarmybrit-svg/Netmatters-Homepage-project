@@ -2,6 +2,97 @@
 // Contact Form
 // ==========================================================================
 
-#contact-form{
-    
+#contact-form {
+    // Main Outer Layout Override (Mobile Stacked) ---
+    > .container > .row {
+        width: 100%;                 
+        justify-content: flex-start; 
+        align-items: flex-start;     
+        flex-direction: column;      
+        gap: 40px;                   
+    }
+
+    // Form Grid Isolation ---
+    form {
+        width: 100%;
+
+        // Fixes the inner wrapper containing Name, Email, and Phone fields
+        > .row {
+            width: 100%;
+            justify-content: flex-start;
+            align-items: stretch;
+            flex-direction: column; 
+            gap: 15px;
+
+            // Split Name/Company and Email/Phone side-by-side on larger screens
+            @include mq(medium) {
+                flex-direction: row;
+                flex-wrap: wrap;
+
+                // Targets the custom parent wrapper divs enclosing the inputs
+                > div {
+                    width: calc(50% - 10px); 
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+
+        // Clean layout handling for labels and input blocks
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-bottom: 5px;
+
+            label {
+                margin-bottom: 6px;
+                font-weight: 600;
+            }
+
+            input, textarea {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+        }
+    }
+
+    // Individual standard components
+    .contact-details, 
+    .OoH-Support {
+        width: 100%;
+    }
+}
+
+// Large Desktop Exact Alignment Shift ---
+@include mq(large) {
+    #contact-form {
+        > .container > .row {
+            // Drop flexbox to prevent the broken vertical gaps
+            display: grid;
+            grid-template-columns: 60% 35%; // Exact matching proportions
+            column-gap: 5%;
+            row-gap: 20px;
+            width: 100%;
+        }
+
+        // Explicitly map elements to grid tracking columns to mimic the mockup perfectly
+        form {
+            grid-column: 1;
+            grid-row: 1 / span 2; // Spans down the entire left side independently
+        }
+
+        .contact-details {
+            grid-column: 2;
+            grid-row: 1; // Sits perfectly in the top right slot
+        }
+
+        .OoH-Support {
+            grid-column: 2;
+            grid-row: 2; // Snaps directly underneath contact details ignoring left height
+            margin-top: 0; 
+        }
+    }
 }
