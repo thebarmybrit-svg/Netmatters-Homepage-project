@@ -238,3 +238,74 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
+// --- Contact Form Validation -- //
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('form[action*="enquiry#contact-form"]');
+    if (!form) return;
+
+    form.setAttribute('novalidate', '');
+
+    const fields = form.querySelectorAll('.form-control');
+    
+    // Cache selectors for performance and reuse
+    const nameField = form.querySelector('#name');
+    const emailField = form.querySelector('#email');
+    const telephoneField = form.querySelector('#telephone');
+    const messageField = form.querySelector('#message');
+
+    // Validation rules dictionary
+    const validationRules = {
+        'name': () => nameField.value.trim().length >= 2,
+        'email': () => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value.trim()),
+        'telephone': () => /^\+?[0-9\s\-]{10,15}$/.test(telephoneField.value.trim().replace(/\s+/g, '')),
+        'message': () => messageField.value.trim().length >= 10
+    };
+
+    // Helper to validate a specific field by its ID
+    function isFieldValid(field) {
+        const rule = validationRules[field.id];
+        return rule ? rule() : true;
+    }
+
+    // Evaluate validation on input; remove error only if rule passes
+    fields.forEach(field => {
+        field.addEventListener('input', function () {
+            if (isFieldValid(this)) {
+                clearFieldError(this);
+            }
+        });
+    });
+
+    form.addEventListener('submit', function (event) {
+        let isValid = true;
+
+        fields.forEach(field => {
+            if (!isFieldValid(field)) {
+                showError(field);
+                isValid = false;
+            } else {
+                clearFieldError(field);
+            }
+        });
+
+        if (!isValid) {
+            event.preventDefault();
+        }
+    });
+
+    function showError(inputElement) {
+        const formGroup = inputElement.closest('.form-group');
+        if (formGroup) {
+            formGroup.classList.add('has-error');
+        }
+    }
+
+    function clearFieldError(inputElement) {
+        const formGroup = inputElement.closest('.form-group');
+        if (formGroup) {
+            formGroup.classList.remove('has-error');
+        }
+    }
+});

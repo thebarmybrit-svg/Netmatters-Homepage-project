@@ -3,7 +3,7 @@
 // ==========================================================================
 
 #contact-form {
-    // Mobile-First Layout Core ---
+    // --- Mobile-First Layout Core --- //
     > .container > .row {
         width: 100%;                 
         justify-content: flex-start; 
@@ -12,7 +12,7 @@
         gap: 30px;                   
     }
 
-    // Form Mockup Card & Inputs ---
+    // --- Form Mockup Card & Inputs --- //
     form {
         width: 100%;
         background-color: #e5e7eb;
@@ -39,12 +39,23 @@
             }
         }
 
-        // Precise field layouts
+        // --- Precise field layouts --- //
         .form-group {
             display: flex;
             flex-direction: column;
             width: 100%;
             margin-bottom: 20px;
+
+            // --- APPEND THIS CLEAN OVERRIDE RULES OVER THE INLINE STYLES ---
+            &.has-error {
+                input, textarea {
+                    border-color: #dc3545 !important;
+
+                    &:focus {
+                        outline: none; 
+                    }
+                }
+            }
 
             label {
                 margin-bottom: 8px;
@@ -66,11 +77,11 @@
                 border-radius: $br--default;
                 background-color: $white;
                 font-size: 15px;
-                transition: border-color 0.2s;
+                transition: box-shadow $trns-duration, border-color $trns-duration; ;
 
                 &:focus {
                     outline: none;
-                    border-color: $webdev-lavander;
+                    box-shadow: 0 0 8px 2px rgba($colour-accent, 0.6) !important; 
                 }
             }
 
@@ -80,7 +91,7 @@
             }
         }
 
-        // Checkbox row structure 
+        // --- Checkbox row structure --- //
         .pretty-checkbox {
             display: block;
             cursor: pointer;
@@ -122,7 +133,7 @@
             }
         }
 
-        // Form Submit Action Block
+        // --- Form Submit Action Block --- //
         .action-block {
             display: flex;
             justify-content: space-between;
@@ -153,7 +164,7 @@
         }
     }
 
-    // --- 3. Sidebar Typography Colors ---
+    // --- Sidebar Typography Colors --- //
     .contact-details {
         width: 100%;
 
@@ -176,7 +187,7 @@
         }
     }
 
-    // --- 4. Accordion Toggle Styling ---
+    // --- Accordion Toggle Styling --- //
     .OoH-Support {
         width: 100%;
 
@@ -197,7 +208,7 @@
                     gap: 8px;
                 }
 
-                // Dropdown arrow icon rule adjustments
+                // --- Dropdown arrow icon rule adjustments --- //
                 .fa-chevron-down {
                     display: inline-block; // Necessary for CSS transforms to apply
                     font-size: 14px;
@@ -224,7 +235,7 @@
     }
 }
 
-// --- 5. Large Desktop Alignment (Grid Framework) ---
+// --- Large Desktop Alignment (Grid Framework) --- //
 @include mq(large) {
     #contact-form {
         > .container > .row {
