@@ -3,20 +3,23 @@
 // ==========================================================================
 
 #contact-form {
-    // Main Outer Layout Override (Mobile Stacked) ---
+    // Mobile-First Layout Core ---
     > .container > .row {
         width: 100%;                 
         justify-content: flex-start; 
         align-items: flex-start;     
         flex-direction: column;      
-        gap: 40px;                   
+        gap: 30px;                   
     }
 
-    // Form Grid Isolation ---
+    // Form Mockup Card & Inputs ---
     form {
         width: 100%;
+        background-color: #e5e7eb;
+        padding: 30px;
+        border-radius: 8px;
 
-        // Fixes the inner wrapper containing Name, Email, and Phone fields
+        // Field inner layout grid
         > .row {
             width: 100%;
             justify-content: flex-start;
@@ -24,12 +27,10 @@
             flex-direction: column; 
             gap: 15px;
 
-            // Split Name/Company and Email/Phone side-by-side on larger screens
             @include mq(medium) {
                 flex-direction: row;
                 flex-wrap: wrap;
 
-                // Targets the custom parent wrapper divs enclosing the inputs
                 > div {
                     width: calc(50% - 10px); 
                     display: flex;
@@ -38,61 +39,215 @@
             }
         }
 
-        // Clean layout handling for labels and input blocks
+        // Precise field layouts
         .form-group {
             display: flex;
             flex-direction: column;
             width: 100%;
-            margin-bottom: 5px;
+            margin-bottom: 20px;
 
             label {
-                margin-bottom: 6px;
-                font-weight: 600;
+                margin-bottom: 8px;
+                font-weight: 700;
+                color: #333333;
+                font-size: 14px;
+                
+                // Red required asterisks styling
+                &.required::after {
+                    content: " *";
+                    color: #d9534f;
+                }
             }
 
             input, textarea {
                 width: 100%;
-                padding: 10px;
-                border: 1px solid #ccc;
+                padding: 12px 15px;
+                border: 1px solid $white;
+                border-radius: $br--default;
+                background-color: $white;
+                font-size: 15px;
+                transition: border-color 0.2s;
+
+                &:focus {
+                    outline: none;
+                    border-color: $webdev-lavander;
+                }
+            }
+
+            textarea {
+                resize: vertical;
+                min-height: 120px;
+            }
+        }
+
+        // Checkbox row structure 
+        .pretty-checkbox {
+            display: block;
+            cursor: pointer;
+            margin-bottom: 25px;
+
+            .media {
+                display: flex;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            .checkbox-left input[type="checkbox"] {
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+                accent-color: $webdev-lavander;
+            }
+
+            .media-body {
+                font-size: 14px;
+                line-height: 1.5;
+                color: $grey;
+
+                a {
+                    color: $grey;
+                    text-decoration: underline;
+                    font-weight: 600;
+                }
+            }
+
+            .button{
+                border-radius: 3px;
+                border: 3px solid #333645;
+                height: 32px;
+                width: 32px;
+                position: relative;
+                float: left;
+                margin-right: 20px;
+            }
+        }
+
+        // Form Submit Action Block
+        .action-block {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+
+            .submit-btn {
+                background-color: #2c3e50; // Dark navy button fill
+                color: $white;
+                padding: 12px 28px;
+                border: none;
                 border-radius: 4px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #1a252f;
+                }
+            }
+
+            .helper-text {
+                font-size: 13px;
+                color: #777777;
             }
         }
     }
 
-    // Individual standard components
-    .contact-details, 
+    // --- 3. Sidebar Typography Colors ---
+    .contact-details {
+        width: 100%;
+
+        p {
+            margin-bottom: 10px;
+            color: #333333;
+
+            strong {
+                font-size: 14px;
+            }
+        }
+
+        .text-web {
+            color: $webdev-lavander;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 26px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+    }
+
+    // --- 4. Accordion Toggle Styling ---
     .OoH-Support {
         width: 100%;
+
+        .out-of-hours {
+            h4 a {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 8px;
+                color: #333333;
+                text-decoration: none;
+                font-size: 16px;
+                font-weight: 700;
+
+                .question-text {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                }
+
+                // Dropdown arrow icon rule adjustments
+                .fa-chevron-down {
+                    display: inline-block; // Necessary for CSS transforms to apply
+                    font-size: 14px;
+                    transition: transform 0.3s ease; // Match transition timing with JS
+                    
+                    &.rotate {
+                        transform: rotate(180deg); 
+                    }
+                }
+            }
+
+            .answer {
+                margin-top: 15px;
+                padding-left: 5px;
+                font-size: 14px;
+                line-height: 1.6;
+                color: #555555;
+
+                &.initiallyHidden {
+                    display: none; // Managed via active JS click hooks
+                }
+            }
+        }
     }
 }
 
-// Large Desktop Exact Alignment Shift ---
+// --- 5. Large Desktop Alignment (Grid Framework) ---
 @include mq(large) {
     #contact-form {
         > .container > .row {
-            // Drop flexbox to prevent the broken vertical gaps
             display: grid;
-            grid-template-columns: 60% 35%; // Exact matching proportions
+            grid-template-columns: 60% 35%; // Exact spatial alignment values
             column-gap: 5%;
             row-gap: 20px;
             width: 100%;
         }
 
-        // Explicitly map elements to grid tracking columns to mimic the mockup perfectly
         form {
             grid-column: 1;
-            grid-row: 1 / span 2; // Spans down the entire left side independently
+            grid-row: 1 / span 2; // Spans entire height block independently
         }
 
         .contact-details {
             grid-column: 2;
-            grid-row: 1; // Sits perfectly in the top right slot
+            grid-row: 1;
         }
 
         .OoH-Support {
             grid-column: 2;
-            grid-row: 2; // Snaps directly underneath contact details ignoring left height
-            margin-top: 0; 
+            grid-row: 2;
         }
     }
 }

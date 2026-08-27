@@ -4,7 +4,7 @@
     <div class="hidden-xs breadcrumb-container ">
         <div class="container">
             <ul class="breadcrumb">
-                <li><a href="/index.html">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li>Our Offices</li>
             </ul>
         </div>
@@ -181,7 +181,7 @@
                 </div>
 
                 <!-- Enquiry Form -->
-                <form method="POST" action="https://www.netmatters.co.uk/enquiry#contact-form" accept-charset="UTF-8" class="col-12">
+                <form method="POST" action="https://www.netmatters.co.uk/enquiry#contact-form" accept-charset="UTF-8">
                     <input name="_token" type="hidden" value="ocjUM78inQ95XPU6UqtLp0hFZmlTi2mgF7LlORKa">
                     <input name="link" type="hidden" value="#">
                     <input name="referrer" type="hidden" value="#">

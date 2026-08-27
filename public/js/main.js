@@ -163,3 +163,78 @@ if (cookieOverlay && cookieBanner && acceptBtn) {
         });
     }
 }
+
+// --- OoH Support Dropdown Accordion --- //
+document.addEventListener('DOMContentLoaded', () => {
+    // Select the accordion link wrapper
+    const accordionToggle = document.querySelector('.out-of-hours h4 a');
+    if (!accordionToggle) return;
+
+    // Select the content panel block
+    const accordionAnswer = document.querySelector('.out-of-hours .answer');
+    const chevronIcon = accordionToggle.querySelector('.fa-chevron-down');
+
+    // Setup initial state attributes for screen readers
+    accordionToggle.setAttribute('aria-expanded', 'false');
+    accordionAnswer.setAttribute('aria-hidden', 'true');
+
+    // Click handler trigger
+    accordionToggle.addEventListener('click', (event) => {
+        event.preventDefault(); // Stop standard link jumping behaviors
+
+        // Check current visible state 
+        const isHidden = accordionAnswer.classList.contains('initiallyHidden');
+
+        if (isHidden) {
+            // Open Accordion ---
+            accordionAnswer.classList.remove('initiallyHidden');
+            accordionToggle.setAttribute('aria-expanded', 'true');
+            accordionAnswer.setAttribute('aria-hidden', 'false');
+            
+            // Add rotation class to the chevron arrow
+            if (chevronIcon) chevronIcon.classList.add('rotate');
+            
+            // Smooth slide animation logic
+            accordionAnswer.style.height = '0px';
+            accordionAnswer.style.opacity = '0';
+            accordionAnswer.style.overflow = 'hidden';
+            accordionAnswer.style.transition = 'height 0.3s ease, opacity 0.3s ease';
+            
+            // Force redraw step to catch animation state accurately
+            const scrollHeight = accordionAnswer.scrollHeight;
+            accordionAnswer.style.height = scrollHeight + 'px';
+            accordionAnswer.style.opacity = '1';
+
+            // Clean up style triggers once animation finishes
+            setTimeout(() => {
+                accordionAnswer.style.height = '';
+                accordionAnswer.style.overflow = '';
+            }, 300);
+
+        } else {
+            // --- 2. Close Accordion ---
+            const scrollHeight = accordionAnswer.scrollHeight;
+            accordionAnswer.style.height = scrollHeight + 'px';
+            accordionAnswer.style.overflow = 'hidden';
+            accordionAnswer.style.transition = 'height 0.3s ease, opacity 0.3s ease';
+
+            // Force reflow recalculation
+            accordionAnswer.offsetHeight; 
+
+            accordionAnswer.style.height = '0px';
+            accordionAnswer.style.opacity = '0';
+            
+            if (chevronIcon) chevronIcon.classList.remove('rotate');
+            accordionToggle.setAttribute('aria-expanded', 'false');
+            accordionAnswer.setAttribute('aria-hidden', 'true');
+
+            // Formally hide the element from selectors once transition ends
+            setTimeout(() => {
+                accordionAnswer.classList.add('initiallyHidden');
+                accordionAnswer.style.height = '';
+                accordionAnswer.style.opacity = '';
+                accordionAnswer.style.overflow = '';
+            }, 300);
+        }
+    });
+});
