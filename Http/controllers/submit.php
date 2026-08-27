@@ -2,7 +2,7 @@
 
 // 1. Keep using the database connection that you know works
 try {
-    $dbcontact = new PDO("mysql:host=localhost;dbname=articles;charset=utf8", "root", "");
+    $dbcontact = new PDO("mysql:host=localhost;dbname=netmatters;charset=utf8", "root", "");
     $dbcontact->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $dbcontact->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
@@ -22,9 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $marketing = isset($_POST['marketing_preference']) ? 1 : 0;
 
     if (!empty($name) && !empty($email) && !empty($telephone) && !empty($message)) {
-        
         try {
-            // 2. CHANGE THIS: Point to 'inquiries' instead of 'contacts'
             $sql = "INSERT INTO inquiries (name, company, email, telephone, message, marketing_preference) 
                     VALUES (:name, :company, :email, :telephone, :message, :marketing)";
             
@@ -38,14 +36,24 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 ':marketing' => $marketing
             ]);
 
-            $successMessage = "Your enquiry has been successfully saved!";
+            // Save to session so it survives the redirect
+            $_SESSION['flash']['successMessage'] = "Your enquiry has been successfully saved!";
+            
+            // Redirect immediately to prevent resubmission on refresh
+            header('Location: /#contact-form');
+            exit();
             
         } catch (PDOException $e) {
-            $errorMessage = "Could not save your enquiry. Please try again.";
+            $_SESSION['flash']['errorMessage'] = "Could not save your enquiry. Please try again.";
         }
     } else {
-        $errorMessage = "Please fill in all required fields.";
+        $_SESSION['flash']['errorMessage'] = "Please fill in all required fields.";
     }
+
+    // Keep old input values in session so form doesn't wipe clear on structural error
+    $_SESSION['flash']['old'] = $_POST;
+    header('Location: /#contact-form');
+    exit();
 }
 
 require base_path('views/contact/submit.view.php');

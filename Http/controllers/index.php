@@ -6,7 +6,7 @@ $heading = "Welcome to Netmatters Homepage";
 
 // Establish your database connection
 try {
-    $db = new PDO("mysql:host=localhost;dbname=articles;charset=utf8", "root", "");
+    $db = new PDO("mysql:host=localhost;dbname=netmatters;charset=utf8", "root", "");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 } catch (PDOException $e) {

@@ -161,7 +161,7 @@
                                         <a href="#">
                                             <span class="question-text">
                                                 Out of Hours IT Support 
-                                                <em style="font-style: normal;" class="icon icon-chevron-down"></em>
+                                                <em style="font-style: normal;" class="icon icon-cheveron-down"></em>
                                             </span>
                                         </a>
                                     </h4>

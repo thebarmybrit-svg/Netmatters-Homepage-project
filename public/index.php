@@ -1,5 +1,10 @@
 <?php
 
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 const BASE_PATH = __DIR__.'/../';
 
 function base_path($path) {
