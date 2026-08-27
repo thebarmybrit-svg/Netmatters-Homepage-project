@@ -7,7 +7,7 @@
     text-transform: uppercase;
     line-height: 50px; 
     margin: 0; 
-    font-size: $font-size--thrd;
+    // font-size: $font-size--thrd;
     font-weight: $font-weight--medium;
     text-align: center;
     align-items: center;
@@ -18,7 +18,7 @@
     border-radius: $br--default;
     @include bg-colours($ui-colors);
     text-decoration: none;
-    padding: 5px 15px;
+    padding: 0 10px;
     gap: em(10px);
     a, p, &{
         color: $white;
@@ -41,4 +41,5 @@
     &--banner{
         padding: 5px 20px;
     }
+
 }

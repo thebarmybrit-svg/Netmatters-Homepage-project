@@ -124,7 +124,7 @@
 
             .button{
                 border-radius: 3px;
-                border: 3px solid #333645;
+                border: 3px solid $colour-font;
                 height: 32px;
                 width: 32px;
                 position: relative;
@@ -141,25 +141,8 @@
             flex-wrap: wrap;
             gap: 15px;
 
-            .submit-btn {
-                background-color: #2c3e50; // Dark navy button fill
-                color: $white;
-                padding: 12px 28px;
-                border: none;
-                border-radius: 4px;
-                font-weight: 700;
-                text-transform: uppercase;
-                letter-spacing: 0.5px;
-                cursor: pointer;
-
-                &:hover {
-                    background-color: #1a252f;
-                }
-            }
-
-            .helper-text {
-                font-size: 13px;
-                color: #777777;
+            .btn{
+                @include bg-colour-hover-darken($ui-colors);
             }
         }
     }
@@ -170,8 +153,6 @@
 
         p {
             margin-bottom: 10px;
-            color: #333333;
-
             strong {
                 font-size: 14px;
             }
@@ -197,7 +178,7 @@
                 justify-content: flex-start;
                 align-items: center;
                 gap: 8px;
-                color: #333333;
+                color: $colour-primary;
                 text-decoration: none;
                 font-size: 16px;
                 font-weight: 700;
@@ -209,10 +190,10 @@
                 }
 
                 // --- Dropdown arrow icon rule adjustments --- //
-                .fa-chevron-down {
-                    display: inline-block; // Necessary for CSS transforms to apply
+                .icon-chevron-down {
+                    display: inline-block; 
                     font-size: 14px;
-                    transition: transform 0.3s ease; // Match transition timing with JS
+                    transition: transform 0.3s ease;
                     
                     &.rotate {
                         transform: rotate(180deg); 

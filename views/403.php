@@ -1,4 +1,4 @@
-<?php require('partials/header.php') ?>
+<?php require base_path('views/partials/header.php'); ?>
 <div id="main">
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
         <h1 class="text-2xl font-bold">You are not authorized to view this page.</h1>
@@ -8,6 +8,11 @@
         </p>
     </div>
 
-    <?php require('partials/footer.php') ?>
 </div>
-<?php require('partials/script_footer.php') ?>
+<?php require base_path('views/partials/footer.php') ?>
+
+<?php require base_path('views/partials/sidebar.php') ?>
+
+<?php require base_path('views/partials/cookies.php') ?>
+
+<?php require base_path('views/partials/ender.php') ?>

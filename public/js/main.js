@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // --- Contact Form Validation -- //
 document.addEventListener('DOMContentLoaded', function () {
-    const form = document.querySelector('form[action*="enquiry#contact-form"]');
+    const form = document.querySelector('form[action*="/#contact-form"]');
     if (!form) return;
 
     form.setAttribute('novalidate', '');

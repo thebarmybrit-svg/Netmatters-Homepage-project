@@ -1,4 +1,4 @@
-<?php require('partials/header.php') ?>
+<?php require base_path('views/partials/header.php'); ?>
 
 <div id="main">
     <div class="hidden-xs breadcrumb-container ">
@@ -161,7 +161,7 @@
                                         <a href="#">
                                             <span class="question-text">
                                                 Out of Hours IT Support 
-                                                <em style="font-style: normal;" class="fa fa-chevron-down rotate"></em>
+                                                <em style="font-style: normal;" class="icon icon-chevron-down"></em>
                                             </span>
                                         </a>
                                     </h4>
@@ -181,46 +181,59 @@
                 </div>
 
                 <!-- Enquiry Form -->
-                <form method="POST" action="https://www.netmatters.co.uk/enquiry#contact-form" accept-charset="UTF-8">
+                <form method="POST" action="/#contact-form" accept-charset="UTF-8">
                     <input name="_token" type="hidden" value="ocjUM78inQ95XPU6UqtLp0hFZmlTi2mgF7LlORKa">
                     <input name="link" type="hidden" value="#">
                     <input name="referrer" type="hidden" value="#">
                     <input id="hotjar_id" name="hotjar_id" type="hidden" value="">
                     <input name="return_url" type="hidden" value="contact-us/success#contact-form">
 
+                    <?php if (isset($successMessage)): ?>
+                        <div class="alert alert-success" style="color: green; background: #e6f4ea; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                            <?= htmlspecialchars($successMessage) ?>
+                        </div>
+                    <?php register_shutdown_function(function() { unset($GLOBALS['successMessage']); }); // Clear after rendering ?>
+                    <?php endif; ?>
+
+                    <?php if (isset($errorMessage)): ?>
+                        <div class="alert alert-danger" style="color: red; background: #fce8e6; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                            <?= htmlspecialchars($errorMessage) ?>
+                        </div>
+                    <?php endif; ?>
+
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="name" class="required">Your Name</label>
-                                <input class="form-control" name="name" type="text" id="name" required>
+                                <input class="form-control" name="name" type="text" id="name" value="<?= htmlspecialchars($_POST['name'] ?? '') ?>" required>
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="company">Company Name</label>
-                                <input class="form-control" name="company" type="text" id="company">
+                                <input class="form-control" name="company" type="text" id="company" value="<?= htmlspecialchars($_POST['company'] ?? '') ?>">
                             </div>
                         </div>
                     
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="email" class="required">Your Email</label>
-                                <input class="form-control" name="email" type="email" id="email" required>
+                                <input class="form-control" name="email" type="email" id="email" value="<?= htmlspecialchars($_POST['email'] ?? '') ?>" required>
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="telephone" class="required">Your Telephone Number</label>
-                                <input class="form-control" name="telephone" type="tel" id="telephone" required>
+                                <input class="form-control" name="telephone" type="tel" id="telephone" value="<?= htmlspecialchars($_POST['telephone'] ?? '') ?>" required>
                             </div>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="message" class="required">Message</label>
-                        <textarea class="form-control" name="message" cols="50" rows="10" id="message" required></textarea>
+                        <textarea class="form-control" name="message" cols="50" rows="10" id="message" required><?= htmlspecialchars($_POST['message'] ?? '') ?></textarea>
                     </div>
 
                     <!-- Marketing Preferences -->
@@ -230,7 +243,7 @@
                                 <span class="media-left checkbox-left">
                                     <span class="button">
                                         <span class="mdi-action-done"></span>
-                                        <input name="marketing_preference" type="checkbox" value="1">
+                                        <input name="marketing_preference" type="checkbox" value="1" <?= isset($_POST['marketing_preference']) ? 'checked' : '' ?>>
                                     </span>
                                 </span>
                                 <span class="media-body">
@@ -243,7 +256,7 @@
 
                     <!-- Action Actions -->
                     <div class="action-block">
-                        <button type="submit" class="btn btn-primary submit-btn">
+                        <button type="submit" class="btn btn--primary submit-btn">
                             Send Enquiry
                         </button>
                         <small class="helper-text"><span class="text-danger">*</span> Fields Required</small>
@@ -253,10 +266,10 @@
         </div>
     </div>
 </div>
-<?php require('partials/footer.php') ?>
+<?php require base_path('views/partials/footer.php') ?>
 
-<?php require('partials/sidebar.php') ?>
+<?php require base_path('views/partials/sidebar.php') ?>
 
-<?php require('partials/cookies.php') ?>
+<?php require base_path('views/partials/cookies.php') ?>
 
-<?php require('partials/ender.php') ?>
+<?php require base_path('views/partials/ender.php') ?>
