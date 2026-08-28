@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION['flash']['successMessage'] = "Your enquiry has been successfully saved!";
             
             // Redirect immediately to prevent resubmission on refresh
-            header('Location: /#contact-form');
+            header('Location: /contact-us#contact-form');
             exit();
             
         } catch (PDOException $e) {
@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     // Keep old input values in session so form doesn't wipe clear on structural error
     $_SESSION['flash']['old'] = $_POST;
-    header('Location: /#contact-form');
+    header('Location: /contact-us#contact-form');
     exit();
 }
 

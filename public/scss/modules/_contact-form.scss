@@ -15,7 +15,7 @@
     // --- Form Mockup Card & Inputs --- //
     form {
         width: 100%;
-        background-color: #e5e7eb;
+        background-color: $formal-grey;
         padding: 30px;
         border-radius: 8px;
 
@@ -49,7 +49,7 @@
             // --- APPEND THIS CLEAN OVERRIDE RULES OVER THE INLINE STYLES ---
             &.has-error {
                 input, textarea {
-                    border-color: #dc3545 !important;
+                    border-color: $danger-red !important;
 
                     &:focus {
                         outline: none; 
@@ -60,13 +60,13 @@
             label {
                 margin-bottom: 8px;
                 font-weight: 700;
-                color: #333333;
+                color: $colour-primary;
                 font-size: 14px;
                 
                 // Red required asterisks styling
                 &.required::after {
                     content: " *";
-                    color: #d9534f;
+                    color: $danger-red ;
                 }
             }
 
@@ -91,6 +91,12 @@
             }
         }
 
+        .icon-checkmark{
+            display: hidden;
+            color: none;
+            opacity: 0 !important;
+        }
+
         // --- Checkbox row structure --- //
         .pretty-checkbox {
             display: block;
@@ -103,11 +109,30 @@
                 gap: 12px;
             }
 
-            .checkbox-left input[type="checkbox"] {
-                width: 20px;
-                height: 20px;
-                cursor: pointer;
-                accent-color: $webdev-lavander;
+            .checkbox-left {
+                position: relative;
+
+                // 1. Hide the default tickbox visually while keeping it accessible
+                input[type="checkbox"] {
+                    position: absolute;
+                    opacity: 0;
+                    width: 0;
+                    height: 0;
+                    margin: 0;
+                    padding: 0;
+                    
+                    // 2. When the checkbox is checked, style the adjacent .button sibling
+                    &:checked + .button {
+                        background-color: $colour-font; // Fills the box with your border color variable
+                        
+                        // 3. Reveal the icon-checkmark when checked
+                        .icon-checkmark {
+                            display: block;
+                            color: $white;
+                            opacity: 1 !important;
+                        }
+                    }
+                }
             }
 
             .media-body {
@@ -122,14 +147,17 @@
                 }
             }
 
-            .button{
+            // Custom check wrapper configuration
+            .button {
                 border-radius: 3px;
                 border: 3px solid $colour-font;
                 height: 32px;
                 width: 32px;
-                position: relative;
-                float: left;
-                margin-right: 20px;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: background-color 0.2s ease;
             }
         }
 
@@ -206,7 +234,7 @@
                 padding-left: 5px;
                 font-size: 14px;
                 line-height: 1.6;
-                color: #555555;
+                color: $grey;
 
                 &.initiallyHidden {
                     display: none; // Managed via active JS click hooks

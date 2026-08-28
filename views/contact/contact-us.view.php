@@ -181,22 +181,34 @@
                 </div>
 
                 <!-- Enquiry Form -->
-                <form method="POST" action="/#contact-form" accept-charset="UTF-8">
+                <form method="POST" action="/contact-us#contact-form" accept-charset="UTF-8">
                     <input name="_token" type="hidden" value="ocjUM78inQ95XPU6UqtLp0hFZmlTi2mgF7LlORKa">
                     <input name="link" type="hidden" value="#">
                     <input name="referrer" type="hidden" value="#">
                     <input id="hotjar_id" name="hotjar_id" type="hidden" value="">
                     <input name="return_url" type="hidden" value="contact-us/success#contact-form">
 
+                    <!-- SUCCESS POP-UP TRIGGER BLOCK -->
                     <?php if (isset($successMessage)): ?>
-                        <div class="alert alert-success" style="color: green; background: #e6f4ea; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                        <!-- Structural Fallback Alert Message -->
+                        <div class="alert alert-success">
                             <?= htmlspecialchars($successMessage) ?>
                         </div>
-                    <?php register_shutdown_function(function() { unset($GLOBALS['successMessage']); }); // Clear after rendering ?>
+                        
+                        <!-- Interactive Success Pop-up Modal Window -->
+                        <div id="success-modal">
+                            <div class="modal-overlay"></div>
+                            <div class="modal-content">
+                                <h3>Success!</h3>
+                                <p><?= htmlspecialchars($successMessage) ?></p>
+                                <button id="close-modal-btn">Close</button>
+                            </div>
+                        </div>
+                    <?php register_shutdown_function(function() { unset($GLOBALS['successMessage']); }); ?>
                     <?php endif; ?>
 
                     <?php if (isset($errorMessage)): ?>
-                        <div class="alert alert-danger" style="color: red; background: #fce8e6; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+                        <div class="alert alert-danger">
                             <?= htmlspecialchars($errorMessage) ?>
                         </div>
                     <?php endif; ?>
@@ -241,9 +253,9 @@
                         <label class="pretty-checkbox">
                             <span class="media">
                                 <span class="media-left checkbox-left">
+                                    <input name="marketing_preference" type="checkbox" id="marketing_preference" value="1" <?= isset($_POST['marketing_preference']) ? 'checked' : '' ?>>
                                     <span class="button">
-                                        <span class="mdi-action-done"></span>
-                                        <input name="marketing_preference" type="checkbox" value="1" <?= isset($_POST['marketing_preference']) ? 'checked' : '' ?>>
+                                        <span class="icon icon-checkmark"></span>
                                     </span>
                                 </span>
                                 <span class="media-body">

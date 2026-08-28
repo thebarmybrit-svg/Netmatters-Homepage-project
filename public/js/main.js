@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // --- Contact Form Validation -- //
 document.addEventListener('DOMContentLoaded', function () {
-    const form = document.querySelector('form[action*="/#contact-form"]');
+    const form = document.querySelector('form[action*="/contact-us#contact-form"]');
     if (!form) return;
 
     form.setAttribute('novalidate', '');
@@ -309,3 +309,17 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 });
+
+// --- Contact Form Submission Message --- //
+document.addEventListener('DOMContentLoaded', function() {
+        const modal = document.getElementById('success-modal');
+        if (modal) {
+            const closeBtn = modal.querySelector('#close-modal-btn');
+            const overlay = modal.querySelector('.modal-overlay');
+            
+            const closeModal = () => modal.remove();
+            
+            closeBtn.addEventListener('click', closeModal);
+            overlay.addEventListener('click', closeModal);
+        }
+    });
