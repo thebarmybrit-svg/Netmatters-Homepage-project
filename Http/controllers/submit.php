@@ -1,6 +1,10 @@
 <?php
 
-// 1. Keep using the database connection that you know works
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Keep using the database connection that you know works
 try {
     $dbcontact = new PDO("mysql:host=localhost;dbname=netmatters;charset=utf8", "root", "");
     $dbcontact->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -55,5 +59,3 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     header('Location: /contact-us#contact-form');
     exit();
 }
-
-require base_path('views/contact/submit.view.php');

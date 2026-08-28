@@ -312,14 +312,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // --- Contact Form Submission Message --- //
 document.addEventListener('DOMContentLoaded', function() {
-        const modal = document.getElementById('success-modal');
-        if (modal) {
-            const closeBtn = modal.querySelector('#close-modal-btn');
-            const overlay = modal.querySelector('.modal-overlay');
-            
-            const closeModal = () => modal.remove();
-            
-            closeBtn.addEventListener('click', closeModal);
-            overlay.addEventListener('click', closeModal);
+    const alertBanners = document.querySelectorAll('.alert');
+    
+    alertBanners.forEach(banner => {
+        const closeBtn = banner.querySelector('.close-alert-btn');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function() {
+                banner.style.opacity = '0';
+                setTimeout(() => banner.remove(), 300); // Clean DOM removal after transition
+            });
         }
     });
+});

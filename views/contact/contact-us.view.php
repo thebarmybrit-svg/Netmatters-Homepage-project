@@ -190,26 +190,18 @@
 
                     <!-- SUCCESS POP-UP TRIGGER BLOCK -->
                     <?php if (isset($successMessage)): ?>
-                        <!-- Structural Fallback Alert Message -->
+                        <!-- Sleek Minimalist Success Banner -->
                         <div class="alert alert-success">
-                            <?= htmlspecialchars($successMessage) ?>
+                            <span>Your message has been sent!</span>
+                            <button type="button" class="close-alert-btn" aria-label="Close message">&times;</button>
                         </div>
-                        
-                        <!-- Interactive Success Pop-up Modal Window -->
-                        <div id="success-modal">
-                            <div class="modal-overlay"></div>
-                            <div class="modal-content">
-                                <h3>Success!</h3>
-                                <p><?= htmlspecialchars($successMessage) ?></p>
-                                <button id="close-modal-btn">Close</button>
-                            </div>
-                        </div>
-                    <?php register_shutdown_function(function() { unset($GLOBALS['successMessage']); }); ?>
                     <?php endif; ?>
 
                     <?php if (isset($errorMessage)): ?>
+                        <!-- Fallback Danger Banner -->
                         <div class="alert alert-danger">
-                            <?= htmlspecialchars($errorMessage) ?>
+                            <span><?= htmlspecialchars($errorMessage) ?></span>
+                            <button type="button" class="close-alert-btn" aria-label="Close message">&times;</button>
                         </div>
                     <?php endif; ?>
 

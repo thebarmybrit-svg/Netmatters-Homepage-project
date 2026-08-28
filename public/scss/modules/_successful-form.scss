@@ -2,7 +2,6 @@
 // Contact form Submission Message 
 // ==========================================================================
 
-
 #success-modal {
     position: fixed;
     top: 0;
@@ -60,18 +59,41 @@
     }
 }
 
+// Base layout for standard messaging alerts
 .alert {
-    padding: 15px;
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    margin-bottom: 24px;
     border-radius: 4px;
+    font-size: 16px;
+    transition: opacity 0.3s ease-out;
 
+    // Direct color styling matching your reference image
     &.alert-success {
-        color: $market-green; // Enhanced contrast for readability
-        background-color: $white;
+        background-color: #E2F5EC; // Light mint pastel green background
+        color: #2F4F4F;            // Dark slate text tone for optimal contrast
     }
 
     &.alert-danger {
-        color: $danger-red; // Enhanced contrast for readability
-        background-color: $white;
+        background-color: #FDE8E8; // Muted danger pastel red background
+        color: $danger-red;            // Deep red text tone for optimal contrast
+    }
+
+    // Modern Dismiss Button Styling
+    .close-alert-btn {
+        background: none;
+        border: none;
+        font-size: 24px;
+        line-height: 1;
+        color: #718096; // Matching subtle gray color for the 'X' button
+        cursor: pointer;
+        padding: 0 4px;
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: #1A202C; // Darkens gracefully on hover engagement
+        }
     }
 }
