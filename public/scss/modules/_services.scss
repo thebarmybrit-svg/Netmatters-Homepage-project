@@ -77,7 +77,7 @@
             display: flex;
             flex-direction: column;
             box-shadow: 0px 0px 5px 2px $colour-shadow;
-            border-radius: $br--default;
+            border-radius: $br--card;
             
 
             @include mq(small){
@@ -145,9 +145,16 @@
         width: 100%;
         transition-duration: $trns-duration;
         padding: $g-gutter-width; 
-        border-radius: $br--default;
+        border-radius: $br--card ;
         gap: $g-gutter-width;
         
+        .h2{
+            font-size: x-large;
+        }
+        .p{
+            font-size: small;
+        }
+
         .icon-container{
             @include bg-colours($ui-colors);
         }

@@ -5,46 +5,67 @@
 // Slick Navigation Dots Styling
 .slick-dots {
     position: absolute;
-    bottom: 25px; // Positions dots near the bottom edge of the banner
-    left: 0;
-    right: 0;
-    display: flex !important; // Forces items onto a single line
-    justify-content: center;
-    list-style: none;
+    bottom: 25px; // Positions the dots over the banner
+    display: block;
+    width: 100%;
     padding: 0;
     margin: 0;
+    list-style: none;
+    text-align: center;
     z-index: 10;
 
     li {
+        position: relative;
+        display: inline-block;
+        width: 16px;
+        height: 16px;
         margin: 0 6px;
         padding: 0;
-        display: inline-block;
+        cursor: pointer;
+        vertical-align: middle;
 
         button {
-            font-size: 0; // Completely hides the raw 1, 2, 3 text numbers
+            font-size: 0;
             line-height: 0;
-            display: block;
-            width: 12px;
-            height: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 16px;
+            height: 16px;
             padding: 0;
             cursor: pointer;
             color: transparent;
-            border: 2px solid $white; 
-            border-radius: $br--round;
-            background: transparent;
+            border: 0;
             outline: none;
-            transition: all 0.2s ease-in-out;
+            background: transparent;
 
-            &:hover {
-                background: rgba(255, 255, 255, 0.4);
+            &:before {
+                display: none; // Removes default Slick unicode dot
+            }
+
+            // Inactive Dot Style (Solid, semi-transparent white)
+            span {
+                display: block;
+                width: 14px;
+                height: 14px;
+                border: 0px solid transparent;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.5); // Dimmed inactive state
+                transition: all 0.2s ease-in-out;
+                box-sizing: border-box;
             }
         }
 
-        // The styling for the currently selected active slide dot
-        &.slick-active button {
-            background: $white; // Solid white fill for the active slide
-            border-color: $white;
-            transform: scale(1.1); // Slightly larger active dot
+        // Active Dot Style (Nested ring and center dot)
+        &.slick-active {
+            button span {
+                width: 16px; // Expands to form the outer ring
+                height: 16px;
+                border: 2px solid $white; // Outer white border
+                background: $white; // Inner dot color
+                background-clip: content-box; 
+                padding: 3px; // Creates the clear gap between ring and inner dot
+            }
         }
     }
 }

@@ -19,8 +19,7 @@ const $spacer = $('<div class="header-spacer"></div>').insertAfter($header);
 
 $(window).on('scroll', function() {
     const currentScrollY = $(window).scrollTop();
-    
-    console.log(currentScrollY);
+
     // 1. User returns to the top area: Transition smoothly back to static
     if (currentScrollY <= 150) {
         if ($header.hasClass('sticky')) {
