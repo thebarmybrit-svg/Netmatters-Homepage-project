@@ -197,6 +197,7 @@
     }
 
     // --- Accordion Toggle Styling --- //
+    // --- Accordion Toggle Styling --- //
     .OoH-Support {
         width: 100%;
 
@@ -221,7 +222,7 @@
                 .icon-chevron-down {
                     display: inline-block; 
                     font-size: 14px;
-                    transition: transform 0.3s ease;
+                    transition: transform 0.3s ease; // Smoothly handles rotation
                     
                     &.rotate {
                         transform: rotate(180deg); 
@@ -237,7 +238,7 @@
                 color: $grey;
 
                 &.initiallyHidden {
-                    display: none; // Managed via active JS click hooks
+                    display: none; 
                 }
             }
         }
@@ -253,11 +254,12 @@
             column-gap: 5%;
             row-gap: 20px;
             width: 100%;
+            align-items: start;
         }
 
         form {
             grid-column: 1;
-            grid-row: 1 / span 2; // Spans entire height block independently
+            grid-row: 1; 
         }
 
         .contact-details {
@@ -268,6 +270,7 @@
         .OoH-Support {
             grid-column: 2;
             grid-row: 2;
+            margin-top: 30px;
         }
     }
 }

@@ -34,11 +34,11 @@
                                 <div class="actions-container">
                                     <div class="actions">
                                         <div class="btn-group">
-                                            <a class="btn btn--it-supp hidden-xs hidden-sm" href="#" target="_blank">
+                                            <a class="btn btn--it-supp hidden-xs hidden-sm" href="#">
                                                 <span class="icon-mouse"></span>
                                                 <p>Support</p>
                                             </a>
-                                            <a class="btn btn--grey hidden-xs hidden-sm" href="/contact-us" target="_blank">
+                                            <a class="btn btn--grey hidden-xs hidden-sm" href="/contact-us">
                                                 <span class="icon-paperplane"></span>
                                                 <p>Contact</p>
                                             </a>

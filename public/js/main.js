@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Select the content panel block
     const accordionAnswer = document.querySelector('.out-of-hours .answer');
-    const chevronIcon = accordionToggle.querySelector('.fa-chevron-down');
+    const chevronIcon = accordionToggle.querySelector('.icon-chevron-down');
 
     // Setup initial state attributes for screen readers
     accordionToggle.setAttribute('aria-expanded', 'false');
@@ -258,7 +258,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const validationRules = {
         'name': () => nameField.value.trim().length >= 2,
         'email': () => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value.trim()),
-        'telephone': () => /^\+?[0-9\s\-]{10,15}$/.test(telephoneField.value.trim().replace(/\s+/g, '')),
+        'telephone': () => /^\+?[0-9\s\-]{7,20}$/.test(telephoneField.value.trim().replace(/\s+/g, '')),
         'message': () => messageField.value.trim().length >= 10
     };
 

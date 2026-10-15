@@ -65,7 +65,34 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $message   = strip_tags(trim($_POST['message'] ?? ''));
     $marketing = isset($_POST['marketing_preference']) ? 1 : 0;
 
-    if (!empty($name) && !empty($email) && !empty($telephone) && !empty($message)) {
+    $errors = [];
+
+    // 1. Name Validation
+    if (empty($name)) {
+        $errors['name'] = 'Please enter your name.';
+    }
+
+    // 2. Email Validation
+    if (empty($_POST['email'])) {
+        $errors['email'] = 'Please enter your email address.';
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors['email'] = 'Please enter a valid email address.';
+    }
+
+    // 3. Telephone Validation (Checking presence and format using regex)
+    if (empty($telephone)) {
+        $errors['telephone'] = 'Please enter your telephone number.';
+    } elseif (!preg_match('/^[0-9\+\-\(\)\s]{7,20}$/', $telephone)) {
+        $errors['telephone'] = 'Please enter a valid telephone number.';
+    }
+
+    // 4. Message Validation
+    if (empty($message)) {
+        $errors['message'] = 'Please enter your message.';
+    }
+
+    // If there are no validation errors, proceed with DB insertion
+    if (empty($errors)) {
         try {
             $sql = "INSERT INTO inquiries (name, company, email, telephone, message, marketing_preference) 
                     VALUES (:name, :company, :email, :telephone, :message, :marketing)";
@@ -80,7 +107,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 ':marketing' => $marketing
             ]);
 
-            // Save to session so it survives the redirect
+            // Save success status to session
             $_SESSION['flash']['successMessage'] = "Your enquiry has been successfully saved!";
             
             // Redirect immediately to prevent resubmission on refresh
@@ -91,10 +118,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION['flash']['errorMessage'] = "Could not save your enquiry. Please try again.";
         }
     } else {
-        $_SESSION['flash']['errorMessage'] = "Please fill in all required fields.";
+        // Save individual input errors to the session
+        $_SESSION['flash']['errors'] = $errors;
     }
 
-    // Keep old input values in session so form doesn't wipe clear on structural error
+    // Keep old input values and redirect back so the user doesn't lose their typed data
     $_SESSION['flash']['old'] = $_POST;
     header('Location: /contact-us#contact-form');
     exit();

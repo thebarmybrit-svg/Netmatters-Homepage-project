@@ -669,7 +669,7 @@
             </div>
         </li>
         <li class="hidden-md hidden-lg sub-menu-banner-title">
-            <a href="#" target="_blank">
+            <a href="#">
                 Support
             </a>
         </li>

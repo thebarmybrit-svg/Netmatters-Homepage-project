@@ -1,7 +1,6 @@
 <?php require base_path('views/partials/header.php'); ?>
-
 <div id="main">
-    <div class="hidden-xs breadcrumb-container ">
+    <div class="hidden-xs breadcrumb-container">
         <div class="container">
             <ul class="breadcrumb">
                 <li><a href="/">Home</a></li>
@@ -14,7 +13,7 @@
         <div class="service-list container">
             <div class="row office-address-row">
                 
-                <!-- Heading Section matching 'Latest News' block -->
+                <!-- Heading Section -->
                 <div class="article headings-container clearfix">
                     <h2 class="h1 float-left-sm">
                         Our Offices
@@ -32,26 +31,19 @@
                         </div>
                         <div class="block">
                             <p class="h2">
-                                <a href="#">
-                                    Cambridge Office
-                                </a>
+                                <a href="#">Cambridge Office</a>
                             </p>
                             <p class="p">
-                                Unit 1.31,
-                                <br>
-                                St John's Innovation Centre,
-                                <br>
-                                Cowley Road,
-                                Milton,
-                                <br>
-                                Cambridge,
-                                <br>
+                                Unit 1.31,<br>
+                                St John's Innovation Centre,<br>
+                                Cowley Road, Milton,<br>
+                                Cambridge,<br>
                                 CB4 0WS
                             </p>
                             <a class="btn btn--web-dsner" href="#">View More</a>
                             <div class="user tel">
                                 <div class="details">
-                                    <a href="tel:#" class="h3 text-web">01223 37 57 72</a>
+                                    <a href="tel:01223375772" class="h3 text-web">01223 37 57 72</a>
                                 </div>
                             </div>
                         </div>  
@@ -69,25 +61,19 @@
                         </div>
                         <div class="block">
                             <p class="h2">
-                                <a href="#">
-                                    Wymondham Office
-                                </a>
+                                <a href="#">Wymondham Office</a>
                             </p>
                             <p class="p">
-                                Unit 15,
-                                <br>
-                                Penfold Drive,
-                                <br>
-                                Gateway 11 Business Park,
-                                <br>
-                                Wymondham, Norfolk,
-                                <br>
+                                Unit 15,<br>
+                                Penfold Drive,<br>
+                                Gateway 11 Business Park,<br>
+                                Wymondham, Norfolk,<br>
                                 NR18 0WZ
                             </p>
                             <a class="btn btn--web-dsner" href="#">View More</a>
                             <div class="user tel">
                                 <div class="details">
-                                    <a href="tel:#" class="h3 text-web">01603 70 40 20</a>
+                                    <a href="tel:01603704020" class="h3 text-web">01603 70 40 20</a>
                                 </div>
                             </div>
                         </div>  
@@ -105,25 +91,19 @@
                         </div>
                         <div class="block">
                             <p class="h2">
-                                <a href="#">
-                                    Great Yarmouth Office
-                                </a>
+                                <a href="#">Great Yarmouth Office</a>
                             </p>
                             <p class="p">
-                                Suite F23,
-                                <br>
-                                Beacon Innovation Centre,
-                                <br>
-                                Beacon Park, Gorleston,
-                                <br>
-                                Great Yarmouth, Norfolk,
-                                <br>
+                                Suite F23,<br>
+                                Beacon Innovation Centre,<br>
+                                Beacon Park, Gorleston,<br>
+                                Great Yarmouth, Norfolk,<br>
                                 NR31 7RA
                             </p>
                             <a class="btn btn--web-dsner" href="#">View More</a>
                             <div class="user tel">
                                 <div class="details">
-                                    <a href="tel:#" class="h3 text-web">01493 60 32 04</a>
+                                    <a href="tel:01493603204" class="h3 text-web">01493 60 32 04</a>
                                 </div>
                             </div>
                         </div>  
@@ -137,31 +117,32 @@
     <div id="contact-form">
         <div class="container">
             <div class="row">
-                <!-- Contact Details -->
-                <div class="contact-details">
-                    <div class="cms-block" id="partial-166971">
-                        <p><strong>Email us on:</strong></p>
-                        <p><a href="mailto:sales@netmatters.com" class="h3 text-web">sales@netmatters.com</a></p>
-                        
-                        <p><strong>Speak to Sales on:</strong></p>
-                        <p><a href="tel:01603515007" class="h3 text-web">01603 515007</a></p>
-                        
-                        <p><strong>Business hours:</strong></p>
-                        <p><strong>Monday - Friday 07:00 - 18:00</strong></p>
+                <!-- Sidebar Info Wrapper (Right Side) -->
+                <div class="contact-info-sidebar">
+                    <!-- Contact Details -->
+                    <div class="contact-details">
+                        <div class="cms-block" id="partial-166971">
+                            <p><strong>Email us on:</strong></p>
+                            <p><a href="mailto:sales@netmatters.com" class="h3 text-web">sales@netmatters.com</a></p>
+                            
+                            <p><strong>Speak to Sales on:</strong></p>
+                            <p><a href="tel:01603515007" class="h3 text-web">01603 515007</a></p>
+                            
+                            <p><strong>Business hours:</strong></p>
+                            <p><strong>Monday - Friday 07:00 - 18:00</strong></p>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Out of Hours Support -->
-                <div class="OoH-Support">
-                    <div class="cms-block" id="partial-166974">
-                        <div class="container">
+                    <!-- Out of Hours Support -->
+                    <div class="OoH-Support">
+                        <div class="cms-block" id="partial-166974">
                             <div class="accordion out-of-hours">
                                 <div class="question out-of-hours">
                                     <h4>
                                         <a href="#">
                                             <span class="question-text">
                                                 Out of Hours IT Support 
-                                                <em style="font-style: normal;" class="icon icon-cheveron-down"></em>
+                                                <em style="font-style: normal;" class="icon icon-chevron-down"></em>
                                             </span>
                                         </a>
                                     </h4>
@@ -180,7 +161,7 @@
                     </div>
                 </div>
 
-                <!-- Enquiry Form -->
+                <!-- Enquiry Form (Left Side)-->
                 <form method="POST" action="/contact-us#contact-form" accept-charset="UTF-8">
                     <input name="_token" type="hidden" value="ocjUM78inQ95XPU6UqtLp0hFZmlTi2mgF7LlORKa">
                     <input name="link" type="hidden" value="#">
@@ -188,17 +169,16 @@
                     <input id="hotjar_id" name="hotjar_id" type="hidden" value="">
                     <input name="return_url" type="hidden" value="contact-us/success#contact-form">
 
-                    <!-- SUCCESS POP-UP TRIGGER BLOCK -->
+                    <!-- SUCCESS BANNER -->
                     <?php if (isset($successMessage)): ?>
-                        <!-- Sleek Minimalist Success Banner -->
                         <div class="alert alert-success">
-                            <span>Your message has been sent!</span>
+                            <span><?= htmlspecialchars($successMessage) ?></span>
                             <button type="button" class="close-alert-btn" aria-label="Close message">&times;</button>
                         </div>
                     <?php endif; ?>
 
+                    <!-- GENERAL DANGER BANNER -->
                     <?php if (isset($errorMessage)): ?>
-                        <!-- Fallback Danger Banner -->
                         <div class="alert alert-danger">
                             <span><?= htmlspecialchars($errorMessage) ?></span>
                             <button type="button" class="close-alert-btn" aria-label="Close message">&times;</button>
@@ -206,38 +186,55 @@
                     <?php endif; ?>
 
                     <div class="row">
+                        <!-- Name Field -->
                         <div class="col-md-6">
-                            <div class="form-group">
+                            <div class="form-group <?= isset($errors['name']) ? 'has-error' : '' ?>">
                                 <label for="name" class="required">Your Name</label>
-                                <input class="form-control" name="name" type="text" id="name" value="<?= htmlspecialchars($_POST['name'] ?? '') ?>" required>
+                                <input class="form-control <?= isset($errors['name']) ? 'is-invalid' : '' ?>" name="name" type="text" id="name" value="<?= htmlspecialchars($oldInput['name'] ?? '') ?>">
+                                <?php if (isset($errors['name'])): ?>
+                                    <small class="text-danger error-message"><?= htmlspecialchars($errors['name']) ?></small>
+                                <?php endif; ?>
                             </div>
                         </div>
 
+                        <!-- Company Field -->
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="company">Company Name</label>
-                                <input class="form-control" name="company" type="text" id="company" value="<?= htmlspecialchars($_POST['company'] ?? '') ?>">
-                            </div>
-                        </div>
-                    
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="email" class="required">Your Email</label>
-                                <input class="form-control" name="email" type="email" id="email" value="<?= htmlspecialchars($_POST['email'] ?? '') ?>" required>
+                                <input class="form-control" name="company" type="text" id="company" value="<?= htmlspecialchars($oldInput['company'] ?? '') ?>">
                             </div>
                         </div>
 
+                        <!-- Email Field -->
                         <div class="col-md-6">
-                            <div class="form-group">
+                            <div class="form-group <?= isset($errors['email']) ? 'has-error' : '' ?>">
+                                <label for="email" class="required">Your Email</label>
+                                <input class="form-control <?= isset($errors['email']) ? 'is-invalid' : '' ?>" name="email" type="email" id="email" value="<?= htmlspecialchars($oldInput['email'] ?? '') ?>">
+                                <?php if (isset($errors['email'])): ?>
+                                    <small class="text-danger error-message"><?= htmlspecialchars($errors['email']) ?></small>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+
+                        <!-- Telephone Field -->
+                        <div class="col-md-6">
+                            <div class="form-group <?= isset($errors['telephone']) ? 'has-error' : '' ?>">
                                 <label for="telephone" class="required">Your Telephone Number</label>
-                                <input class="form-control" name="telephone" type="tel" id="telephone" value="<?= htmlspecialchars($_POST['telephone'] ?? '') ?>" required>
+                                <input class="form-control <?= isset($errors['telephone']) ? 'is-invalid' : '' ?>" name="telephone" type="tel" id="telephone" value="<?= htmlspecialchars($oldInput['telephone'] ?? '') ?>">
+                                <?php if (isset($errors['telephone'])): ?>
+                                    <small class="text-danger error-message"><?= htmlspecialchars($errors['telephone']) ?></small>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <!-- Message Field -->
+                    <div class="form-group <?= isset($errors['message']) ? 'has-error' : '' ?>">
                         <label for="message" class="required">Message</label>
-                        <textarea class="form-control" name="message" cols="50" rows="10" id="message" required><?= htmlspecialchars($_POST['message'] ?? '') ?></textarea>
+                        <textarea class="form-control <?= isset($errors['message']) ? 'is-invalid' : '' ?>" name="message" cols="50" rows="10" id="message"><?= htmlspecialchars($oldInput['message'] ?? '') ?></textarea>
+                        <?php if (isset($errors['message'])): ?>
+                            <small class="text-danger error-message"><?= htmlspecialchars($errors['message']) ?></small>
+                        <?php endif; ?>
                     </div>
 
                     <!-- Marketing Preferences -->
@@ -245,7 +242,7 @@
                         <label class="pretty-checkbox">
                             <span class="media">
                                 <span class="media-left checkbox-left">
-                                    <input name="marketing_preference" type="checkbox" id="marketing_preference" value="1" <?= isset($_POST['marketing_preference']) ? 'checked' : '' ?>>
+                                    <input name="marketing_preference" type="checkbox" id="marketing_preference" value="1" <?= isset($oldInput['marketing_preference']) ? 'checked' : '' ?>>
                                     <span class="button">
                                         <span class="icon icon-checkmark"></span>
                                     </span>
@@ -258,7 +255,7 @@
                         </label>
                     </div>
 
-                    <!-- Action Actions -->
+                    <!-- Action Buttons -->
                     <div class="action-block">
                         <button type="submit" class="btn btn--primary submit-btn">
                             Send Enquiry
@@ -270,10 +267,8 @@
         </div>
     </div>
 </div>
-<?php require base_path('views/partials/footer.php') ?>
 
-<?php require base_path('views/partials/sidebar.php') ?>
-
-<?php require base_path('views/partials/cookies.php') ?>
-
-<?php require base_path('views/partials/ender.php') ?>
+<?php require base_path('views/partials/footer.php'); ?>
+<?php require base_path('views/partials/sidebar.php'); ?>
+<?php require base_path('views/partials/cookies.php'); ?>
+<?php require base_path('views/partials/ender.php'); ?>
