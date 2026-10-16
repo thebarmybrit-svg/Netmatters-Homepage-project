@@ -6,9 +6,18 @@
     padding-top: 50px;
     position: relative;
     z-index: 5;
-    .headings-container a:hover{
-        text-decoration: underline;
+
+    .headings-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: $g-gutter-width;
+
+        a:hover{
+            text-decoration: underline;
+        }
     }
+
     .h2{
         font-weight: $font-weight--bold;
     }
@@ -18,22 +27,31 @@
     .btn{
         color: $white;
     }
+
     .img-content-container {
         position: relative;
         max-width: $img-size__standard--max-width-mobile;
-        margin-bottom: auto;
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block; // Removes any unwanted inline spacing/gaps below the image
+        }
+
         .category {
             position: absolute;
+            top: 10px;
             right: 0;
+            left: auto;   // Resets any inherited mobile-first left: 0 stretching
+            width: auto;  // Forces it to only take up the width of its text ("INSIGHTS")
             color: $white;
             font-weight: $font-weight--bold;
             font-size: .75rem;
             padding: 0 10px;
             line-height: 1.438rem;
             text-transform: uppercase;
-            top: 10px;
-            right: 0;   
             z-index: 3;   
+
             &:hover{
                 text-decoration: underline;
                 cursor: pointer;
@@ -62,8 +80,12 @@
         }
 
         &:last-child{
+            
             display: flex;
             justify-content: center;
+            h3{
+                font-size: 1.625rem;
+            }
             &:hover a{
                 text-decoration: underline;
                 cursor: pointer;
@@ -89,12 +111,13 @@
                 height: 100%;
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
-                align-items: center;
+                justify-content: flex-start; // Aligns card content to the top instead of centering
+                align-items: stretch; // Ensures child elements span the full card width properly
                 max-width: 100%; 
                 box-shadow: 0px 0px 20px 1px $colour-shadow;
                 border-radius: $br--default;
                 border: 1px solid palette(grey, light);
+                overflow: hidden;
 
                 .article-link{
                     position: absolute;
@@ -107,16 +130,23 @@
             }
 
             .block{
-                padding: em(30px);
+                padding: em(15px) em(30px) em(20px) em(30px); 
+
+                .btn {
+                    display: inline-block; // Ensures margins apply correctly if it's an inline element
+                    margin-bottom: em(25px); // Creates the required gap between the button and the dividing line
+                }
             }
+
             .user{
                 display: flex;
                 justify-content: left;
                 align-items: center;
                 width: 100%;
-                border-top: 1px $grey solid;
-                padding-top: em(30px);
-                margin-top: em(30px);
+                border-top: 1px solid palette(grey, light);
+                padding-top: em(25px); // Matches the spacing above the line for symmetry
+                margin-top: 0; // Reset margin-top so the padding handles the spacing cleanly
+                
                 .details{
                     padding-left: em(20px);
                     font-size: small;
@@ -136,7 +166,6 @@
             }
         } 
         @include mq(large) {
-           
             &:nth-child(n+4) {
                 display: grid !important; 
             }
@@ -145,6 +174,5 @@
                 display: none !important;
             }
         }
-        
     }
 }
