@@ -60,19 +60,20 @@
             .description {
                 display: none !important;
                 position: absolute;
-                bottom: 85%;
+                bottom: 120%; // Pushes the tooltip box further up above the logo
                 left: 50%; 
                 transform: translateX(-50%); 
                 z-index: 100;
                 width: 280px; 
-                transition: transform 0.2s ease; // Smooth alignment shifting
+                transition: transform 0.2s ease;
+
                 .box {
                     background-color: $meteorite-blue;
                     text-align: center;
                     color: $white;
                     padding: 20px;
                     font-size: .875rem;
-                    margin-bottom: 50px;
+                    margin-bottom: 0; // Remove extra bottom margin since arrow is now at the bottom
 
                     h3 {
                         position: relative;
@@ -88,13 +89,14 @@
                         margin-bottom: 5px;
                     }
                     .btn {
+                        margin-top: 11px;
                         @include bg-colour-hover-darken($ui-colors);
                     }
                 }
 
                 .arrow {
                     position: absolute;
-                    bottom: 10px;
+                    bottom: -15px; // Positions the arrow outside the bottom of the box
                     left: 50%;
                     transform: translateX(-50%);
 
@@ -102,9 +104,11 @@
                         content: "";
                         margin: auto;
                         display: inline-block;
-                        border-color: $meteorite-blue transparent transparent;
+                        // Flip the border colors so the triangle points down towards the logo
+                        border-color: $meteorite-blue transparent transparent transparent;
                         border-style: solid;
-                        border-width: 38px 36px 0;
+                        // Adjust dimensions to form a downward-pointing triangle
+                        border-width: 15px 15px 0 15px; 
                     }
                 }
             }
