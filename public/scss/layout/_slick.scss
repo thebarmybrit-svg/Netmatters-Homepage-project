@@ -17,9 +17,9 @@
     li {
         position: relative;
         display: inline-block;
-        width: 16px;
-        height: 16px;
-        margin: 0 6px;
+        width: 32px;
+        height: 32px;
+        margin: 0 10px;
         padding: 0;
         cursor: pointer;
         vertical-align: middle;
@@ -30,8 +30,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 16px;
-            height: 16px;
+            width: 32px;
+            height: 32px;
             padding: 0;
             cursor: pointer;
             color: transparent;
@@ -46,8 +46,8 @@
             // Inactive Dot Style (Solid, semi-transparent white)
             span {
                 display: block;
-                width: 14px;
-                height: 14px;
+                width: 11px;
+                height: 11px;
                 border: 0px solid transparent;
                 border-radius: 50%;
                 background: rgba(255, 255, 255, 0.5); // Dimmed inactive state
@@ -59,8 +59,8 @@
         // Active Dot Style (Nested ring and center dot)
         &.slick-active {
             button span {
-                width: 16px; // Expands to form the outer ring
-                height: 16px;
+                width: 23px; // Expands to form the outer ring
+                height: 23px;
                 border: 2px solid $white; // Outer white border
                 background: $white; // Inner dot color
                 background-clip: content-box; 

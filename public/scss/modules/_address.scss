@@ -78,7 +78,7 @@
                 /* Card Titles */
                 .h2 {
                     margin: 0 0 15px 0;
-                    font-size: 1.5rem;
+                    font-size: 20px;
 
                     a {
                         color: $colour-primary;
@@ -91,10 +91,9 @@
 
                 /* Address Details */
                 .p {
-                    font-size: 0.95rem;
+                    font-size: 13px;
                     line-height: 1.6;
-                    margin: 0 0 25px 0;
-                    min-height: 120px; /* Equalizes text block height */
+                    margin: 0 0 15px 0;
                 }
 
                 /* --- Phone Numbers --- */
@@ -104,7 +103,7 @@
 
                     .h3.text-web {
                         display: inline-block;
-                        font-size: 1.8rem;
+                        font-size: 26px;
                         font-weight: 700;
                         color: $webdev-lavander;
                         text-decoration: none;
@@ -119,7 +118,9 @@
                     order: 2;
                     width: fit-content;
                     border-radius: $br--default;
+                    padding: 5px 30px;
                     @include bg-colour-hover-darken($ui-colors);
+                    font-size: 14.4px;
                 }
             }
         }
